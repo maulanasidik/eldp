@@ -23,7 +23,6 @@
 # Logs and databases #
 ######################
 *.log
-*.sql
 *.sqlite
  
 # OS generated files #
@@ -41,7 +40,6 @@ Thumbs.db
 /app/tmp/*
 /app/Config/core.php
 /app/Config/database.php
-/vendors/*
 
 #ignore files webroot
 /app/webroot/files/*
