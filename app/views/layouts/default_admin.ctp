@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <title>Elibrary Admin</title>
   <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600' rel='stylesheet' type='text/css'>-->
+  
+  <meta name="viewport" content="width=1024,initial-scale=1.00, minimum-scale=1.00"/>
 
   <?php echo $html->css('responsive'); ?>
   <?php echo $html->css('metro-bootstrap'); ?>
@@ -21,7 +23,129 @@
   
   ?>
 
-  <?php echo $javascript->link('jquery.min.js'); 
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+
+    <?php 
+
+    echo $html->css('el2/layout'); 
+    echo $html->css('el2/nav'); 
+    echo $html->css('el2/tiles'); 
+    echo $html->css('/plugins/lightbox/plugin.css'); 
+    echo $html->css('/plugins/plugintemplate/plugin.css'); 
+    echo $html->css('/plugins/tileslide/plugin.css'); 
+    echo $html->css('/plugins/tileslideshow/plugin.css'); 
+    echo $html->css('/plugins/tiletemplate/plugin.css'); 
+    ?>
+    
+    <style>
+
+    html{background-color:#0F6D32;}
+
+    #bgImage { 
+      position:fixed; top:0; left:0; z-index:-4; min-width:%;min-height:100%;
+    }
+    .tile{
+      -webkit-transition-property: box-shadow, margin-left,  margin-top;
+      -webkit-transition-duration: 0.25s, 0.5s, 0.5s;
+      -moztransition-property: box-shadow, margin-left,  margin-top;
+      -moz-transition-duration: 0.25s, 0.5s, 0.5s;
+      -o-transition-property: box-shadow, margin-left,  margin-top;
+      -o-transition-duration: 0.25s, 0.5s, 0.5s;
+      -ms-transition-property: box-shadow, margin-left,  margin-top;
+      -ms-transition-duration: 0.25s, 0.5s, 0.5s;
+      transition-property: box-shadow, margin-left,  margin-top;
+      transition-duration: 0.25s, 0.5s, 0.5s;
+    }
+    #subNavWrapper{
+        position:relative;
+        right:0;
+        left:0;
+    }
+    /*#centerWrapper{
+        margin-top:40px;
+    }*/
+    </style> 
+    <!--[if IE]>
+      <script src="js/html5.js"></script>
+       <![endif]-->
+      <!--[if lt IE 9]>
+      <script type="text/javascript" language="javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="js/html5.js"></script>
+    <![endif]-->
+    <!--[if !IE]>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      
+      
+    <![endif]-->
+
+      <!--[if !IE]>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">window.jQuery || document.write('<\/script><script type="text/javascript" src="<?php echo $this->webroot;?>js/el2/jquery1102.js"><\/script>')</script>
+      
+      <?php echo $javascript->link('/js/el2/plugins.js'); ?>
+      
+      
+      <script type="text/javascript">
+      scale = 150;
+      spacing = 10;
+      theme = '';
+      $group.titles = [""];
+      $group.spacingFull = [5];
+      $group.inactive.opacity = "1";
+      $group.inactive.clickable = "";
+      $group.showEffect = 0;
+      $group.direction = "horizontal";
+
+      mouseScroll = "";
+
+      siteTitle = 'E-Library 2.0';
+      siteTitleHome = 'Home';
+      showSpeed = 400;
+      hideSpeed = 300;
+      scrollSpeed = 550;
+
+      device = "";
+        scrollHeader = "";
+        disableGroupScrollingWhenVerticalScroll = "";
+
+      /*For background image*/
+      bgMaxScroll= "";
+      bgScrollSpeed = "";
+
+      /*For responsive */
+      autoRearrangeTiles = "1";
+      autoResizeTiles = "1";
+      rearrangeTreshhold = 2;
+
+      /*Locale */
+      lang = "en";
+      l_pageNotFound = "";
+      l_pageNotFoundDesc = "";
+      l_menu = "";
+      l_goToFullSiteRedirect = "";
+      pageTitles = '';pageURL = '';
+      </script>
+
+      <?php
+      echo $javascript->link('/plugins/lightbox/plugin.js');
+      echo $javascript->link('/plugins/plugintemplate/plugin.js');
+      echo $javascript->link('/plugins/tileslide/plugin.js');
+      echo $javascript->link('/plugins/tileslideshow/plugin.js');
+      echo $javascript->link('/plugins/tiletemplate/plugin.js');
+      echo $javascript->link('/js/el2/functions.js');
+      echo $javascript->link('/js/el2/main.js');
+      ?>
+      
+      
+      <noscript>
+        <style>#tileContainer{display:block}</style>
+      </noscript>
+
+  <?php
+
   echo $javascript->link('jquery.jplayer.min.js');
   echo $javascript->link('/client/js/jwplayer.js');
   
@@ -35,71 +159,45 @@
 
 </head>
 
-<body class="metro">
-
-
-  <!-- Preloader-  -->
-  <!--<div id="preloader">
-    <div id="spinner_container"><img id="spinner" src="images/loading.gif" alt="" /></div>
-  </div>-->
-  <!-- Preloader-  END--> 
-
-  <div class="background">
-  <img src="<?php echo $this->webroot;?>slider/image1.png" alt="pic1" />
-    <!--<img src="slider/image2.png" alt="pic2" />
-   
-  <img src="slider/3.jpg" alt="pic3" />
-   <img src="slider/4.jpg" alt="pic4" />-->
-  </div>
-
-  
-
-
-
-  <div class="container2">
-    <div class="loadingpagecontainer">
-    
-    <div class="loader loadingstateall" style="">
-      <img src="<?php echo $this->webroot;?>images/rotite-30-29.png" width="928" height="29" style="position: absolute; display: block; overflow: hidden; left: 0px; top: 0px; margin: 0px; padding: 0px; max-width: none; max-height: none; border: none; line-height: 1; background-color: transparent; -webkit-backface-visibility: hidden; -webkit-user-select: none;">
-    </div>
-    <p class="loaderstat" style="color:#fff;">Memuat data mohon menunggu </p>
-    </div>
-
-    <div class="main">
-
-      <!-- Header Part -->
-      <div class="clearfix sub_page">
-        <div class="clr logo_bg">
-          <div class="logo_left">
-            <div class="logo"><img src="<?php echo $this->webroot;?>client/images/new-logo.png"/></div>
-            <div class="slogan">Admin Panel</div>
+  <body class="full ">
+  <img src='<?php echo $this->webroot;?>img/el2/bg/matdes.jpg' alt='background-image' id='bgImage'/>  <header>
+    <div id="headerWrapper">
+      <div id="headerCenter">
+        <a id="headerlogo">
+          
+            <img src="<?php echo $this->webroot;?>img/el2/icons/logo-eldp-version2.png" style="width: 65px; margin: 0 0 0 -240px;">
+          
+        </a>
+        <div id="headerTitles">
+          <h1><a href="#!">E-Library</a></h1>
+            <h2>version 2.0</h2>
           </div>
-          <div class="header_rightbg">
-            <div class="clr"> 
-              <div class="ph_number">
-                <nav class="horizontal-menu">
-                  <a href="#" class="refreshapp" onclick="location.reload();"><i class=" icon-loading-2" style="background:#fd7814;color: white;padding: 10px;border-radius: 50%"></i><br/>&nbsp;Refresh<br/>Aplikasi</a>
-                  <ul>
-                      <li>
-                          
-                          <a class="dropdown-toggle" href="#">Admin</a>
-                          <ul class="dropdown-menu" data-role="dropdown">
-                              <li><a class="gotolink" data-url="<?php echo $this->webroot;?>admin/profiles/edit" data-title="Profile Perpustakaan" data-width="900px" data-height="375px">Profile Perpustakaan</a></li>
-                              <li><a class="gotolink" data-url="<?php echo $this->webroot;?>admin/banners/listbanner" data-title="Profile Perpustakaan" data-width="900px" data-height="375px">Banner Management</a></li>
-                              <li><a class="gotolink" data-url="<?php echo $this->webroot;?>admin/plans/listplan" data-title="Pengadaan Buku" data-width="900px" data-height="375px">Pengadaan Buku</a></li>
-                              <li><a class="gotolink" data-url="<?php echo $this->webroot;?>admin/users/changepassword" data-title="Ubah Sandi" data-width="900px" data-height="375px">Ubah Sandi</a></li>
-                              <li><a class="gotolink" data-url="<?php echo $this->webroot;?>admin/profiles/changeip" data-title="Edit IP Address" data-width="900px" data-height="375px">Alamat Server</a></li>
-                              <li><a href="<?php echo $this->webroot;?>admin/logout">Logout</a></li>
-                          </ul>
-                      </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
+          <nav>
+                
+            <a href="#!">
+          <img src="<?php echo $this->webroot;?>img/el2/icons/home-01.png" id="homebutton" alt="home"/>
+          </a>
+        </nav>
       </div>
-      <!-- // Header Part -->
+      </div>
+
+    </header>
+
+  <div id="wrapper">
+
+
+
+    <div id="centerWrapper">
+      
+      <div id="subhome" >
+        <a href="#!/" class="uphome">Profile Perpustakaan</a>
+              <a href="#!/" class="uphome">Banner Management</a>
+              <a href="#!/" class="uphome">Pengadaan Buku</a>
+              <a href="#!/" class="uphome">Ubah Sandi</a>
+              <a href="#!/" class="uphome">Alamat Server</a>
+              <a href="#!/" class="uphome">Logout</a>
+          </div>
+
    
       <?php e($content_for_layout); ?>
    </div>
@@ -1174,8 +1272,6 @@
 
         });
         console.log('submitted');
-        
-
         return false;
     });
 
@@ -1471,12 +1567,6 @@
 
         return false;
     }); 
-
-    
-        
-  
-
-
   </script>
   
 

@@ -14,7 +14,7 @@ class AppController extends Controller {
 		// if admin url requested
 		if(isset($this->params['admin']) && $this->params['admin']) {
 			// check user is logged in
-			if( !$this->Session->check('User') ) {
+			/*if( !$this->Session->check('User') ) {
 				$this->Session->setFlash('Anda harus login terlebih dahulu.',true);
 				$this->redirect('/login');
 			}
@@ -22,7 +22,7 @@ class AppController extends Controller {
 			// save user data
 			$this->_User = $this->Session->read('User');
 			$this->set('user',$this->_User);
-			$this->set('useridloggedin',$this->_User['User']['id']);
+			$this->set('useridloggedin',$this->_User['User']['id']);*/
 			
 
 			// change layout
