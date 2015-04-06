@@ -107,7 +107,7 @@ header{
 	padding:35px 20px 70px 20px;
 	display:none;	
 	overflow:visible;
-	width: 1111px;
+	width: 1150px;
 }
 
 
@@ -757,7 +757,7 @@ dl.separator dt:first-child:after { display: none; }
 	width: 810px;
 	background-color: rgba(252, 252, 252, 0.3);
 	margin-top: 0px;
-  	margin-left: 285px;
+  	
   	padding: 10px 10px 8px 10px;
   	
 }
@@ -779,7 +779,8 @@ dl.separator dt:first-child:after { display: none; }
 	position: absolute;
 	left: 300px;
 	top:-60px;
-
+	z-index: 10000;
+	display:block;
 }
 
 .upbutton{

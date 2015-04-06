@@ -203,6 +203,10 @@
    </div>
   </div><!-- /container -->
 
+  </div>
+  <footer> <a title='Metro UI template' href='' target='_blank'></a> ©HASAMA.Corps</footer>
+        </div>
+
 
   
   <?php echo $javascript->link('jquery.form.min.js'); ?>

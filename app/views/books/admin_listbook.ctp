@@ -1,12 +1,33 @@
+<div class="sidebarpage">
 
+  <div id="subNav">
+      <a href="#!/url=books.php"><img src="<?php echo $this->webroot;?>img/el2/Logomenu1-12.png" class="upbutton"> Daftar Buku</a>
+      <a href="#!/url=favbooks.php"><img src="<?php echo $this->webroot;?>img/el2/Logomenu2-13.png" class="upbutton"> Buku Favorit</a>
+      <a href="#!/url=findbooks.php"><img src="<?php echo $this->webroot;?>img/el2/Logomenu3-14.png" class="upbutton"> Cari</a>
+  </div>
+
+    <div id="a" class="book imageNavinside">&nbsp;</div>
+    
+    <div>
+        <ul id="side">
+      <h3>
+        <a>Tambah Daftar Buku</a>
+      </h3>
+      <h3>
+        <a>Cetak Daftar Buku</a>
+      </h3>
+      </ul>
+    </div>
+                          
+</div>
 <?php 
 if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
 }
 ?> 
 <div class="mask1">
-  <div class="actions">
-    <table class="table hovered" cellpadding="0" cellspacing="0">
+  <div class="transp actions">
+    <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
           <th>ID</th>
@@ -145,3 +166,7 @@ $(".opennewtab").click(function() {
 
 
 </script>
+
+
+
+

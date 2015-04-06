@@ -106,7 +106,7 @@ $show = {
 				url = hashReq+".php";
 			}
 		}
-		$.ajax("pages/"+url+(typeof $hashed.get[1] != "undefined" ? "?"+$hashed.get[1] : "")).success(function(newContent,textStatus){	
+		$.ajax(url+(typeof $hashed.get[1] != "undefined" ? "?"+$hashed.get[1] : "")).success(function(newContent,textStatus){	
 			$content.css("margin-left",0).fadeOut(50,function(){	
 				$content.html(newContent);
 				$page.current = url;

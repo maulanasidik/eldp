@@ -83,7 +83,7 @@
           </a>
 
 
-            <a href="#!/url=<?php echo $this->webroot;?>books/admin/" class="tile tileSlide up group0 " style="margin-top: 203.4px; margin-left: 0px; width: 190px; height: 190px; padding: 0px; display: block; background: rgb(0, 187, 212);" data-pos="203_4-0-190" data-doslide="1"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/books/listbook" class="tile tileSlide up group0 " style="margin-top: 203.4px; margin-left: 0px; width: 190px; height: 190px; padding: 0px; display: block; background: rgb(0, 187, 212);" data-pos="203_4-0-190" data-doslide="1"> 
             <div class="slideText" style="
                     height:76px; width:100%;top:190px;    ">
             <h3>Book</h3>    
@@ -235,17 +235,12 @@
             <div style="font-size:20px;line-height:20px;">Ebook CR</div>
           </div>
         </a>
-          </div>
-          
-          <div id="subNavWrapper"></div>
-        <div id="contentWrapper" >          
-                        <div id="content">            
-                      </div>
-                  </div>
-                </div>
-    <footer>
-      <a title='Metro UI template' href='' target='_blank'></a>
-      ©HASAMA.Corps     </footer>
         </div>
+          
+        <div id="subNavWrapper"></div>
+          <div id="contentWrapper" >
+            <div id="content">
+            </div>
+          </div>
+        
   <div id="catchScroll"></div>
-
