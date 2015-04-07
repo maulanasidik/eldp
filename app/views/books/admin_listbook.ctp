@@ -1,17 +1,17 @@
 <div class="sidebarpage">
 
   <div id="subNav">
-      <a href="#!/url=books.php"><img src="<?php echo $this->webroot;?>img/el2/Logomenu1-12.png" class="upbutton"> Daftar Buku</a>
-      <a href="#!/url=favbooks.php"><img src="<?php echo $this->webroot;?>img/el2/Logomenu2-13.png" class="upbutton"> Buku Favorit</a>
-      <a href="#!/url=findbooks.php"><img src="<?php echo $this->webroot;?>img/el2/Logomenu3-14.png" class="upbutton"> Cari</a>
+      <a href="#!/url=<?php echo $this->webroot;?>admin/books/listbook"><img src="<?php echo $this->webroot;?>img/el2/Logomenu1-12.png" class="upbutton"> Daftar Buku</a>
+      <a href="#!/url=<?php echo $this->webroot;?>admin/books/showfavorite"><img src="<?php echo $this->webroot;?>img/el2/Logomenu2-13.png" class="upbutton"> Buku Favorit</a>
+      <a href="#!/url=<?php echo $this->webroot;?>admin/books/find"><img src="<?php echo $this->webroot;?>img/el2/Logomenu3-14.png" class="upbutton"> Cari</a>
   </div>
 
     <div id="a" class="book imageNavinside">&nbsp;</div>
     
     <div>
         <ul id="side">
-      <h3>
-        <a>Tambah Daftar Buku</a>
+      <h3 class="showdialogwindow" data-url="<?php echo $this->webroot;?>admin/books/add" data-title="Tambah Buku" data-width="900px" data-height="375px">
+        <a >Tambah Daftar Buku</a>
       </h3>
       <h3>
         <a>Cetak Daftar Buku</a>
@@ -162,7 +162,15 @@ $(".opennewtab").click(function() {
     window.open(productLink.attr("href"));
 
     return false;
-  });
+});
+
+
+$(".showdialogwindow").on('click', function(){
+    $('.loadingpagecontainer').show();
+    console.log('clicked');
+    
+
+});
 
 
 </script>

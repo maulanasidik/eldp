@@ -2810,8 +2810,6 @@ h2.judul1{
 	position: absolute;
 	display: inline-block;
 	overflow: hidden; 
-	left: 42%; 
-	top: 52%; 
 	padding: 0px; 
 	
 	width: 300px; 
@@ -2819,8 +2817,11 @@ h2.judul1{
 
 	margin-left: -150px; 
 	margin-top: -50px; 
-	
 	visibility: visible; opacity: 1;z-index:99999999;
+	text-align: center;
+	left: 50%;
+  	top: 60%;
+  	font-size: 1.5em;
 }
 
 
@@ -2844,6 +2845,7 @@ h2.judul1{
 	left: 0;
 	z-index: 9999999;
 	display: none;
+	
 }
 .window-overlay .content{
 	
@@ -3078,5 +3080,9 @@ a.refreshapp:hover{
 	background: #fff;
 }
 
-
+.tables th a,.tables th{
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 16px;
+}
 

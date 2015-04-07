@@ -820,6 +820,10 @@ class BooksController extends AppController {
 
 	}
 
+	function admin_find(){
+		$this->layout = 'default_blank';		
+	}
+
 
 	function admin_printall(){
 		$this->Book->recursive=2;

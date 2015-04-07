@@ -160,7 +160,16 @@
 </head>
 
   <body class="full ">
-  <img src='<?php echo $this->webroot;?>img/el2/bg/matdes.jpg' alt='background-image' id='bgImage'/>  <header>
+
+    <div class="loadingpagecontainer">
+      <div class="loader loadingstateall" style="">
+        <img src="<?php echo $this->webroot;?>images/rotite-30-29.png" width="928" height="29" style="position: absolute; display: block; overflow: hidden; left: 0px; top: 0px; margin: 0px; padding: 0px; max-width: none; max-height: none; border: none; line-height: 1; background-color: transparent; -webkit-backface-visibility: hidden; -webkit-user-select: none;">
+    </div>
+      <p class="loaderstat" style="color:#fff;">Memuat data <br/>mohon menunggu.. </p>
+    </div>
+
+  <img src='<?php echo $this->webroot;?>img/el2/bg/matdes.jpg' alt='background-image' id='bgImage'/>  
+  <header>
     <div id="headerWrapper">
       <div id="headerCenter">
         <a id="headerlogo">
@@ -190,12 +199,12 @@
     <div id="centerWrapper">
       
       <div id="subhome" >
-        <a href="#!/" class="uphome">Profile Perpustakaan</a>
+        <!--<a href="#!/" class="uphome">Profile Perpustakaan</a>
               <a href="#!/" class="uphome">Banner Management</a>
               <a href="#!/" class="uphome">Pengadaan Buku</a>
               <a href="#!/" class="uphome">Ubah Sandi</a>
               <a href="#!/" class="uphome">Alamat Server</a>
-              <a href="#!/" class="uphome">Logout</a>
+              <a href="#!/" class="uphome">Logout</a>-->
           </div>
 
    
@@ -273,10 +282,10 @@
 
      
     
-    $(".gotolink").on('click', function(){
+    $(".showdialogwindow").on('click', function(){
         $('.loadingpagecontainer').show();
         console.log('clicked');
-        var thisurl = $(this).data('url');
+        /*var thisurl = $(this).data('url');
         var titlePage = $(this).data('title');
 
         var Datawidth = $(this).data('width');
@@ -292,7 +301,7 @@
           success: function (data) {
             showdialog(data,titlePage,Datawidth,Dataheight);
           } // success
-        }); // ajax
+        }); // ajax*/
 
     });
 
