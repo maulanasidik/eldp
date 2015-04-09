@@ -242,7 +242,7 @@
             type: "POST",
             dataType: "json",
             cache: false,
-            url: this.href, // preview.php
+            url: $(this).data('url'), // preview.php
             //data: $("#postp").serializeArray(), // all form fields
             success: function (data) {
               console.log(data);
@@ -270,28 +270,7 @@
 
      
     
-    $(".showdialogwindow").on('click', function(){
-        $('.loadingpagecontainer').show();
-        console.log('clicked');
-        /*var thisurl = $(this).data('url');
-        var titlePage = $(this).data('title');
 
-        var Datawidth = $(this).data('width');
-        var Dataheight = $(this).data('height');
-
-
-        $.ajax({
-          type: "GET",
-          dataType: "html",
-          cache: false,
-          url: thisurl, // preview.php
-          //data: $("#postp").serializeArray(), // all form fields
-          success: function (data) {
-            showdialog(data,titlePage,Datawidth,Dataheight);
-          } // success
-        }); // ajax*/
-
-    });
 
 
     $(".gotolinkspecial").on('click', function(){
@@ -325,7 +304,7 @@
         $('.loadingpagecontainer').show();
         console.log('clicked');
 
-        var thisurl = $(this).attr('href');
+        var thisurl = $(this).data('href');
         var titlePage = $(this).data('title');
 
         var Datawidth = $(this).data('width');
@@ -386,7 +365,7 @@
           overlay: true,
           draggable:true,
           shadow: true,
-          flat: false,
+          flat: true,
           width:Datawidth,
           height:Dataheight,
           padding: 10,
@@ -1567,7 +1546,8 @@
         
 
         return false;
-    }); 
+    });
+
   </script>
   
 

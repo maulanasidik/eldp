@@ -522,6 +522,8 @@ class BooksController extends AppController {
 	    $listbook = $this->paginate('Book');
 	    //$this->set(compact('data'));
 		$this->set('listbook',$listbook);
+
+		$this->set('actionActive','listbook');
 		$this->layout = 'default_blank';
 	}
 
@@ -754,6 +756,8 @@ class BooksController extends AppController {
 	    );
 	    $listbook = $this->paginate('Book');
 		$this->set('listbook',$listbook);;	
+
+		$this->set('actionActive','showfavorite');
 		$this->render('admin_listbook','ajax');
 		$this->layout = 'default_blank';
 	}

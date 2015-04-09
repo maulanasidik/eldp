@@ -1,5 +1,6 @@
 <div class="pagecontent">
   <h2 class="header">MODUL BUKU</h2>
+  <h4 class="subheader">LIST BUKU</h4>
 <div id="a" class="book imageNavinside">&nbsp;</div>
 
 <?php 
@@ -7,7 +8,7 @@ if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
 }
 ?> 
-<div class="mask1">
+<div class="mask1 contenareaajax">
   <div class="transp actions">
     <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
@@ -47,9 +48,9 @@ echo $this->renderElement('header_paginate');
           <td><?php echo $entry['Category']['Location']['lokasi']; ?></td>
           
           <td class="actions">
-            <a class="gotolinkanchor" data-title="View Book" data-width="900px" data-height="600px" href="<?php echo $this->webroot;?>admin/books/view/<?php echo $entry['Book']['id'];?>"><i class=" icon-new-tab on-right"></i> Lihat</a>
+            <a class="gotolinkanchor" data-title="View Book" data-width="900px" data-height="600px" data-url="<?php echo $this->webroot;?>admin/books/view/<?php echo $entry['Book']['id'];?>"><i class=" icon-new-tab on-right"></i> Lihat</a>
             
-            <a class="gotolinkanchor" data-title="Edit Book" data-width="900px" data-height="600px" href="<?php echo $this->webroot;?>admin/books/edit/<?php echo $entry['Book']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
+            <a class="gotolinkanchor" data-title="Edit Book" data-width="900px" data-height="600px" data-url="<?php echo $this->webroot;?>admin/books/edit/<?php echo $entry['Book']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
 
             <div>
               <?php echo $form->create('Book',array('id'=>'bookform_do_fav_'.$entry['Book']['id'],'action'=>'admin_do_favorite','style'=>'margin:0;'));
@@ -68,9 +69,9 @@ echo $this->renderElement('header_paginate');
 
             </div>
 
-            <a class="printview opennewtab" href="<?php echo $this->webroot;?>admin/books/barcode/<?php echo $entry['Book']['id']?>" ><i class="icon-printer on-right"></i> Print barcode</a>
+            <a class="printview opennewtab" href="<?php echo $this->webroot;?>admin/books/barcode/<?php echo $entry['Book']['id']?>" ><i class="icon-barcode on-right"></i> Print barcode</a>
 
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/books/delete/<?php echo $entry['Book']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/books/delete/<?php echo $entry['Book']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
 
 
           </td>
@@ -101,7 +102,8 @@ echo $this->renderElement('paginate',array('data_scope' => 'ebookscope','data_ba
 
 $(document).ready(function() { 
 
-   window.entryid = 0;
+    window.entryid = 0;
+    
     var options_bookdofav = {
 
       //beforeSubmit:  showRequest,  // pre-submit callback 
@@ -120,10 +122,9 @@ $(document).ready(function() {
       $('.loadingpagecontainer').show();
       $('#bookform_do_fav_'+window.entryid).ajaxSubmit(options_bookdofav);
       //console.log("cetak1" + window.entryid);
-      
-
-      
     });
+
+
 }); 
 
 function showResponse_bookdofav(responseText, statusText, xhr, $form)  { 
@@ -137,43 +138,19 @@ function showResponse_bookdofav(responseText, statusText, xhr, $form)  {
 }
 
 
-$(".opennewtab").click(function() {
-    var productLink = $(this);
-
-    productLink.attr("target", "_blank");
-    window.open(productLink.attr("href"));
-
-    return false;
-});
-
-
-$(".showdialogwindow").on('click', function(){
-    $('.loadingpagecontainer').show();
-    console.log('clicked');
-    
-
-});
 
 
 </script>
 
 </div>
 
-<div class="tabs tabs-style-iconbox">
-  
-  <nav>
-    <ul>
-      <li class="tab-current"><a href="#section-iconbox-1" class="icon icon-home"><span>Home</span></a></li>
-      <li><a href="section-iconbox-2" class="icon icon-gift"><span>Deals</span></a></li>
-      <li><a href="section-iconbox-3" class="icon icon-upload"><span>Upload</span></a></li>
-      <li><a href="section-iconbox-4" class="icon icon-coffee"><span>Work</span></a></li>
-      <li><a href="section-iconbox-5" class="icon icon-config"><span>Settings</span></a></li>
-    </ul>
-  </nav>
+<?php 
 
-  
+echo $this->renderElement('menu_tabs_footer'); 
 
-</div>
+?>
+
+
 
 
 

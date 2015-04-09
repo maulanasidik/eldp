@@ -107,7 +107,7 @@ $show = {
 			}
 		}
 		$.ajax(url+(typeof $hashed.get[1] != "undefined" ? "?"+$hashed.get[1] : "")).success(function(newContent,textStatus){	
-			$('.loadingpagecontainer').show();
+			//$('.loadingpagecontainer').show();
 			$content.css("margin-left",0).fadeOut(50,function(){
 				$content.html(newContent);
 				$page.current = url;
@@ -116,7 +116,7 @@ $show = {
 				$events.beforeSubPageShow();
 
 				$content.show(500,function(){
-					$('.loadingpagecontainer').hide();	
+					//$('.loadingpagecontainer').hide();	
 					$events.afterSubPageShow();
 					$(window).resize();
 				});
