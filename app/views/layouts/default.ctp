@@ -33,7 +33,7 @@ echo $javascript->link('jquery.jplayer.min.js');
     <div id="head" class="clearfix">
       <div id="blogname-home">  
         
-        <h1 class="logo"><a href="<?php echo $this->webroot;?>" title="#"><img src="<?php echo $this->webroot;?>client/images/new-logo.png"/></a></h1>
+        <h1 class="logo"><a href="<?php echo $this->webroot;?>" title="#"><img src="<?php echo $this->webroot;?>client/images/Logo-ELDP-User-05.png" style="width: 260px; height: auto;"/></a></h1>
       </div>
       
     </div><!--end masthead-->
@@ -57,7 +57,7 @@ echo $javascript->link('jquery.jplayer.min.js');
         <?php endif;?>
         </li>
 
-        <li><a id="comment" href="#" class="statuspopup button"></a></li>
+        <li><a id="comment" href="#comment1" class="ebookpopup button"></a></li>
         <li><a id="listview1"  class="button" href="#" title="#"></a></li>
         <li><a id="listview" class="active button" href="#" title="#"></a></li>
         </ul>
@@ -138,33 +138,6 @@ echo $javascript->link('jquery.jplayer.min.js');
 
 
 
-<div id="profilepopup" style="display:none;">
-  <div class="profile-resume">
-    <div class="avatar-frame">
-      <img class="avatar" src="images/avatar.png"/>
-    </div>
-    <h1><small style="font-style:italic;font-weight:normal;">Hai,</small> Taufiq Ridha</h1>
-    <p>
-      <strong>ID Member:</strong> 123243422<br/>
-      <strong>TTL:</strong> 2010-01-0<br/>
-      <strong>Alamat:</strong> Jl. Administrator jsdfdsfsdfsdfsdfsjkdfjsdfjk<br/>
-    </p>
-  </div>
-  <div class="history-resume">
-    <div class="rowstatus">
-      <span class="numberStatus">12</span>
-      <span class="descStatus">Buku telat <br/>dikembalikan</span>
-    </div>
-    <div class="rowstatus" style="margin-right:10px;">
-      <span class="numberStatus">0</span>
-      <span class="descStatus">Buku sedang <br/>di booking</span>
-    </div>
-    <div class="rowstatus">
-      <span class="numberStatus">4</span>
-      <span class="descStatus">Buku sedang <br/>dipinjam</span>
-    </div>
-  </div>
-</div>
 
 <div id="bookingpopup" style="display:none;">
   <h2>Silahkan scan barcode <br/>kartu member anda</h2>
@@ -204,37 +177,6 @@ echo $javascript->link('jquery.jplayer.min.js');
 
 </div>
 
-
-
-<div id="statuspopup" style="display:none;">
-  <h2>Silahkan scan barcode <br/>kartu member anda</h2>
-  
-  
-  <div class="loadingbooking" style="color:#fff;display:none;">
-    <img src="<?php echo $this->webroot?>client/images/ajax-loader2.gif"> &nbsp; Memproses data..
-  </div>
-  <?php echo $form->create('User',array('action'=>'checkstatus','style'=>'margin:0;','autocomplete'=>'off'));
-  ?>
-  <a href="#" class="showformmemberbooking">Klik jika anda tidak menggunakan barcode scanner</a>
-  <div class="row showformmemberbooking" style="position:absolute;top: -100px">
-    
-    <div class="large-12 columns">
-      <label>Masukkan ID Member, kemudian tekan enter
-
-        <?php echo $form->input('usermemberid',array('id'=>'inputid_memberstatus','placeholder'=>'ID Member','label'=>false));?> 
-      </label>
-      
-      
-    </div>
-    
-    <a href="#" class="hideformmemberbooking">Klik untuk menggunakan barcode scanner</a>
-  </div>
-  
-  <?php echo $form->end();?>
-
-
-</div>
-<!--endstatuspopup-->
 <div id="audio_container" style="display:none;">
   <div id="jquery_jplayer_1" class="jp-jplayer"></div>
   <div id="jp_container_1" class="jp-audio">
@@ -435,7 +377,15 @@ echo $javascript->link('/client/js/foundation.min.js');
     $(".imagegalerry").fancybox({
       
     });
-    
+    $(".ebookpopup").fancybox({
+      'titleShow' : false,
+      'openEffect'  : 'elastic',
+        'closeEffect' : 'elastic',
+      'autoSize' : false,
+      'maxWidth':800,
+      'padding':0,
+      'autoHeight':true
+    });
 
     
 
@@ -489,47 +439,6 @@ echo $javascript->link('/client/js/foundation.min.js');
           });
           $('#transaction_success').hide();
           $('#transaction_failed').hide();
-
-        }
-      });
-      e.preventDefault();
-    });
-
-
-
-    $( document ).on( "click", "a.statuspopup", function(e) {
-      //var bookid = $(this).data('bookid');
-      
-      $.fancybox({
-        titleShow : false,
-        openEffect  : 'elastic',
-        closeEffect : 'elastic',
-        autoSize : false,
-        type:'inline',
-        href:'#statuspopup',
-        width:500,
-        height:300,
-        padding:0,
-        autoHeight:false,
-        afterShow:function(){
-          
-          $("div.showformmemberbooking").css({
-            position: 'absolute',
-            top: '-1000px'
-          });
-
-          $( "#inputid_memberstatus").focus();
-          
-          
-          
-        },
-        beforeClose:function(){
-          $('a.showformmemberbooking').fadeIn();
-          $("div.showformmemberbooking").css({
-            position: 'absolute',
-            top: '-1000px'
-          });
-          
 
         }
       });
@@ -671,7 +580,6 @@ echo $javascript->link('/client/js/foundation.min.js');
         window.usebarcodescanner = true;
         $(this).hide();
         $( "#inputid_memberbooking" ).focus();
-        $( "#inputid_memberstatus" ).focus();
         $("div.showformmemberbooking").css({
           position: 'relative',
           top: '0'
@@ -679,13 +587,9 @@ echo $javascript->link('/client/js/foundation.min.js');
         console.log(window.usebarcodescanner);
     }); // ready
 
-
-
-
     $( document ).on( "click", "a.hideformmemberbooking", function() {
         window.usebarcodescanner = false;
         $( "#inputid_memberbooking" ).focus();
-        $( "#inputid_memberstatus" ).focus();
         $('a.showformmemberbooking').fadeIn();
         $("div.showformmemberbooking").css({
           position: 'absolute',
@@ -805,7 +709,6 @@ echo $javascript->link('/client/js/foundation.min.js');
           $('#transaction_success').hide();
           $('#transaction_failed').hide();
           $('#RentBookedForm').clearForm();
-          $('#UserCheckstatusForm').clearForm();
           $('.loadingbooking').hide();
           $('a.hideformmemberbooking').hide();
           $('a.showformmemberbooking').hide();
@@ -832,79 +735,9 @@ echo $javascript->link('/client/js/foundation.min.js');
           //$("#RentBookedForm").unbind('submit');
           return false;
         });
-
-
-
-
-        //check status
-
-        //window.usebarcodescanner = true;
-
-        function showResponse2(responseText, statusText, xhr, $form)  { 
-
-          setTimeout(function() {
-            $.fancybox({
-
-            type: 'html',
-            autoSize: false,
-            width:'60%',
-            height:'60%',
-            content :responseText,
-            beforeClose: function() {
-                closeLoading_booked();
-                $(".fancybox-inner").unwrap();
-                $('a.showformmemberbooking').show();
-
-            },
-            padding:0,
-            openEffect:'elastic',
-            closeEffect:'elastic',
-            }); //fancybox
-            return false;
-            
-          }, 2000);
-
-          
-        }
-
-        var options_status = {
-          
-          success: showResponse2  // post-submit callback
-        };
-
-        $('#UserCheckstatusForm').unbind('submit').bind('submit',function(e) {
-          e.preventDefault();
-          $('.loadingbooking').show();
-          $("div.showformmemberbooking").css({
-            position: 'absolute',
-            top: '-1000px'
-          });
-          $('a.showformmemberbooking').hide();
-          $('#UserCheckstatusForm').ajaxSubmit(options_status);
-          //$("#RentBookedForm").unbind('submit');
-          return false;
-        });
-
     }); 
 
     
   </script>
-
-
-  <script type="text/javascript">
-  $(function(){
-  $(".ebookpopup").fancybox({
-    'titleShow' : false,
-    'openEffect'  : 'elastic',
-      'closeEffect' : 'elastic',
-    'autoSize' : false,
-    'maxWidth':800,
-    'padding':0,
-    'autoHeight':true
-  });
-  })();
-
-  </script>
-
 </body>
 </html>

@@ -32,7 +32,7 @@
   <!-- Preloader-  END--> 
 
   <div class="background">
-  <img src="<?php echo $this->webroot;?>slider/image1.png" alt="pic1" />
+  <img src="<?php echo $this->webroot;?>slider/matdes.jpg" alt="pic1" />
     <!--<img src="slider/image2.png" alt="pic2" />
    
   <img src="slider/3.jpg" alt="pic3" />
@@ -58,9 +58,7 @@
       <div class="clearfix sub_page">
         <div class="clr logo_bg">
           <div class="logo_center">
-            <div class="logo logologin">
-              <img src="<?php echo $this->webroot;?>client/images/new-logo.png"/>
-            </div>
+            <div class="logo"><span>Admin</span>&nbsp;Panel</div>
             <div class="slogan">Electronic Library</div>
           </div>
           <div class="header_rightbg">
