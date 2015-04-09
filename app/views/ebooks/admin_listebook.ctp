@@ -1,4 +1,8 @@
 
+<div class="pagecontent">
+  <h2 class="header">MODUL EBOOK</h2>
+<div id="a" class="Ebook imageNavinside">&nbsp;</div>
+
 <?php 
 if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
@@ -118,4 +122,22 @@ function showResponse_ebookdofav(responseText, statusText, xhr, $form)  {
 
 
 </script>
+
+
+<div class="tabs tabs-style-iconbox">
+  
+  <nav>
+    <ul>
+      <li class="tab-current"><a href="#section-iconbox-1" class="icon icon-home"><span>Home</span></a></li>
+      <li><a href="section-iconbox-2" class="icon icon-gift"><span>Deals</span></a></li>
+      <li><a href="section-iconbox-3" class="icon icon-upload"><span>Upload</span></a></li>
+      <li><a href="section-iconbox-4" class="icon icon-coffee"><span>Work</span></a></li>
+      <li><a href="section-iconbox-5" class="icon icon-config"><span>Settings</span></a></li>
+    </ul>
+  </nav>
+
+  
+
+</div>
+
 

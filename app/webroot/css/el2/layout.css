@@ -260,19 +260,17 @@ footer:hover{
 }
 
 #a.Ebook{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
+	
 	width: 167px;
-	height: 287px; 
+	height: 155px;
 	background-image:url(../../img/el2/ebook-02.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
+    background-position: 0 0;
    	-moz-transition: all 0.3s ease-in-out;
    	-o-transition: all 0.3s ease-in-out;
   	transition: all 0.3s ease-in-out;
   	background-size: 147px;
+  	margin: 0 auto;
 }
 
 #a.Video{  
@@ -840,6 +838,7 @@ dl.separator dt:first-child:after { display: none; }
 	background: #29373d;
 	bottom: 0;
 	left: 0;
+	text-align: center;
 }
 
 /* Nav */
@@ -995,7 +994,7 @@ box-shadow: 2px -3px 5px -1px rgba(0,0,0,0.5);
 	height: 0;
 	border: solid transparent;
 	border-width: 10px;
-	border-bottom-color: #fff;
+	border-bottom-color: #77bfb6;
 	content: '';
 	pointer-events: none;
 }

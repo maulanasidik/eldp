@@ -172,25 +172,13 @@
   <header>
     <div id="headerWrapper">
       <div id="headerCenter">
-        <a id="headerlogo">
+        
+        
           
-            <img src="<?php echo $this->webroot;?>img/el2/icons/logo-eldp-version2.png" style="width: 65px; margin: 0 0 0 -240px;">
-          
-        </a>
-        <div id="headerTitles">
-          <h1><a href="#!">E-Library</a></h1>
-            <h2>version 2.0</h2>
-          </div>
-          <nav>
-                
-            <a href="#!">
-          <img src="<?php echo $this->webroot;?>img/el2/icons/home-01.png" id="homebutton" alt="home"/>
-          </a>
-        </nav>
       </div>
-      </div>
+    </div>
 
-    </header>
+  </header>
 
   <div id="wrapper">
 
