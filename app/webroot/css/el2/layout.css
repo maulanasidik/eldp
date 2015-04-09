@@ -89,22 +89,22 @@ header{
 }
 #wrapper{
 	margin:0 0 0 0;
-	padding:70px 0 1px 0 !important;
+	padding:0 0 1px 0 !important;
 	position:relative;
 	z-index:0;
 }
 #centerWrapper{
 	position:relative;
-	max-width: 1024px;
-	margin: -25px auto 0px auto;
+	max-width: 1100px;
+	margin: 0 auto 0px auto;
 	padding: 0px 0px 0px 0px;
 }
 #contentWrapper{
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#503C3C3C,endColorstr=#503C3C3C); 
 	/*ackground: rgba(60, 60, 60, 0.4); /* nice browsers */
 	min-height:300px;
-	margin: -40px 0 0 0;	
-	padding:35px 0 70px 0;
+	margin: 0;	
+	padding:0;
 	display:none;	
 	overflow:visible;
 	width: 1150px;
@@ -245,19 +245,17 @@ footer:hover{
 }
 
 #a.book{  
-	clear: both;
-	
-	
 	
 	width: 167px;
-	height: 287px;
+	height: 155px;
 	background-image: url(../../img/el2/Book-01.png);
 	background-repeat: no-repeat;
-	background-position: right 137px;
+	background-position: 0 0;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 	background-size: 147px;
+	margin: 0 auto;
 
 }
 
@@ -827,4 +825,192 @@ dl.separator dt:first-child:after { display: none; }
 }
 .imageNavinside{
 
+}
+
+
+/*TABS*/
+
+.tabs {
+	position: fixed;
+	
+	margin: 0 auto;
+	width: 100%;
+	font-weight: 300;
+	font-size: 1.25em;
+	background: #29373d;
+	bottom: 0;
+	left: 0;
+}
+
+/* Nav */
+.tabs nav {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 0;
+	float: none;
+}
+
+.tabs nav ul {
+	position: relative;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1200px;
+	list-style: none;
+	-ms-box-orient: horizontal;
+	-ms-box-pack: center;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+}
+
+.tabs nav ul li {
+	position: relative;
+	z-index: 1;
+	display: block;
+	margin: 0;
+	text-align: center;
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	list-style: none;
+}
+
+.tabs nav a {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 2.5;
+}
+
+.tabs nav a span {
+	vertical-align: middle;
+	font-size: 0.75em;
+}
+
+.tabs nav li.tab-current a {
+	color: #74777b;
+}
+
+.tabs nav a:focus {
+	outline: none;
+}
+
+/* Content */
+.content-wrap {
+	position: relative;
+}
+
+.content-wrap section {
+	display: none;
+	margin: 0 auto;
+	padding: 1em;
+	max-width: 1200px;
+	text-align: center;
+}
+
+.content-wrap section.content-current {
+	display: block;
+}
+
+.content-wrap section p {
+	margin: 0;
+	padding: 0.75em 0;
+	color: rgba(40,44,42,0.05);
+	font-weight: 900;
+	font-size: 4em;
+	line-height: 1;
+}
+
+/*****************************/
+/* Icon box */
+/*****************************/
+
+.tabs-style-iconbox nav {
+	background: #2b373e;
+	-webkit-box-shadow: 2px -3px 5px -1px rgba(0,0,0,0.5);
+-moz-box-shadow: 2px -3px 5px -1px rgba(0,0,0,0.5);
+box-shadow: 2px -3px 5px -1px rgba(0,0,0,0.5);
+}
+
+.tabs-style-iconbox nav ul li a {
+	overflow: visible;
+	padding: 2em 5em;
+	line-height: 1;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+	box-shadow: 1px 0 0 #000;
+}
+.tabs-style-iconbox nav ul li a:hover{
+	background-color: #77bfb6;
+	color: #fff;
+}
+
+.tabs-style-iconbox nav ul li a span {
+	font-weight: 700;
+	font-size: 0.7em;	
+}
+
+.tabs-style-iconbox nav ul li.tab-current {
+	z-index: 100;
+}
+
+.tabs-style-iconbox nav ul li.tab-current a {
+	background: #77bfb6;
+	box-shadow: -1px 0 0 #fff;
+	color: #fff;
+}
+
+
+.tabs-style-iconbox nav ul li:first-child::before,
+.tabs-style-iconbox nav ul li::after {
+	position: absolute;
+	top: 20%;
+	right: 0;
+	z-index: -1;
+	width: 1px;
+	height: 60%;
+	background: #343f46;
+	content: '';
+}
+
+.tabs-style-iconbox nav ul li.tab-current a::after {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	margin-left: -10px;
+	width: 0;
+	height: 0;
+	border: solid transparent;
+	border-width: 10px;
+	border-bottom-color: #fff;
+	content: '';
+	pointer-events: none;
+}
+
+.tabs-style-iconbox nav ul li:first-child::before {
+	right: auto;
+	left: 0;
+}
+
+.tabs-style-iconbox .icon::before {
+	display: block;
+	margin: 0 0 0.25em 0;
+}
+
+.pagecontent{
+	margin-top: -10px;
+	text-align: center;
 }

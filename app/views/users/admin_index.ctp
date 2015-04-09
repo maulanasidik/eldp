@@ -236,11 +236,9 @@
           </div>
         </a>
         </div>
-          
-        <div id="subNavWrapper"></div>
-          <div id="contentWrapper" >
-            <div id="content">
-            </div>
+        <div id="contentWrapper" >
+          <div id="content">
           </div>
+        </div>
         
   <div id="catchScroll"></div>

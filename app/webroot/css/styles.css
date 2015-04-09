@@ -1771,7 +1771,8 @@ blockquote:after {
 }
 
 #a.book{  
-	clear:both; position:absolute; left:-12px; top:-70px; width: 167px; height: 287px; 
+	clear:both; 
+	width: 167px; height: 287px; 
 	background-image:url(../images/books1.png);
 	background-repeat:no-repeat;
 	background-position:right 175px;

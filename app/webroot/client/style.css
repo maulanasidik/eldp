@@ -373,13 +373,16 @@ h6 {
 /* Outer */
 
 #wrapper {
-    background: url(images/body.jpg);
+    background-color: #EEF3FA;
     padding: 40px 0px 96px 0;
 }
 #casing {
     width: 991px;
     margin: 0px auto;
-    background: url(images/content.png);
+    background: url(../client/images/ELDP-User-bg-bulet2-03.png) no-repeat;
+    background-size: 1000px 900px;
+    background-position-y: -190px;
+    background-color: #F4EFE9;
     padding: 0px 0px;
 }
 
@@ -392,7 +395,7 @@ h6 {
 
 #head {
     height: 100px;
-    background: url(images/head.png);
+    background-color: #FAFAFA;
 }
 
 #blogname {
@@ -422,17 +425,18 @@ h6 {
     font-size: 12px;
     overflow: hidden;
     height: 70px;
-    background: url(images/menu2.png) repeat-x;
+    background-color: #CBDECB;
 }
 #botmenu.botmenuhome{
-    background: url(images/menu1.png) repeat-x;
+    background-color: #FAFAFA;
     height: 120px;
     color: #aaa;
     text-align: center;
     font-size: 13px;
 }
 #listview{
-    background: #d08402 url('images/list-grid.png') no-repeat center center;
+    background: #FFD600 url('images/lgo-thumbnail-12.png') no-repeat center center;
+    background-size: 24px;
     width:34px;
     height: 34px;
     display: block;
@@ -441,13 +445,16 @@ h6 {
     
 }
 #listview.active,#listview:hover{
-    background: #9d6402 url('images/list-grid.png') no-repeat center center;
+    background: #E7C100 url('images/lgo-thumbnail-12.png') no-repeat center center;
+    background-size: 24px;
 }
 #listview1.active,#listview1:hover{
-    background: #9d6402 url('images/list-grid1.png') no-repeat center center;
+    background: #E7C100 url('images/logo-list-12.png') no-repeat center center;
+    background-size: 24px;
 }
 #listview1{
-    background: #d08402 url('images/list-grid1.png') no-repeat center center;
+    background: #FFD600 url('images/logo-list-12.png') no-repeat center center;
+    background-size: 24px;
     width:34px;
     height: 34px;
     display: block;
@@ -464,7 +471,8 @@ h6 {
     float: right;
 }
 #homeicon{
-    background: #d08402 url('images/home-icon.png') no-repeat center center;
+    background: #FFD600 url('images/logo-home-12.png') no-repeat center center;
+    background-size: 24px;
     width:34px;
     height: 34px;
     display: block;
@@ -472,10 +480,12 @@ h6 {
     margin: 0;
 }
 #homeicon:hover{
-    background: #9d6402 url('images/home-icon.png') no-repeat center center;
+    background: #E7C100 url('images/logo-home-12.png') no-repeat center center;
+    background-size: 24px;
 }
 #favorite{
-    background: #d08402 url('images/favorite.png') no-repeat center center;
+    background: #FFD600 url('images/logo-favorit-12.png') no-repeat center center;
+    background-size: 24px;
     width:34px;
     height: 34px;
     display: block;
@@ -483,11 +493,13 @@ h6 {
     margin: 0;
 }
 #favorite.active,#favorite:hover{
-    background: #9d6402 url('images/favorite.png') no-repeat center center;
+    background: #E7C100 url('images/logo-favorit-12.png') no-repeat center center;
+    background-size: 24px;
     
 }
 #comment{
-    background: #d08402 url('images/comment.png') no-repeat center center;
+    background: #FFD600 url('images/logo-komentar-12.png') no-repeat center center;
+    background-size: 24px;
     width:34px;
     height: 34px;
     display: block;
@@ -495,8 +507,8 @@ h6 {
     margin: 0;
 }
 #comment:hover{
-    background: #9d6402 url('images/comment.png') no-repeat center center;
-    
+    background: #E7C100 url('images/logo-komentar-12.png') no-repeat center center;
+    background-size: 24px;
 }
 
 #listview h1 {
@@ -682,21 +694,22 @@ h6 {
 /* Home	 */
 
 #home-content {
-    background: url(images/homecontent.png) repeat-y;
+    background: url(../client/images/contentbawahtransparan.png) repeat-y;
+    background-position-y: 50px;
     padding: 0px 0px;
 }
 #home-content1 {
-    background: url(images/homecontent.png) center 67px no-repeat;
+    background: url(../client/images/contentbawahtransparan.png) center 67px no-repeat;
     padding: 20px 0px;
 }
 
 #video-content {
-    background: url(images/videocontent.png) repeat-y;
+    background: url(../client/images/contentbawahtransparan.png) repeat-y;
     padding: 0px 0px;
 }
 
 #cd-content {
-    background: url(images/cdcontent.png) repeat-y;
+    background: url(../client/images/contentbawahtransparan.png) repeat-y;
     padding: 0px 0px;
 }
 
@@ -1173,7 +1186,7 @@ table#wp-calendar {
 
 .bottomcover {
     background: url(images/footer.png);
-    border-top: 10px solid #e99f3b;
+    border-top: 10px transparent #e99f3b;
     margin: 0px 0px 0px 0px;
     padding: 0px;
 }
@@ -1181,7 +1194,7 @@ table#wp-calendar {
 #bottom {
     width: 960px;
     margin: 0px auto;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px transparent #333;
 }
 
 #bottom ul {
@@ -1769,7 +1782,7 @@ width: 100%;
     position: relative;
     margin-top: 10px;
     margin-left: 20px;
-    background-color: #d08402;
+    background-color: #FFD600;
 }
 .f-dropdown1{
    border: solid 10px #F1EEE5; 
@@ -1865,8 +1878,8 @@ a.play{
     font-family: 'entypofonts';
     font-size: 0px;
     color: #fff;
-    padding: 14px 0;
-    width: 56px;
+    padding: 20px 0;
+    width: 70px;
     background: url(images/play.png) center center;
     border: 3px solid #9C9C9C;
     border-radius: 29px;
@@ -1882,8 +1895,8 @@ a.play{
     transition: ease 0.3s;
     text-decoration: none;
     position: absolute;
-    left: 46px;
-    top: 101px;
+    left: 39px;
+    top: 70px;
     opacity: 0;
 }
 #blogname-home {
@@ -2135,7 +2148,7 @@ box-shadow:         0px -1px 4px 0px rgba(50, 50, 50, 0.75);
 
 
 #searchbar input[type="text"] {
-    background: url(images/search-white.png) no-repeat 95% 50% #535353;
+    background: url(images/search-white.png) no-repeat 95% 50% #799C8E;
     border: 0 none;
     
     color: #d7d7d7;
@@ -2162,7 +2175,7 @@ box-shadow:         0px -1px 4px 0px rgba(50, 50, 50, 0.75);
     /*text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);*/
 }
 .rack{
-    background: url(images/homecontent1.png) no-repeat;
+    background: url(images/popup-bg-04.png) no-repeat;
     float: left;
 }
 .commenthome{
@@ -2227,6 +2240,16 @@ body#landing{
     left: 70px;
     z-index: 6;
 }
+
+.logo{
+    position: absolute;
+    top: 50px;
+    right: 330px;
+    width: 260px;
+    height: auto;
+    z-index: 6;
+}
+
 #libraryidentity{
     position: absolute;
     top:30px;
@@ -2270,7 +2293,7 @@ body#landing{
     left: 400px;
 }
 .bookdetailpopup{
-    background: transparent url('images/notepad.png') no-repeat top left;
+    background: transparent url('images/notepad3.png') no-repeat top left;
 }
 
 .bookdetailpopup2{
@@ -2281,12 +2304,12 @@ body#landing{
 #prevpage{
     
     color: #fff;
-    background-color: #d08402;
+    background-color: #56BCBC;
     margin-right: 5px;
     margin-top: -4px;
     padding: 1px 10px;
      -webkit-border-radius: 3px;
-    border-radius: 3px;
+    border-radius: 15px;
     display: inline-block;
     
 }
@@ -2294,20 +2317,20 @@ body#landing{
     
     padding: 1px 10px;
     color: #fff;
-    background-color: #d08402;
+    background-color: #56BCBC;
     margin-top: -4px;
     display: inline-block;
     -webkit-border-radius: 3px;
-    border-radius: 3px;
+    border-radius: 15px;
 }
 
 a#prevpage:hover{
     color:#fff;
-    background-color: #d08402;
+    background-color: #7ACACA;
 }
 a#nextpage:hover{
     color:#fff;
-    background-color: #d08402;
+    background-color: #7ACACA;
     
 }
 
@@ -2330,7 +2353,7 @@ a#nextpage:hover{
 }
 .paging span a{
     padding: 4px 10px;
-    background-color: #d08402;
+    background-color: #B0DFDF;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     color:#fff;
@@ -2339,11 +2362,11 @@ a#nextpage:hover{
 
 .paging span a:hover{
     color:#fff;
-    background-color: #9d6402;
+    background-color: #7ACACA;
 }
 .current{
     color: #fff;
-    background-color: #9d6402;
+    background-color: #56BCBC;
     padding: 1px 10px;
     font-size: 12px;
     -webkit-border-radius: 3px;
@@ -2352,13 +2375,13 @@ a#nextpage:hover{
 
 
 div#prevpage.disabled{
-    background-color: #d0b182;
-    color: #f9d49b;
+    background-color: #B0DFDF;
+    color: #FFFFFF;
 }
 
 div#nextpage.disabled{
-    background-color: #d0b182;
-    color: #f9d49b;
+    background-color: #B0DFDF;
+    color: #FFFFFF;
 }
 
 /*.buttonview a#homeicon.button.radius{
@@ -2422,14 +2445,14 @@ div#nextpage.disabled{
     display: block;
 }
 
-#bookingpopup,#statuspopup{
+#bookingpopup{
     background: #96d9ea url(images/barcode_scanner.png) no-repeat top right;
     width:500px;
     height: 300px;
     padding:60px 30px;
     display: block;
 }
-#bookingpopup h2,#statuspopup h2{
+#bookingpopup h2{
     font-size: 28px;
 color: #fff;
 letter-spacing: -1px;
@@ -2440,10 +2463,6 @@ padding-bottom: 7px;
 width: 70%;
 
 }
-
-
-
-
 
 
 

@@ -373,7 +373,7 @@ h6 {
 /* Outer */
 
 #wrapper {
-    background: url(images/body.jpg);
+    background-color: #EEF3FA;
     padding: 30px 0px 80px 0;
     
 }
@@ -382,7 +382,7 @@ h6 {
     margin-left: 0;
     width: 1279px;
     margin: 0px auto;
-    background: url(images/content.png);
+    background: #F4EFE8;
     padding: 0px 0px;
 }
 
@@ -395,7 +395,7 @@ h6 {
 
 #head {
     height: 100px;
-    background: url(images/head1.png);
+    background-color: #FAFAFA;
     width: 1280px;
     margin-left: -145px;
 }
@@ -427,10 +427,10 @@ h6 {
     font-size: 12px;
     overflow: hidden;
     height: 70px;
-    background: url(images/menu2.png) repeat-x;
+    background-color: #FAFAFA;
 }
 #botmenu.botmenuhome{
-    background: url(images/menu1.png) repeat-x;
+    background-color: #FAFAFA;
     height: 120px;
     width: 1278px;
     text-align: center;
@@ -658,22 +658,24 @@ h6 {
 /* Home	 */
 
 #home-content {
-    background: url(images/homecontent.png) repeat-y;
+    background: url(../client/images/papan-bawah-11.png) repeat-y;
     padding: 0px 0px;
 }
 #home-content1 {
-    background: url(images/homecontent-1.png) center 100px no-repeat;
+    background: url(../client/images/papan-bawah-11.png) center 100px no-repeat;
+    background-size: 1000px 80px;
+    background-position: 115px 275px;
     padding: 20px 0px;
     margin-left: 34px;
 }
 
 #video-content {
-    background: url(images/videocontent.png) repeat-y;
+    background: url(../client/images/contentbawahtransparan.png) repeat-y;
     padding: 0px 0px;
 }
 
 #cd-content {
-    background: url(images/cdcontent.png) repeat-y;
+    background: url(../client/images/contentbawahtransparan.png) repeat-y;
     padding: 0px 0px;
 }
 
@@ -683,18 +685,19 @@ h6 {
 }
 #shelf-home {
     width: 1215px;
-    margin: -19px auto;
-    margin-left: 7px;
+    margin: 0px auto;
+    margin-left: 125px;
 }
 
 .box {
-    width: 150px;
+    width: 131px;
+    height: 170px;
     background: transparent;
-    margin: 25px 25px 75px 25px;
+    margin: 25px 37px 75px 0;
     float: left;
     -webkit-box-shadow: 4px 0px 8px 0px rgba(50, 50, 50, 1);
     -moz-box-shadow:    4px 0px 8px 0px rgba(50, 50, 50, 1);
-    box-shadow:         4px 0px 8px 0px rgba(50, 50, 50, 1);
+    box-shadow:         4px 0px 8px -8px rgba(50, 50, 50, 1);
 }
 .itemisotope{
 width: 180px;
@@ -735,7 +738,6 @@ position: relative;
 .postim {
     width: 150px;
     height: 191px;
-    background: transparent url(images/bookbg.png) repeat-y;
     margin: -4px 0px;
     overflow: hidden;
     -webkit-box-shadow: 3px -2px 1px 0px #eee;
@@ -1171,8 +1173,9 @@ table#wp-calendar {
 /* Bottom */
 
 .bottomcover {
-    background: url(images/footer.png);
-    border-top: 10px solid #e99f3b;
+    
+    background: #F4EFE8;
+    border-top: 10px solid #F4EFE8;
     margin: 0px 0px 0px 0px;
     padding: 0px;
 }
@@ -1180,7 +1183,6 @@ table#wp-calendar {
 #bottom {
     width: 960px;
     margin: 0px auto;
-    border-bottom: 1px solid #333;
 }
 
 #bottom ul {
@@ -1865,10 +1867,17 @@ text-transform: uppercase;
 margin-bottom: 14px;
 
 }
-.tip img{
-    margin-left: 15px;
+
+.tip{
+    margin-bottom: 10px;
+
 }
 
+.tip ul{
+    float: left;
+    margin: 15px 0px -7px 169px;
+    font-size: 18px;
+}
 .dropdowncontentmenu ul ul{
     margin-left: 20px;
 }
@@ -2165,18 +2174,35 @@ p.pengarangdetail{
 }
 #logolanding{
     position: absolute;
-    top:30px;
-    left: 495px;
+    top: 30px;
+    right: 388px;
+    width: 260px;
+    height: auto;
     z-index: 6;
 }
+
+.logo{
+    position: absolute;
+    top: 50px;
+    right: 210px;
+    width: 260px;
+    height: auto;
+    z-index: 6;
+}
+
 #tablet{
     position: absolute;
-    top: 33px;
-    right: 22px;
+    top: -65px;
+    right: -17px;
     z-index: 6;
-    width: 100%;
+    width: 709px;
+    height: 470px;
 }
 #notes{
+    width: 610px;
+    position: absolute;
+    left: -7px;
+    top: -11px;
     
 }
 #libraryidentity{
@@ -2234,8 +2260,8 @@ p.pengarangdetail{
     position: absolute;
     width: 605px;
     height: 410px;
-    right: 25px;
-    top: -13px;
+    right: 190px;
+    top: 300px;
     z-index: 5;
 }
 ul.bxslider{
@@ -2263,7 +2289,7 @@ html{
 }
 #pengumuman{
     position: absolute;
-    top: 247px;
+    top: 330px;
     left: 112px;
 }
 #pengumuman #content{
@@ -2294,6 +2320,23 @@ html{
     background: #efefef !important;
 }
 
+/*#gotoslidelanding2{
+    width: 200px;
+    height: auto;
+    background-image: url(images/tombol-mulai-01.png);
+    background-size: 200px auto;
+    background-position: 0px 0px 0px 0px, center;
+    display: block;
+    position: absolute;
+}*/
+
+#bgstart{
+   
+    position: absolute;
+    right: 450px;
+    bottom: 30px;
+
+}
 
 
 
