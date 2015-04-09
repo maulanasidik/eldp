@@ -29,10 +29,10 @@
         <a href="section-iconbox-4" class="icon icon-search"><span>Pencarian</span></a>
       </li>
       <li>
-        <a href="section-iconbox-5" class="icon icon-printer"><span>Cetak</span></a>
+        <a href="<?php echo $this->webroot;?>admin/books/printall" class="printview opennewtab icon icon-printer"><span>Cetak</span></a>
       </li>
       <li>
-        <a href="section-iconbox-5" class="icon icon-barcode"><span>Cetak Barcode</span></a>
+        <a href="<?php echo $this->webroot;?>admin/books/barcode_all" class="printview opennewtab icon icon-barcode"><span>Cetak Barcode</span></a>
       </li>
       <?php endif;?>
     </ul>
@@ -107,7 +107,7 @@ $(document).ready(function() {
 
   $( '.tabs-style-iconbox a' ).on( 'click', function () {
     window.titlerecord = $(this).find('span').text();
-    $('.pagecontent h4.subheader').text(window.titlerecord);
+    
   }); // gotolink function
 
   $('.pagecontent h4.subheader').text(window.titlerecord);

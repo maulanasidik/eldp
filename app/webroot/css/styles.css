@@ -1780,14 +1780,7 @@ blockquote:after {
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out; 	
 }
-#a.book:hover{  
-	background-image:url(../images/books1.png);
-	background-repeat:no-repeat;
-	background-position:right 170px;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out; 	
-}
+
 
 .member{  
 	clear: both; position: absolute; left: 0px; bottom: 0px; width: 212px; height: 150px;

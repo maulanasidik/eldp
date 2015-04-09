@@ -259,6 +259,15 @@ footer:hover{
 
 }
 
+#a.book:hover{  
+	background-image:url(../../img/el2/Book-01.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
+}
+
 #a.Ebook{  
 	
 	width: 167px;
@@ -1053,6 +1062,6 @@ td.actions a:hover{
 .logoelinside:hover{
 	background:transparent url(../../img/el2/logo-eldp-version2.png) 100% 100% no-repeat;
 }
-.showdialogwindow,.deleteitemtable{
+.showdialogwindow,.deleteitemtable,.nongoldehlo{
 	cursor: pointer;
 }

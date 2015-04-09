@@ -60,10 +60,10 @@ echo $this->renderElement('header_paginate');
               <?php if($entry['Book']['favorite'] == 0):?>
 
                 <?php echo $form->input('BookFav.action',array('type'=>'hidden','value'=>1));?>
-                <a data-entryid="<?php echo $entry['Book']['id'];?>" id="do_fav_<?php echo $entry['Book']['id']?>" href="#" class="nongoldehlo"><i class=" icon-star on-right"></i> Jadikan Fav</a>
+                <a data-entryid="<?php echo $entry['Book']['id'];?>" id="do_fav_<?php echo $entry['Book']['id']?>" class="nongoldehlo"><i class=" icon-star on-right"></i> Jadikan Fav</a>
               <?php else:?>
                 <?php echo $form->input('BookFav.action',array('type'=>'hidden','value'=>0));?>
-                <a data-entryid="<?php echo $entry['Book']['id'];?>" id="do_fav_<?php echo $entry['Book']['id']?>" href="#" class="nongoldehlo"><i class=" icon-star on-right"></i>  Buang dari Fav</a>
+                <a data-entryid="<?php echo $entry['Book']['id'];?>" id="do_fav_<?php echo $entry['Book']['id']?>" class="nongoldehlo"><i class=" icon-star on-right"></i>  Buang dari Fav</a>
               <?php endif;?>
               <?php echo $form->end();?>
 
