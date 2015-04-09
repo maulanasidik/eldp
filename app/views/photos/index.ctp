@@ -46,7 +46,7 @@
             
               <a class="imagegalerry fancybox.ajax datapopupbutton" href="<?php echo $this->webroot;?>photos/view/<?php echo $book['Photo']['id_pustaka'] ?>/1" title="#"><img src="<?php echo $this->webroot?>images/lihat-btn.png"/></a>
              
-             <a href="<?php echo $this->webroot;?>photos/view/<?php echo $book['Photo']['id_pustaka'] ?>/2" title="#" class="imagegalerry fancybox.ajax datapopupbutton"><img style="" src="<?php echo $this->webroot?>client/images/download-btn.png"/></a>
+             <a href="<?php echo $this->webroot;?>photos/view/<?php echo $book['Photo']['id_pustaka'] ?>/2" title="#" class="imagegalerry fancybox.ajax datapopupbutton"><img style="" src="<?php echo $this->webroot?>client/images/icon-download-07.png"/></a>
 
               <a href="<?php echo $this->webroot.'comments/show_comments/'.$controllerActiveId.'/'.$book['Photo']['id'];?>" title="#" class="commentpopup datapopupbutton fancybox.ajax"><img style="" src="<?php echo $this->webroot?>client/images/comment-btn.png"/></a>
             

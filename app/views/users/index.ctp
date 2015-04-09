@@ -4,7 +4,7 @@
   
 <!--<div id="headerlanding"></div>
 <div id="digiclock"></div>-->
-<img src="<?php echo $this->webroot;?>client/images/new-logo.png" id="logolanding"/>
+<img src="<?php echo $this->webroot;?>client/images/Logo-ELDP-User-05.png" id="logolanding"/>
 <div id="pengumuman">
 <img src="<?php echo $this->webroot;?>client/images/notes.png" id="notes"/>
   <section id="content" class="sub-content">
@@ -67,7 +67,7 @@
 Telpon 021-: 8295455, Fax. 021-8351782</p>
 </div>-->
 <div id="box">
-<img src="<?php echo $this->webroot;?>client/images/tablet.png" id="tablet"/>
+<img src="<?php echo $this->webroot;?>client/images/papan-gambar-03.png" id="tablet"/>
 
 
   <ul class="bxslider">
@@ -86,14 +86,14 @@ Telpon 021-: 8295455, Fax. 021-8351782</p>
 </div>
 
 
-
+<div id="bgstart"><img src="<?php echo $this->webroot;?>client/images/tombol-mulai-01.png" style="width:200px; height:auto;"/></div>
 <div id="welcomelandingtext">
   <!--<h2>SELAMAT DATANG DI</h2>
   <h1>e-LIBRARY</h1>
   <div class="sponsortext">
     <p>In previous article I explained 6 jQuery News ticker plugin examples, 4 SpellChecker Plugin examples, 4 jQuery Price Range slider examples, 11+ Best jQuery Countdown timer plugins, 12+ Best jQuery Drag and Drop Plugins, 11+ best jQuery Scroll to top plugins and many articles relating to jQuery Plugins, JQuery, Ajax, asp.net, SQL Server etc. Now I will explain best jQuery clock plugins (analog & digital) examples.</p>
   </div>-->
-  <a href="#" id="gotoslidelanding2" class="button radius" style="margin-top:250px; float:right; left:360px;">Mulai</a>
+  <a href="#" id="gotoslidelanding2" class="" style="margin-top:450px; float:right; right:40px; font-size: 20px;">Mulai</a>
 </div>
 
   </div>
@@ -108,7 +108,7 @@ Telpon 021-: 8295455, Fax. 021-8351782</p>
         <div id="head" class="clearfix">
           <div id="blogname-home">  
             
-            <h1 class="logo"><a href="#" title="#"><img src="<?php echo $this->webroot;?>client/images/new-logo.png"/></a></h1>
+            <h1 class="logo"><a href="<?php echo $this->webroot;?>" title="#"><img src="<?php echo $this->webroot;?>client/images/Logo-ELDP-User-05.png" style="width: 260px; height: auto;"/></a></h1>
           </div>
           
         </div><!--end masthead-->
@@ -126,53 +126,53 @@ Telpon 021-: 8295455, Fax. 021-8351782</p>
       <div id="casing">
 
         <div id="home-content1" class="clearfix">
-          <div class="tip" style="margin-left:0px;width:1215px;">
-            <img class="" src="<?php echo $this->webroot;?>client/images/buku-tooltip.png">
-            <img class="" src="<?php echo $this->webroot;?>client/images/ebook-tooltip.png">
-            <img class="" src="<?php echo $this->webroot;?>client/images/video-tooltip.png">
-            <img class="" src="<?php echo $this->webroot;?>client/images/cd-tooltip.png">
-            <img class="" src="<?php echo $this->webroot;?>client/images/audio-tooltip.png">
-            <img class="" src="<?php echo $this->webroot;?>client/images/foto-tooltip.png">
+          <div class="tip clearfix" style="margin-left:0px;width:1215px;">
+            <ul >Buku</ul>
+            <ul style="margin-left: 127px;">E-book</ul>
+            <ul style="margin-left: 119px;">Video</ul>
+            <ul style="margin-left: 73px;">CD Pembelajaran</ul>
+            <ul style="margin-left: 68px;">Audio</ul>
+            <ul style="margin-left: 123px;">Foto</ul>
           </div>
+
           <div id="shelf-home">
 
             <div class="box" id="bukuHome">
               <a href="<?php echo $this->webroot;?>books" class="ebookpopup">
-                <img class="postim bittle" src="<?php echo $this->webroot;?>client/images/book1.jpeg">
+                <img class="postim bittle" src="<?php echo $this->webroot;?>client/images/kotak-buku-05.png">
               </a>
             </div>
             
             <div class="box" id="ebookHome">
               <a href="<?php echo $this->webroot;?>ebooks" class="ebookpopup">
-                <img class="ebookribbon" src="<?php echo $this->webroot;?>client/images/ebook-ribbon.png"/>
-                <img class="postim bittle" src="<?php echo $this->webroot;?>client/images/book4.png">
+                <img class="postim bittle" src="<?php echo $this->webroot;?>client/images/kotak-ebook-06.png">
               </a>
             </div>
-            <div class="box name" id="videoHome" style="display: list-item;">
-              <div class="postim1" id="#">
-                <a class="play" href="<?php echo $this->webroot;?>videos" data-2500="opacity:0;" data-2700="opacity:1;" style="opacity: 1;">1</a>
-                <a href="<?php echo $this->webroot;?>videos" class="ebookpopup1 ebookpopup">
-                  <img class="" src="<?php echo $this->webroot;?>client/images/video1.png">
-                </a>
-              </div>
+
+            <div class="box" id="videoHome">
+              <a href="<?php echo $this->webroot;?>videos" class="ebookpopup">
+                  <img class="postim bittle" src="<?php echo $this->webroot;?>client/images/kotak-video-07.png">
+              </a>
             </div>
+
             <div class="box" id="CDHome">
               <a href="<?php echo $this->webroot;?>subjects" class="ebookpopup">
-                <img class="postim bittle" src="<?php echo $this->webroot;?>client/images/book5.png">
+                <img class="postim bittle" src="<?php echo $this->webroot;?>client/images/kotak-cd-08.png">
               </a>
             </div>
-            <div class="box name" id="audioHome" style="">
+
+            <div class="box" id="audioHome">
                <a href="<?php echo $this->webroot;?>audios" class="ebookpopup">
-                <div class="postim2" id="#">
-                </div>
+                <img class="postim bittle" src="<?php echo $this->webroot;?>client/images/kotak-audio-09.png">
               </a>
             </div>
-            <div class="box name" id="fotoHome" style="">
+
+            <div class="box" id="fotoHome">
               <a href="<?php echo $this->webroot;?>photos" class="ebookpopup">
-                <div class="postim3" id="#">
-                </div>
+                <img class="postim bittle" src="<?php echo $this->webroot;?>client/images/kotak-foto-10.png">
               </a>
             </div>
+
           </div>
         </div>
 
