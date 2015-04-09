@@ -340,5 +340,6 @@ transformLinks = function(){
 $(document).on("click","a",function(){	
 	if(this.href==window.location.href){ // if we're already on the page the user wants to go
 		$(window).hashchange(); // just refresh page
+		
 	};
 });

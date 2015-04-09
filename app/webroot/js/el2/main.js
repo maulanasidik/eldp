@@ -107,16 +107,20 @@ $show = {
 			}
 		}
 		$.ajax(url+(typeof $hashed.get[1] != "undefined" ? "?"+$hashed.get[1] : "")).success(function(newContent,textStatus){	
-			$content.css("margin-left",0).fadeOut(50,function(){	
+			$('.loadingpagecontainer').show();
+			$content.css("margin-left",0).fadeOut(50,function(){
 				$content.html(newContent);
 				$page.current = url;
 				$subNav.make();
 				transformLinks();
 				$events.beforeSubPageShow();
+
 				$content.show(500,function(){
+					$('.loadingpagecontainer').hide();	
 					$events.afterSubPageShow();
 					$(window).resize();
 				});
+
 				if (typeof _gaq !== "undefined" && _gaq !== null) {_gaq.push(['_trackPageview', "/#!/"+$hashed.parts[0]]); }
 			});
 		}).error(function(){

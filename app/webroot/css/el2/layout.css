@@ -246,9 +246,9 @@ footer:hover{
 
 #a.book{  
 	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -110px;
+	
+	
+	
 	width: 167px;
 	height: 287px;
 	background-image: url(../../img/el2/Book-01.png);
@@ -773,14 +773,14 @@ dl.separator dt:first-child:after { display: none; }
 .view{
 	background-image: url(../../img/el2/view.png)
 }
-
-
 #subNav{
-	position: absolute;
-	left: 300px;
-	top:-60px;
+	background: #3da4d9;
+	position: fixed;
+	left: 0px;
+	bottom:0px;
 	z-index: 10000;
 	display:block;
+	width: 100%;
 }
 
 .upbutton{
@@ -824,4 +824,7 @@ dl.separator dt:first-child:after { display: none; }
 	  position: absolute;
 	  right: 390px;
    	  top: 71px;
+}
+.imageNavinside{
+
 }

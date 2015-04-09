@@ -99,7 +99,7 @@
          
           </a>
 
-            <a href="#!/url=ebooks.php" class="tile tileSlide up group0 " style="margin-top: 203.4px; margin-left: 240px; width: 190px; height: 190px; padding: 0px; display: block; background: rgb(0, 187, 212);" data-pos="203_4-240-190" data-doslide="1"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/ebooks/listebook" class="tile tileSlide up group0 " style="margin-top: 203.4px; margin-left: 240px; width: 190px; height: 190px; padding: 0px; display: block; background: rgb(0, 187, 212);" data-pos="203_4-240-190" data-doslide="1"> 
               <div class="slideText" style="
                     height:76px; width:100%;top:190px;    ">
             <h3>E-Book</h3>    
