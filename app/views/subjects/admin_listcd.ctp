@@ -1,12 +1,16 @@
 
+<div class="pagecontent">
+  <h2 class="header">MODUL PUSTAKA MULTIMEDIA</h2>
+<div id="a" class="cd imageNavinside">&nbsp;</div>
+
 <?php 
 if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
 }
 ?> 
-<div class="mask1">
-  <div class="actions">
-    <table class="table hovered" cellpadding="0" cellspacing="0">
+<div class="mask1 contenareaajax">
+  <div class="transp actions">
+   <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
           <th>ID Pustaka</th>
@@ -33,9 +37,9 @@ echo $this->renderElement('header_paginate');
           <td><?php echo $entry['Subject']['tahun']?></td>
           
           <td class="actions">
-            <a class="gotolinkanchor" data-title="View CD" data-width="800px" data-height="500px" href="<?php echo $this->webroot;?>admin/subjects/view/<?php echo $entry['Subject']['id'];?>"><i class=" icon-new-tab on-right"></i> Lihat</a>
+            <a class="gotolinkanchor" data-title="View CD" data-width="800px" data-height="500px" data-url="<?php echo $this->webroot;?>admin/subjects/view/<?php echo $entry['Subject']['id'];?>"><i class=" icon-new-tab on-right"></i> Lihat</a>
 
-            <a class="gotolinkanchor" data-title="Edit CD" data-width="900px" data-height="500px" href="<?php echo $this->webroot;?>admin/subjects/edit/<?php echo $entry['Subject']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
+            <a class="gotolinkanchor" data-title="Edit CD" data-width="900px" data-height="500px" data-url="<?php echo $this->webroot;?>admin/subjects/edit/<?php echo $entry['Subject']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
 
             <div>
               <?php echo $form->create('Subject',array('id'=>'form_do_fav_'.$entry['Subject']['id'],'action'=>'admin_do_favorite','style'=>'margin:0;'));
@@ -54,7 +58,7 @@ echo $this->renderElement('header_paginate');
 
             </div>
 
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/subjects/delete/<?php echo $entry['Subject']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/subjects/delete/<?php echo $entry['Subject']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
           </td>
         </tr>
 
@@ -117,4 +121,12 @@ function showResponse_cddofav(responseText, statusText, xhr, $form)  {
 
 
 </script>
+
+</div>
+
+<?php 
+
+echo $this->renderElement('cds_menu_tabs_footer'); 
+
+?>
 

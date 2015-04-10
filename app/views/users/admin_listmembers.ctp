@@ -1,18 +1,17 @@
-<style type="text/css">
-.actions{
-  color: #fff;
-}
-</style>
-  
+
+<div class="pagecontent">
+  <h2 class="header">MEMBER</h2>
+<div id="a" class="Member imageNavinside">&nbsp;</div> 
+
   <?php 
 if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
 }
 ?> 
 
-<div class="mask1">
-  <div class="actionss">
-   <table class="table hovered" cellpadding="0" cellspacing="0">
+<div class="mask1 contenareaajax">
+  <div class="transp actions">
+   <table class="tables hovered" cellpadding="0" cellspacing="0">
       
       <thead>
         <tr class="title_table">
@@ -56,15 +55,15 @@ echo $this->renderElement('header_paginate');
           </td>
 
           <td class="actions">
-            <a class="gotolinkanchor" data-title="View Member" data-width="600px" data-height="375" href="<?php echo $this->webroot;?>admin/users/view/<?php echo $member['User']['id'] ?>"><i class=" icon-new-tab on-right"></i> Lihat</a>
+            <a class="gotolinkanchor" data-title="View Member" data-width="600px" data-height="375" data-url="<?php echo $this->webroot;?>admin/users/view/<?php echo $member['User']['id'] ?>"><i class=" icon-new-tab on-right"></i> Lihat</a>
 
-            <a class="gotolinkanchor" data-title="Edit Member" data-width="800px" data-height="375" href="<?php echo $this->webroot;?>admin/users/edit/<?php echo $member['User']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
+            <a class="gotolinkanchor" data-title="Edit Member" data-width="800px" data-height="375" data-url="<?php echo $this->webroot;?>admin/users/edit/<?php echo $member['User']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
 
             <!--a class="gotolinkanchor" data-title="Ganti Password" data-width="800px" data-height="375" href="<?php echo $this->webroot;?>admin/users/password/<?php echo $member['User']['id'] ?>"><i class=" icon-pencil on-right"></i> Ganti Password</a-->
             
-            <a class="printview opennewtab" href="<?php echo $this->webroot;?>admin/users/barcode/<?php echo $member['User']['id']?>" ><i class="icon-printer on-right"></i> Print barcode</a>
+            <a class="printview opennewtab" data-url="<?php echo $this->webroot;?>admin/users/barcode/<?php echo $member['User']['id']?>" ><i class="icon-printer on-right"></i> Print barcode</a>
 
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/users/delete/<?php echo $member['User']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/users/delete/<?php echo $member['User']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
           </td>
         </tr>
 
@@ -125,3 +124,11 @@ echo $this->renderElement('paginate',array('data_scope' => 'memberscope','data_b
   });
         
         </script>
+
+</div>
+
+<?php 
+
+echo $this->renderElement('users_menu_tabs_footer'); 
+
+?>

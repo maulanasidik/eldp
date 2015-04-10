@@ -467,6 +467,8 @@ function beforeFilter(){
 	    //$this->set(compact('data'));
 
 		$this->set('listuser',$listuser);
+
+		$this->set('actionActive','listuser');
 		$this->layout = 'default_blank';
 	}
 

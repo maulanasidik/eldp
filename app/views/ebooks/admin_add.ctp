@@ -1,6 +1,6 @@
 <?php echo $form->create('Ebook',array('enctype'=>'multipart/form-data'));?>
 <fieldset>
-<div style="float:left;width:350px;margin-right:40px;">
+<div style="float:left;width:415px;margin-right:40px;">
 
     
 
@@ -82,7 +82,8 @@
 
     <label>Pilih file ebook</label>
     <?php
-    echo $form->input('Ebook.ebookfiles', array('div'=>false,'label'=>false, 'type'=>'file'));
+    echo $form->input('Ebook.ebookfiles', array('div'=>false,'label'=>false, 'type'=>'file', 'style'=>
+    'margin-left: -96px'));
     ?>
 
     <?php endif;?>

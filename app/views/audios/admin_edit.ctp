@@ -1,6 +1,6 @@
 <?php echo $form->create('Audio',array('action'=>'edit','enctype'=>'multipart/form-data'));?>
 <fieldset>
-  <div style="float:left;width:250px;margin-right:40px;">
+  <div style="float:left;width:325px;margin-right:40px;">
 
     <?php
     echo $form->input('id',array('div'=>false,'label'=>false));
@@ -39,7 +39,7 @@
 
             <label>Tahun</label>
             <div>
-            <?php echo $form->year('tahunBerdiri', 1945, 2015, null, array('class'=>'year-set'), 'Pilih Tahun');    ?>
+            <?php echo $form->year('tahunBerdiri', 1945, 2015, null, array('class'=>'year-set', 'style'=>'width: 325px'), 'Pilih Tahun');    ?>
             <?php //echo $form->input('jumlahhalaman',array('class'=>'text-input normal-input','label'=>'Jumlah halaman'));   ?>
             </div>
             <br/>
@@ -98,7 +98,7 @@
             ?>
 </div>
 
-<div style="float:left;width:250px;">
+<div style="float:left;width:275px;">
 
             <label>Judul</label>
 
@@ -120,13 +120,13 @@
             ?>
             <label>Ganti file Cover</label>
             <?php
-            echo $form->input('File.image', array('label'=>false, 'type'=>'file'));
+            echo $form->input('File.image', array('label'=>false, 'type'=>'file', 'style'=>'margin-left: -100px'));
             ?>
           <br/>
           
           <label>Ganti file Audio</label>
           <?php
-          echo $form->input('file', array('label'=>false, 'type'=>'file'));
+          echo $form->input('file', array('label'=>false, 'type'=>'file', 'style'=>'margin-left: -100px'));
           ?>
           </div>
 </div>

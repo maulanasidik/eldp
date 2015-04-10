@@ -582,6 +582,8 @@ class AudiosController extends AppController {
 	    //$this->set(compact('data'));
 
 		$this->set('listaudio',$listaudio);
+
+		$this->set('actionActive','listaudio');
 		$this->layout = 'default_blank';
 	}
 
@@ -844,6 +846,8 @@ class AudiosController extends AppController {
 	    );
 	    $listaudio = $this->paginate('Audio');
 		$this->set('listaudio',$listaudio);;	
+
+		$this->set('actionActive','showfavorite');
 		$this->render('admin_listaudios','ajax');
 		$this->layout = 'default_blank';
 	}

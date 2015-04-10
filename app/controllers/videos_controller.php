@@ -600,6 +600,8 @@ class VideosController extends AppController {
 	    //$this->set(compact('data'));
 
 		$this->set('listvideo',$listvideo);
+
+		$this->set('actionActive','listvideo');
 		$this->layout = 'default_blank';
 	}
 
@@ -779,6 +781,8 @@ class VideosController extends AppController {
 	    );
 	    $listvideo = $this->paginate('Video');
 		$this->set('listvideo',$listvideo);;	
+
+		$this->set('actionActive','showfavorite');
 		$this->render('admin_listvideo','ajax');
 		$this->layout = 'default_blank';
 	}

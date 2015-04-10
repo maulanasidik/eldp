@@ -3,9 +3,14 @@
   color: #fff;
 }
 </style>
-<div class="mask1">
-  <div class="actionss">
-   <table class="table hovered" cellpadding="0" cellspacing="0">
+
+<div class="pagecontent">
+  <h2 class="header">CATEGORY</h2>
+<div id="a" class="Category imageNavinside">&nbsp;</div>
+
+<div class="mask1 contenareaajax">
+  <div class="transp actions">
+   <table class="tables hovered" cellpadding="0" cellspacing="0">
       
       <thead>
         <tr class="title_table">
@@ -45,9 +50,9 @@
 
           <td class="actions">
             <!--a href="<?php echo $this->webroot;?>categories/view/<?php echo $category['Category']['id'];?>"><i class=" icon-new-tab on-right"></i> Lihat</a-->
-            <a class="gotolinkanchor" data-title="Edit Category" data-width="785px" data-height="400px" href="<?php echo $this->webroot;?>admin/categories/edit/<?php echo $category['Category']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
+            <a class="gotolinkanchor" data-title="Edit Category" data-width="785px" data-height="400px" data-url="<?php echo $this->webroot;?>admin/categories/edit/<?php echo $category['Category']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
             
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/categories/delete/<?php echo $category['Category']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/categories/delete/<?php echo $category['Category']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
           </td>
         </tr>
 
@@ -93,4 +98,8 @@
   </div>
 </div>
 
+<?php 
 
+echo $this->renderElement('categories_menu_tabs_footer'); 
+
+?>

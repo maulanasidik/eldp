@@ -1,17 +1,16 @@
-<style type="text/css">
-.actions{
-  color: #fff;
-}
-</style>
+
+<div class="pagecontent">
+  <h2 class="header">MODUL FOTO</h2>
+<div id="a" class="Photo imageNavinside">&nbsp;</div>
 
 <?php 
 if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
 }
 ?> 
-<div class="mask1">
-  <div class="actionss">
-   <table class="table hovered" cellpadding="0" cellspacing="0">
+<div class="mask1 contenareaajax">
+  <div class="transp actions">
+   <table class="tables hovered" cellpadding="0" cellspacing="0">
       
     <thead>
       <tr class="title_table">
@@ -43,9 +42,9 @@ echo $this->renderElement('header_paginate');
 
           <td class="actions">
             
-            <a class="gotolinkanchor" data-title="View Photo" data-width="500px" data-height="375" href="<?php echo $this->webroot;?>admin/photos/view/<?php echo $photo['Photo']['id'] ?>"><i class="  icon-new-tab on-right"></i> Lihat</a>
+            <a class="gotolinkanchor" data-title="View Photo" data-width="500px" data-height="375" data-url="<?php echo $this->webroot;?>admin/photos/view/<?php echo $photo['Photo']['id'] ?>"><i class="  icon-new-tab on-right"></i> Lihat</a>
 
-            <a class="gotolinkanchor" data-title="Edit Photo" data-width="500px" data-height="375" href="<?php echo $this->webroot;?>admin/photos/edit/<?php echo $photo['Photo']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
+            <a class="gotolinkanchor" data-title="Edit Photo" data-width="500px" data-height="375" data-url="<?php echo $this->webroot;?>admin/photos/edit/<?php echo $photo['Photo']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
 
             <div>
               <?php echo $form->create('Photo',array('id'=>'photoform_do_fav_'.$photo['Photo']['id'],'action'=>'admin_do_favorite','style'=>'margin:0;'));
@@ -64,7 +63,7 @@ echo $this->renderElement('header_paginate');
 
             </div>
 
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/photos/delete/<?php echo $photo['Photo']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/photos/delete/<?php echo $photo['Photo']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
           </td>
         </tr>
 
@@ -129,3 +128,11 @@ function showResponse_photodofav(responseText, statusText, xhr, $form)  {
 
 
 </script>
+
+</div>
+
+<?php 
+
+echo $this->renderElement('photos_menu_tabs_footer'); 
+
+?>

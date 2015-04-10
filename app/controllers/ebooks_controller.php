@@ -168,6 +168,8 @@ class EbooksController extends AppController {
 
 		
 		$this->set('listbuku',$listbuku);
+
+		$this->set('actionActive','listebook');
 		$this->layout = 'default_blank';
 	}
 
@@ -194,6 +196,8 @@ class EbooksController extends AppController {
 	    );
 	    $listbuku = $this->paginate('Ebook');
 		$this->set('listbuku',$listbuku);;	
+
+		$this->set('actionActive','showfavorite');
 		$this->render('admin_listebook','ajax');
 		$this->layout = 'default_blank';
 	}

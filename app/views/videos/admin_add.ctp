@@ -1,6 +1,6 @@
 <?php echo $form->create('Video',array('enctype'=>'multipart/form-data'));?>
 <fieldset>
-<div style="float:left;width:350px;margin-right:40px;">
+<div style="float:left;width:400px;margin-right:40px;">
 
 
     
@@ -44,7 +44,7 @@ echo $form->input('produksi',array('div'=>false,'label'=>false));
 
 </div>
 
-<div style="float:left;width:350px;">
+<div style="float:left;width:300px;">
 
 <label>Tahun Produksi</label>
 <?php echo $form->year('tahunBerdiri', 1945, 2015, null, array('class'=>'year-set'), 'Pilih Tahun');    ?>
@@ -63,13 +63,15 @@ echo $form->input('details',array('div'=>false,'label'=>false));
 
 <label>Pilih file Cover</label>
 <?php
-echo $form->input('File.image1', array('label'=>false, 'type'=>'file'));
+echo $form->input('File.image1', array('label'=>false, 'type'=>'file', 'style'=>
+    'margin-left: -100px'));
 ?>
 
 
 <label>Pilih file Video</label>
 <?php
-echo $form->input('file', array('label'=>false, 'type'=>'file'));
+echo $form->input('file', array('label'=>false, 'type'=>'file', 'style'=>
+    'margin-left: -100px'));
 ?>
 </div>
 <div style="clear:both;float:none;margin-bottom:30px;"/>

@@ -66,6 +66,8 @@ class LocationsController extends AppController {
 		$this->Location->recursive = 0;
 		$listlocation = $this->Location->find('all');
 		$this->set('listlocation',$listlocation);
+
+		$this->set('actionActive','listlocation');
 		$this->layout = 'default_blank';
 	}
 

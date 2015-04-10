@@ -1,17 +1,16 @@
-<style type="text/css">
-.actions{
-  color: #fff;
-}
-</style>
+
+<div class="pagecontent">
+  <h2 class="header">MODUL AUDIO</h2>
+<div id="a" class="Audio imageNavinside">&nbsp;</div>
 
 <?php 
 if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
 }
 ?> 
-<div class="mask1">
-  <div class="actionss">
-   <table class="table hovered" cellpadding="0" cellspacing="0">
+<div class="mask1 contenareaajax">
+  <div class="transp actions">
+   <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
         <th><a href="#">Id Pustaka</a></th>
@@ -39,9 +38,9 @@ echo $this->renderElement('header_paginate');
           <td><?php echo $audio['Audio']['tahun']?></td>
           
           <td class="actions">
-            <a class="gotolinkanchor" data-title="View Audio" data-width="500px" data-height="200" href="<?php echo $this->webroot;?>admin/audios/view/<?php echo $audio['Audio']['id'] ?>"><i class="  icon-new-tab on-right"></i> Lihat</a>
+            <a class="gotolinkanchor" data-title="View Audio" data-width="500px" data-height="200" data-url="<?php echo $this->webroot;?>admin/audios/view/<?php echo $audio['Audio']['id'] ?>"><i class="  icon-new-tab on-right"></i> Lihat</a>
 
-            <a class="gotolinkanchor" data-title="Edit Audio" data-width="650px" data-height="375" href="<?php echo $this->webroot;?>admin/audios/edit/<?php echo $audio['Audio']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
+            <a class="gotolinkanchor" data-title="Edit Audio" data-width="700px" data-height="375" data-url="<?php echo $this->webroot;?>admin/audios/edit/<?php echo $audio['Audio']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
 
             <div>
               <?php echo $form->create('Audio',array('id'=>'audioform_do_fav_'.$audio['Audio']['id'],'action'=>'admin_do_favorite','style'=>'margin:0;'));
@@ -51,16 +50,16 @@ echo $this->renderElement('header_paginate');
               <?php if($audio['Audio']['favorite'] == 0):?>
 
                 <?php echo $form->input('AudioFav.action',array('type'=>'hidden','value'=>1));?>
-                <a data-entryid="<?php echo $audio['Audio']['id'];?>" id="do_fav_<?php echo $audio['Audio']['id']?>" href="#" class="nongoldehlo"><i class=" icon-star on-right"></i> Jadikan Fav</a>
+                <a data-entryid="<?php echo $audio['Audio']['id'];?>" id="do_fav_<?php echo $audio['Audio']['id']?>"  class="nongoldehlo"><i class=" icon-star on-right"></i> Jadikan Fav</a>
               <?php else:?>
                 <?php echo $form->input('AudioFav.action',array('type'=>'hidden','value'=>0));?>
-                <a data-entryid="<?php echo $audio['Audio']['id'];?>" id="do_fav_<?php echo $audio['Audio']['id']?>" href="#" class="nongoldehlo"><i class=" icon-star on-right"></i>  Buang dari Fav</a>
+                <a data-entryid="<?php echo $audio['Audio']['id'];?>" id="do_fav_<?php echo $audio['Audio']['id']?>"  class="nongoldehlo"><i class=" icon-star on-right"></i>  Buang dari Fav</a>
               <?php endif;?>
               <?php echo $form->end();?>
 
             </div>
 
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/audios/delete/<?php echo $audio['Audio']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/audios/delete/<?php echo $audio['Audio']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
           </td>
         </tr>
 
@@ -124,3 +123,11 @@ function showResponse_audiodofav(responseText, statusText, xhr, $form)  {
 
 
 </script>
+
+</div>
+
+<?php 
+
+echo $this->renderElement('audios_menu_tabs_footer'); 
+
+?>

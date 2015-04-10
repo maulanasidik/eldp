@@ -131,6 +131,7 @@ class CategoriesController extends AppController {
 
 		$this->set('tipe',$id);
 
+		$this->set('actionActive','listcategory');
 		$this->layout = 'default_blank';
 	}
 

@@ -1,6 +1,11 @@
-<div class="mask1">
-  <div class="actionss">
-   <table class="table hovered" cellpadding="0" cellspacing="0">
+
+<div class="pagecontent">
+  <h2 class="header">DDC</h2>
+<div id="a" class="ddc imageNavinside">&nbsp;</div>
+
+<div class="mask1 contenareaajax">
+  <div class="transp actions">
+   <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
             <th><a href="/elips/ddcs/index/page:1/sort:id/direction:asc">Id</a></th>
@@ -24,9 +29,9 @@
           <td><?php echo $entry['Ddc']['keterangan']?></td>
           <td class="actions">
             <!--<a href="<?php echo $this->webroot;?>ddcs/view/<?php echo $entry['Ddc']['id'];?>"><i class=" icon-new-tab on-right"></i> Lihat</a-->
-            <a class="gotolinkanchor" data-title="Edit Ddc" data-width="400px" data-height="300px" href="<?php echo $this->webroot;?>admin/ddcs/edit/<?php echo $entry['Ddc']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
+            <a class="gotolinkanchor" data-title="Edit Ddc" data-width="400px" data-height="300px" data-url="<?php echo $this->webroot;?>admin/ddcs/edit/<?php echo $entry['Ddc']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
             
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/ddcs/delete/<?php echo $entry['Ddc']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/ddcs/delete/<?php echo $entry['Ddc']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
           </td>
         </tr>
 
@@ -72,4 +77,8 @@
   </div>
 </div>
 
+<?php 
 
+echo $this->renderElement('ddcs_menu_tabs_footer'); 
+
+?>

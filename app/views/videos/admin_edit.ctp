@@ -12,7 +12,7 @@
 	<?php echo $form->create('Video',array('action'=>'edit','enctype'=>'multipart/form-data'));?>
 		<fieldset>
 		
-		<div style="float:left;width:250px;margin-right:40px;">
+		<div style="float:left;width:400px;margin-right:40px;">
 				
 			<?php
 			echo $form->input('id');?>

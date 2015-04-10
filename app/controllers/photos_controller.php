@@ -586,6 +586,8 @@ class PhotosController extends AppController {
 	    $listphoto = $this->paginate('Photo');
 	    //$this->set(compact('data'));
 		$this->set('listphoto',$listphoto);
+
+		$this->set('actionActive','listphoto');
 		$this->layout = 'default_blank';
 	}
 
@@ -821,6 +823,8 @@ class PhotosController extends AppController {
 	    );
     $listphoto = $this->paginate('Photo'); 
     $this->set('listphoto',$listphoto);;  
+
+    $this->set('actionActive','showfavorite');
     $this->render('admin_listphotos','ajax');
     $this->layout = 'default_blank';
   }

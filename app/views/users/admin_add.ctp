@@ -37,7 +37,7 @@
 
         <label>Pilih Foto Profile</label>
         <?php
-        echo $form->input('File.image', array('label'=>false, 'type'=>'file'));
+        echo $form->input('File.image', array('label'=>false, 'type'=>'file', 'style'=>'margin-left: -100px'));
         ?>
         
 

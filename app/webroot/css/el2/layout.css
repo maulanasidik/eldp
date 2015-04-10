@@ -282,148 +282,211 @@ footer:hover{
   	margin: 0 auto;
 }
 
+#a.Ebook:hover{  
+	background-image:url(../../img/el2/ebook-02.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
+}
+
 #a.Video{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
 	width: 167px;
-	height: 287px;
+	height: 155px;
 	background-image:url(../../img/el2/video-03.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
-   	-moz-transition: all 0.3s ease-in-out;
-   	-o-transition: all 0.3s ease-in-out;
-  	transition: all 0.3s ease-in-out;
-  	background-size: 147px;
+	background-position: 0 0;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-size: 147px;
+	margin: 0 auto;
+}
+
+#a.Video:hover{  
+	background-image:url(../../img/el2/video-03.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
 }
 
 #a.Audio{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
 	width: 167px;
-	height: 287px; 
+	height: 155px;
 	background-image:url(../../img/el2/audio-04.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
-   	-moz-transition: all 0.3s ease-in-out;
-   	-o-transition: all 0.3s ease-in-out;
-  	transition: all 0.3s ease-in-out;
-  	background-size: 147px;
+	background-position: 0 0;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-size: 147px;
+	margin: 0 auto;
+}
+
+#a.Audio:hover{  
+	background-image:url(../../img/el2/audio-04.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
 }
 
 #a.Category{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
 	width: 167px;
-	height: 287px; 
+	height: 155px;
 	background-image:url(../../img/el2/tambah-kategori-05.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
-   	-moz-transition: all 0.3s ease-in-out;
-   	-o-transition: all 0.3s ease-in-out;
-  	transition: all 0.3s ease-in-out;
-  	background-size: 147px;
+	background-position: 0 0;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-size: 147px;
+	margin: 0 auto;
+}
+
+#a.Category:hover{  
+	background-image:url(../../img/el2/tambah-kategori-05.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
 }
 
 #a.Member{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
 	width: 167px;
-	height: 287px; 
+	height: 155px; 
 	background-image:url(../../img/el2/member.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
-   	-moz-transition: all 0.3s ease-in-out;
-   	-o-transition: all 0.3s ease-in-out;
-  	transition: all 0.3s ease-in-out;
-  	background-size: 147px;
+	background-position: 0 0;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-size: 147px;
+	margin: 0 auto;
+}
+
+#a.Member:hover{  
+	background-image:url(../../img/el2/member.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
 }
 
 #a.Photo{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
 	width: 167px;
-	height: 287px; 
+	height: 155px; 
 	background-image:url(../../img/el2/foto.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
-   	-moz-transition: all 0.3s ease-in-out;
-   	-o-transition: all 0.3s ease-in-out;
-  	transition: all 0.3s ease-in-out;
-  	background-size: 147px;
+	background-position: 0 0;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-size: 147px;
+	margin: 0 auto;
+}
+
+#a.Photo:hover{  
+	background-image:url(../../img/el2/foto.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
 }
 
 #a.cd{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
 	width: 167px;
-	height: 287px; 
+	height: 155px; 
 	background-image:url(../../img/el2/pustakamultimedia-06.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
-   	-moz-transition: all 0.3s ease-in-out;
-   	-o-transition: all 0.3s ease-in-out;
-  	transition: all 0.3s ease-in-out;
-  	background-size: 147px;
+	background-position: 0 0;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-size: 147px;
+	margin: 0 auto;
+}
+
+#a.cd:hover{  
+	background-image:url(../../img/el2/pustakamultimedia-06.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
 }
 
 #a.ddc{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
 	width: 167px;
-	height: 287px; 
+	height: 155px; 
 	background-image:url(../../img/el2/logo-kode-ddc-07.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
-   	-moz-transition: all 0.3s ease-in-out;
-   	-o-transition: all 0.3s ease-in-out;
-  	transition: all 0.3s ease-in-out;
-  	background-size: 147px;
+	background-position: 0 0;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-size: 147px;
+	margin: 0 auto;
+}
+
+#a.ddc:hover{  
+	background-image:url(../../img/el2/logo-kode-ddc-07.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
 }
 
 #a.Location{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
 	width: 167px;
-	height: 287px; 
+	height: 155px; 
 	background-image:url(../../img/el2/logo-lokasi-buku-08.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
-   	-moz-transition: all 0.3s ease-in-out;
-   	-o-transition: all 0.3s ease-in-out;
-  	transition: all 0.3s ease-in-out;
-  	background-size: 147px;
+	background-position: 0 0;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-size: 147px;
+	margin: 0 auto;
+}
+
+#a.Location:hover{  
+	background-image:url(../../img/el2/logo-lokasi-buku-08.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
 }
 
 #a.comment{  
-	clear: both;
-	position: absolute;
-	left: 40px;
-	top: -155px;
 	width: 167px;
-	height: 287px; 
+	height: 155px;
 	background-image:url(../../img/el2/logo-komentar-10.png);
 	background-repeat: no-repeat;
-    background-position: right 137px;
-   	-moz-transition: all 0.3s ease-in-out;
-   	-o-transition: all 0.3s ease-in-out;
-  	transition: all 0.3s ease-in-out;
-  	background-size: 147px;
+	background-position: 0 0;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-size: 147px;
+	margin: 0 auto;
+}
+
+#a.comment:hover{  
+	background-image:url(../../img/el2/logo-komentar-10.png);
+	background-repeat:no-repeat;
+	background-position:0 50px;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 	
 }
 
 #side{

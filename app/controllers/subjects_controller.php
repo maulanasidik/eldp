@@ -168,6 +168,8 @@ class SubjectsController extends AppController {
 
 		
 		$this->set('entry',$entry);
+
+		$this->set('actionActive','entry');
 		$this->layout = 'default_blank';
 	}
 
@@ -197,6 +199,8 @@ class SubjectsController extends AppController {
 
 		
 		$this->set('entry',$entry);
+
+		$this->set('actionActive','showfavorite');
 		$this->render('admin_listcd','ajax');
 
 		

@@ -40,6 +40,8 @@ class DdcsController extends AppController {
 		$this->Ddc->recursive = 0;
 		$listddc = $this->Ddc->find('all');
 		$this->set('listddc',$listddc);
+
+		$this->set('actionActive','listddc');
 		$this->layout = 'default_blank';
 	}
 

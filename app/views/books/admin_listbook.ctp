@@ -146,7 +146,7 @@ function showResponse_bookdofav(responseText, statusText, xhr, $form)  {
 
 <?php 
 
-echo $this->renderElement('menu_tabs_footer'); 
+echo $this->renderElement('books_menu_tabs_footer'); 
 
 ?>
 

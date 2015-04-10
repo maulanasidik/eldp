@@ -1,7 +1,7 @@
 <?php echo $form->create('Audio',array('enctype'=>'multipart/form-data'));?>
 <fieldset>
 
-<div style="float:left;width:350px;margin-right:40px;">
+<div style="float:left;width:325px;margin-right:40px;">
 
 
     
@@ -45,7 +45,7 @@ echo $form->input('produksi',array('div'=>false,'label'=>false));
 
 </div>
 
-<div style="float:left;width:350px;">
+<div style="float:left;width:325px;">
 
 <label>Tahun Produksi</label>
 <?php echo $form->year('tahun', 1945, 2015, null, array('class'=>'year-set'), 'Pilih Tahun');    ?>
@@ -64,13 +64,13 @@ echo $form->input('details',array('div'=>false,'label'=>false));
 
 <label>Pilih file Cover</label>
 <?php
-echo $form->input('File.image', array('label'=>false, 'type'=>'file'));
+echo $form->input('File.image', array('label'=>false, 'type'=>'file', 'style'=>'margin-left: -100px'));
 ?>
 
 
 <label>Pilih file Audio</label>
 <?php
-echo $form->input('file', array('label'=>false, 'type'=>'file'));
+echo $form->input('file', array('label'=>false, 'type'=>'file', 'style'=>'margin-left: -100px'));
 ?>
 </div>
 <div style="clear:both;float:none;margin-bottom:30px;"/>

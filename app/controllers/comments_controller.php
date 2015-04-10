@@ -104,6 +104,8 @@ class CommentsController extends AppController {
 	    $listcomment = $this->paginate('Comment');
 		
 		$this->set('listcomment',$listcomment);
+
+		$this->set('actionActive','listcomment');
 		$this->layout = 'default_blank';
 	}
 

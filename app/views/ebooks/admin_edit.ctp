@@ -12,7 +12,7 @@
 	<?php echo $form->create('Ebook',array('action'=>'admin_edit','enctype'=>'multipart/form-data'));?>
 	<fieldset>
 	
-	<div style="float:left;width:300px;margin-right:40px;">
+	<div style="float:left;width:415px;margin-right:40px;">
 			
 		<?php
 		echo $form->input('id');

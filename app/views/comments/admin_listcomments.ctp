@@ -1,16 +1,11 @@
-<style type="text/css">
-.actions{
-  color: #fff;
-}
-</style>
-<?php 
-if($this->action != 'admin_search'){
-echo $this->renderElement('header_paginate'); 
-}
-?> 
-<div class="mask1">
-  <div class="actionss">
-   <table class="table hovered" cellpadding="0" cellspacing="0">
+
+<div class="pagecontent">
+  <h2 class="header">KOMENTAR</h2>
+<div id="a" class="comment imageNavinside">&nbsp;</div>
+
+<div class="mask1 contenareaajax">
+  <div class="transp actions">
+   <table class="tables hovered" cellpadding="0" cellspacing="0">
       
       <thead>
         <tr class="title_table">
@@ -42,7 +37,7 @@ echo $this->renderElement('header_paginate');
 
             <!--<a class="gotolinkanchor" data-title="Setujui Comment" data-width="500px" data-height="375" href="<?php echo $this->webroot;?>admin/comments/confirm/<?php echo $com['Comment']['id'] ?>"><i class=" icon-thumbs-up on-right"></i> Setujui</a>-->
             
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/comments/delete/<?php echo $com['Comment']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/comments/delete/<?php echo $com['Comment']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
           </td>
         </tr>
 
@@ -88,10 +83,8 @@ echo $this->renderElement('header_paginate');
   </div>
 </div>
 
-
 <?php 
-if($this->action != 'admin_search'){
-echo $this->renderElement('paginate',array('data_scope' => 'commentscope','data_background'=>'#E3328C')); 
-}
-?> 
 
+echo $this->renderElement('comments_menu_tabs_footer'); 
+
+?>

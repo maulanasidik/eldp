@@ -114,7 +114,7 @@
           </div>       
           </a>
 
-            <a href="#!/url=videos.php" class="tile tileSlide up group0 " style="margin-top: 203.4px; margin-left: 480px; width: 190px; height: 190px; padding: 0px; display: block; background: rgb(0, 187, 212);" data-pos="203_4-480-190" data-doslide="1">   
+            <a href="#!/url=<?php echo $this->webroot;?>admin/videos/listvideo" class="tile tileSlide up group0 " style="margin-top: 203.4px; margin-left: 480px; width: 190px; height: 190px; padding: 0px; display: block; background: rgb(0, 187, 212);" data-pos="203_4-480-190" data-doslide="1">   
           <div class="slideText" style="
                   height:76px; width:100%;top:190px;    ">
           <h3>Video</h3>    
@@ -129,7 +129,7 @@
         </div> 
           </a>
 
-            <a href="#!/url=audios.php" class="tile tileSlide up group0 " style="margin-top: 203.4px; margin-left: 720px; width: 190px; height: 190px; padding: 0px; display: block; background: rgb(0, 187, 212);" data-pos="203_4-720-190" data-doslide="1"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/audios/listaudios" class="tile tileSlide up group0 " style="margin-top: 203.4px; margin-left: 720px; width: 190px; height: 190px; padding: 0px; display: block; background: rgb(0, 187, 212);" data-pos="203_4-720-190" data-doslide="1"> 
           <div class="slideText" style="
                   height:76px; width:100%;top:190px;    ">
           <h3>Audio</h3>    
@@ -145,14 +145,14 @@
           </a>
 
 
-            <a href="#!/url=catbooks.php" id="tileScroll0_0-2_25" class="tile tileScroll group0 " style="margin-top: 405px; margin-left: 0px; width: 310px; height: 70px; display: block; background: rgb(205, 220, 57);" data-pos="405-0-310"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/categories/listcategories/1" id="tileScroll0_0-2_25" class="tile tileScroll group0 " style="margin-top: 405px; margin-left: 0px; width: 310px; height: 70px; display: block; background: rgb(205, 220, 57);" data-pos="405-0-310"> 
             <div class="tileTitle" style="margin-left:10px;">Kategori</div>
           <div class="divScroll" style="margin-left: 12px; opacity: 1; margin-top: 0px;"></div>
             <script>scrollTile("0_0-2_25",[],2500,0)</script>
             </a>
 
 
-            <a href="#!/url=members.php" id="tileSlideshow0-2_25-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 360px; width: 70px; height: 70px; display: block; background: rgb(0, 187, 212);" data-pos="405-360-70" data-n="0"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/users/listmembers" id="tileSlideshow0-2_25-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 360px; width: 70px; height: 70px; display: block; background: rgb(0, 187, 212);" data-pos="405-360-70" data-n="0"> 
           
           <div class="imgWrapperBack" style="width: 72px; height: 72px; left: 60.662592px; top: 0px;">
             <img src="" alt="">
@@ -172,7 +172,7 @@
           </a>
 
 
-            <a href="#!/url=photos.php" id="tileSlideshow0-3-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 480px; width: 70px; height: 70px; display: block; background: rgb(0, 187, 212);" data-pos="405-480-70" data-n="0"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/photos/listphotos" id="tileSlideshow0-3-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 480px; width: 70px; height: 70px; display: block; background: rgb(0, 187, 212);" data-pos="405-480-70" data-n="0"> 
         
           <div class="imgWrapperBack" style="width: 72px; height: 72px; left: 59.4682083333333px; top: 0px;">
             <img src="" alt="">
@@ -192,7 +192,7 @@
           </a>
 
 
-            <a href="#!/url=cds.php" id="tileScroll0_3_75-2_25" class="tile tileScroll group0 " style="margin-top: 405px; margin-left: 600px; width: 310px; height: 70px; display: block; background: rgb(205, 220, 57);" data-pos="405-600-310"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/subjects/listcd" id="tileScroll0_3_75-2_25" class="tile tileScroll group0 " style="margin-top: 405px; margin-left: 600px; width: 310px; height: 70px; display: block; background: rgb(205, 220, 57);" data-pos="405-600-310"> 
           <div class="tileTitle" style="margin-left:10px;">Pustaka Multimedia</div>
         <div class="divScroll" style="margin-left: 12px; opacity: 1; margin-top: 0px;">
         </div>
@@ -202,28 +202,28 @@
             </a>
 
 
-            <a href="#!/url=ddcs.php" class="tile group0 " style="margin-top: 485px; margin-left: 80px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-80-94"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/ddcs/listddc" class="tile group0 " style="margin-top: 485px; margin-left: 80px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-80-94"> 
             <div style="line-height:30px; font-weight:300; margin-top:10px; margin-left:10px;">
             <div style="font-size:27px;line-height:30px;">Kode DDC</div>
           </div>        
         </a>
 
 
-            <a href="#!/url=locations.php" class="tile group0 " style="margin-top: 485px; margin-left: 240px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-240-94"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/locations/listlocations" class="tile group0 " style="margin-top: 485px; margin-left: 240px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-240-94"> 
           <div style="line-height:30px; font-weight:300; margin-top:40px; margin-left:10px;">
             <div style="font-size:20px;line-height:15px;">Location</div>
           </div>        
         </a>
 
 
-            <a href="#!/url=typography.php" class="tile group0 " style="margin-top: 485px; margin-left: 400px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-400-94"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/rents/chart" class="tile group0 " style="margin-top: 485px; margin-left: 400px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-400-94"> 
             <div style="line-height:30px; font-weight:300; margin-top:40px; margin-left:10px;">
             <div style="font-size:20px;line-height:15px;">Laporan</div>
           </div>
         </a>
 
 
-            <a href="#!/url=comments.php" class="tile group0 " style="margin-top: 485px; margin-left: 560px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-560-94"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/comments/listcomments" class="tile group0 " style="margin-top: 485px; margin-left: 560px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-560-94"> 
             <div style="line-height:30px; font-weight:300; margin-top:40px; margin-left:8px;">
             <div style="font-size:18px;line-height:15px;">Komentar</div>
           </div>

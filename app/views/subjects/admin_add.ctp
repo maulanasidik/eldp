@@ -65,14 +65,14 @@
   <div>
     <label>Pilih file cover</label>
     <?php
-    echo $form->input('File.image1', array('label'=>false, 'type'=>'file'));
+    echo $form->input('File.image1', array('label'=>false, 'type'=>'file', 'style'=>'margin-left:-100px'));
     ?>
   </div>
   <br/>
   <div>
     <label>Pilih file CD Pembelajaran <br/><small>dalam format zip</small></label>
     <?php
-    echo $form->input('zipfile', array('label'=>false, 'type'=>'file'));
+    echo $form->input('zipfile', array('label'=>false, 'type'=>'file', 'style'=>'margin-left:-100px'));
     ?>
   </div>
   <br/>
