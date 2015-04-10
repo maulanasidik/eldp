@@ -133,6 +133,6 @@ function showResponse_photodofav(responseText, statusText, xhr, $form)  {
 
 <?php 
 
-echo $this->renderElement('photos_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>

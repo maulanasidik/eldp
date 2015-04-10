@@ -126,7 +126,7 @@ function showResponse_cddofav(responseText, statusText, xhr, $form)  {
 
 <?php 
 
-echo $this->renderElement('cds_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>
 

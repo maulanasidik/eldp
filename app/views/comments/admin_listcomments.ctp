@@ -1,7 +1,7 @@
 
 <div class="pagecontent">
   <h2 class="header">KOMENTAR</h2>
-<div id="a" class="comment imageNavinside">&nbsp;</div>
+<div id="a" class="comments imageNavinside">&nbsp;</div>
 
 <div class="mask1 contenareaajax">
   <div class="transp actions">
@@ -10,11 +10,11 @@
       <thead>
         <tr class="title_table">
 
-          <th><a href="/elips/users/index/page:1/sort:id/direction:asc">Id</a></th>                        
-          <th><a href="/elips/users/index/page:1/sort:username/direction:asc">Member</a></th>
-          <th><a href="/elips/users/index/page:1/sort:nama/direction:asc">Comment</a></th>
-          <!--<th><a href="/elips/users/index/page:1/sort:lahir/direction:asc">Status</a></th>-->
-          <th><a href="/elips/users/index/page:1/sort:lahir/direction:asc">Created</a></th>
+          <th><a href="/elips/comments/index/page:1/sort:id/direction:asc">Id</a></th>                        
+          <th><a href="/elips/comments/index/page:1/sort:username/direction:asc">Member</a></th>
+          <th><a href="/elips/comments/index/page:1/sort:nama/direction:asc">Comment</a></th>
+          <!--<th><a href="/elips/comments/index/page:1/sort:lahir/direction:asc">Status</a></th>-->
+          <th><a href="/elips/comments/index/page:1/sort:lahir/direction:asc">Created</a></th>
           <th class="actions">Actions</th>
         </tr>
       </thead>
@@ -85,6 +85,6 @@
 
 <?php 
 
-echo $this->renderElement('comments_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>

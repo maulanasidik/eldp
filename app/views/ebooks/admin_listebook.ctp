@@ -130,7 +130,7 @@ function showResponse_ebookdofav(responseText, statusText, xhr, $form)  {
 
 <?php 
 
-echo $this->renderElement('ebooks_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>
 

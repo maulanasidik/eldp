@@ -79,6 +79,6 @@
 
 <?php 
 
-echo $this->renderElement('ddcs_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>

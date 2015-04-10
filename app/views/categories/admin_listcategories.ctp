@@ -100,6 +100,6 @@
 
 <?php 
 
-echo $this->renderElement('categories_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>

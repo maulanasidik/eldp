@@ -84,6 +84,6 @@
 
 <?php 
 
-echo $this->renderElement('locations_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>

@@ -129,6 +129,6 @@ echo $this->renderElement('paginate',array('data_scope' => 'memberscope','data_b
 
 <?php 
 
-echo $this->renderElement('users_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>

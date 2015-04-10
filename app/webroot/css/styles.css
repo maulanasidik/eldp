@@ -1981,8 +1981,8 @@ blockquote:after {
 	transition: all 0.3s ease-in-out; 	
 }
 
-#a.comment{  
-	clear:both; position:absolute; left:0px; top:-89px; width: 167px; height: 287px; 
+#a.comments{  
+	width: 167px; height: 287px; 
 	background-image:url(../images/comment1.png);
 	background-repeat:no-repeat;
 	background-position:right 175px;
@@ -1990,7 +1990,7 @@ blockquote:after {
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out; 	
 }
-#a.comment:hover{  
+#a.comments:hover{  
 	background-image:url(../images/comment1.png);
 	background-repeat:no-repeat;
 	background-position:right 170px;

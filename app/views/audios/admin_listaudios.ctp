@@ -128,6 +128,6 @@ function showResponse_audiodofav(responseText, statusText, xhr, $form)  {
 
 <?php 
 
-echo $this->renderElement('audios_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>

@@ -133,6 +133,6 @@ function showResponse_videodofav(responseText, statusText, xhr, $form)  {
 
 <?php 
 
-echo $this->renderElement('videos_menu_tabs_footer'); 
+echo $this->renderElement('menu_tabs_footer'); 
 
 ?>
