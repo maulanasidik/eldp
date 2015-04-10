@@ -1,7 +1,11 @@
 <div class="tabs tabs-style-iconbox">
-  <a href="#" class="logoelinside">Elibrary</a>
+  
   <nav>
     <ul>
+      <li>
+        <a href="#" class=""><span class="logoelinside">Elibrary</span></a>
+      </li>
+      
       <?php if ($this->params['controller'] == 'books'):?>
       <li>
         <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/books/add" data-title="Tambah Buku" data-width="900px" data-height="375px" ><span>Tambah Buku</span></a>]

@@ -1117,10 +1117,9 @@ td.actions a:hover{
 	background:transparent url(../../img/el2/logo-eldp-version2.png) 0 0 no-repeat;
 	width: 80px;
 	height: 75px;
-	position: absolute;
-	top: 15px;
-	left: 50px;
+	display: block;
 	text-indent: -10000px;
+	margin-top: -15px;
 }
 .logoelinside:hover{
 	background:transparent url(../../img/el2/logo-eldp-version2.png) 100% 100% no-repeat;
