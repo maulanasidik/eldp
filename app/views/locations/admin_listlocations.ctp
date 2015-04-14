@@ -36,7 +36,7 @@
             
             <a class="gotolinkanchor" data-title="Edit Location" data-width="400px" data-height="300" data-url="<?php echo $this->webroot;?>admin/locations/edit/<?php echo $location['Location']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
             
-            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/locations/delete/<?php echo $location['Location']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/locations/delete/<?php echo $location['Location']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
           </td>
         </tr>
 

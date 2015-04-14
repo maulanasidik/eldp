@@ -63,7 +63,7 @@ echo $this->renderElement('header_paginate');
             
             <a class="printview opennewtab" data-url="<?php echo $this->webroot;?>admin/users/barcode/<?php echo $member['User']['id']?>" ><i class="icon-printer on-right"></i> Print barcode</a>
 
-            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/users/delete/<?php echo $member['User']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/users/delete/<?php echo $member['User']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
           </td>
         </tr>
 
