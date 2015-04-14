@@ -58,7 +58,7 @@ echo $this->renderElement('header_paginate');
 
             </div>
 
-            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/subjects/delete/<?php echo $entry['Subject']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/subjects/delete/<?php echo $entry['Subject']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
           </td>
         </tr>
 

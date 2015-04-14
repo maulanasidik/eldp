@@ -31,7 +31,7 @@
             <!--<a href="<?php echo $this->webroot;?>ddcs/view/<?php echo $entry['Ddc']['id'];?>"><i class=" icon-new-tab on-right"></i> Lihat</a-->
             <a class="gotolinkanchor" data-title="Edit Ddc" data-width="400px" data-height="300px" data-url="<?php echo $this->webroot;?>admin/ddcs/edit/<?php echo $entry['Ddc']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
             
-            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/ddcs/delete/<?php echo $entry['Ddc']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/ddcs/delete/<?php echo $entry['Ddc']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
           </td>
         </tr>
 

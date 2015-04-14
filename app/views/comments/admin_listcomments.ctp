@@ -37,7 +37,7 @@
 
             <!--<a class="gotolinkanchor" data-title="Setujui Comment" data-width="500px" data-height="375" href="<?php echo $this->webroot;?>admin/comments/confirm/<?php echo $com['Comment']['id'] ?>"><i class=" icon-thumbs-up on-right"></i> Setujui</a>-->
             
-            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/comments/delete/<?php echo $com['Comment']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/comments/delete/<?php echo $com['Comment']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
           </td>
         </tr>
 

@@ -52,7 +52,7 @@
             <!--a href="<?php echo $this->webroot;?>categories/view/<?php echo $category['Category']['id'];?>"><i class=" icon-new-tab on-right"></i> Lihat</a-->
             <a class="gotolinkanchor" data-title="Edit Category" data-width="785px" data-height="400px" data-url="<?php echo $this->webroot;?>admin/categories/edit/<?php echo $category['Category']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
             
-            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/categories/delete/<?php echo $category['Category']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/categories/delete/<?php echo $category['Category']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
           </td>
         </tr>
 
