@@ -337,9 +337,96 @@ transformLinks = function(){
 }
 
 /*Fired when clicked on any link*/
-$(document).on("click","a",function(){	
+$(document).on("click","a",function(){
+
+
 	if(this.href==window.location.href){ // if we're already on the page the user wants to go
 		$(window).hashchange(); // just refresh page
 		
 	};
 });
+
+
+
+
+
+$( '.paginationadmin span a' ).on('click', function(){   
+
+        var gotourl = $(this).attr('href');
+
+        var scope = $(this).data('scope');
+
+        var background = $(this).data('background');
+
+        window.colorfont = $(this).data('fontcolor');
+
+        var table = $(this).data('table');
+
+
+
+        
+        
+        $('.spinner_container').show();
+        $('#'+scope+'.contenareaajax').hide();
+        
+
+
+        
+        var classElement = $(this);
+        $('.'+scope+'.contentareatoload').css({
+          'background-color': '#fff',
+          '-webkit-transition': 'background-color 200ms linear',
+          '-moz-transition': 'background-color 200ms linear',
+          '-o-transition': 'background-color 200ms linear',
+          '-ms-transition': 'background-color 200ms linear',
+          'transition': 'background-color 200ms linear'
+
+        });
+        
+        setTimeout(function() {
+
+          
+
+          //$('.loadingstate').fadeOut();
+          $('.tohide').show();
+          
+
+          $('.spinner_container').hide();
+
+          $.ajax({
+            type: "POST",
+            dataType: "html",
+            cache: false,
+            url: gotourl,
+            //data: $("#postp").serializeArray(), // all form fields
+            success: function (data) {
+              
+              $('#'+scope+'.contenareaajax').fadeIn();
+              $('#'+scope+'.contenareaajax').html(data);
+
+              //$('#'+scope+'.contenareaajax').find('tbody#categorytable').addClass(table);
+              
+              
+              
+            } // success
+          }); // ajax
+
+          
+          $('.'+scope+'.contentareatoload').css({
+            'background-color': background,
+            '-webkit-transition': 'background-color 300ms linear',
+            '-moz-transition': 'background-color 300ms linear',
+            '-o-transition': 'background-color 300ms linear',
+            '-ms-transition': 'background-color 300ms linear',
+            'transition': 'background-color 300ms linear'
+          });
+
+          $('#pagination span.current').css('color',colorfont);
+          
+          
+
+        }, 1000);
+
+        
+    
+}); 

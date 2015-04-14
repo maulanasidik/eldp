@@ -17,9 +17,11 @@
 
 </div>
 <script type="text/javascript">
-$( '.paginationadmin a' ).on('click', function(){   
 
-        var gotourl = $(this).attr('href');
+$(document).on('click', '.paginationadmin a', function(e) {
+        e.preventDefault();
+
+       var gotourl = $(this).attr('href');
 
         var scope = $(this).data('scope');
 
@@ -33,32 +35,17 @@ $( '.paginationadmin a' ).on('click', function(){
 
         
         
-        $('.spinner_container').show();
-        $('#'+scope+'.contenareaajax').hide();
-        
-
-
-        
-        var classElement = $(this);
-        $('.'+scope+'.contentareatoload').css({
-          'background-color': '#fff',
-          '-webkit-transition': 'background-color 200ms linear',
-          '-moz-transition': 'background-color 200ms linear',
-          '-o-transition': 'background-color 200ms linear',
-          '-ms-transition': 'background-color 200ms linear',
-          'transition': 'background-color 200ms linear'
-
-        });
+       
         
         setTimeout(function() {
 
           
 
           //$('.loadingstate').fadeOut();
-          $('.tohide').show();
+         
           
 
-          $('.spinner_container').hide();
+         
 
           $.ajax({
             type: "POST",
@@ -68,8 +55,8 @@ $( '.paginationadmin a' ).on('click', function(){
             //data: $("#postp").serializeArray(), // all form fields
             success: function (data) {
               
-              $('#'+scope+'.contenareaajax').fadeIn();
-              $('#'+scope+'.contenareaajax').html(data);
+              //$('#'+scope+'.contenareaajax').fadeIn();
+              $('.pagecontent').html(data);
 
               //$('#'+scope+'.contenareaajax').find('tbody#categorytable').addClass(table);
               
@@ -79,24 +66,15 @@ $( '.paginationadmin a' ).on('click', function(){
           }); // ajax
 
           
-          $('.'+scope+'.contentareatoload').css({
-            'background-color': background,
-            '-webkit-transition': 'background-color 300ms linear',
-            '-moz-transition': 'background-color 300ms linear',
-            '-o-transition': 'background-color 300ms linear',
-            '-ms-transition': 'background-color 300ms linear',
-            'transition': 'background-color 300ms linear'
-          });
-
-          $('#pagination span.current').css('color',colorfont);
+          
           
           
 
         }, 1000);
+});
 
-        
-    
-}); 
+
+ 
 
 
 

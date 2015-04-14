@@ -1110,20 +1110,23 @@ td.actions a:hover{
 	color: #575757;
 	font-size: 1.4em;
 }
-.mask1 {
+.pagecontent {
 	padding-bottom: 170px;
 }
 .logoelinside{
 	background:transparent url(../../img/el2/logo-eldp-version2.png) 0 0 no-repeat;
-	width: 80px;
+	
 	height: 75px;
 	display: block;
 	text-indent: -10000px;
 	margin-top: -15px;
 }
-.logoelinside:hover{
+.logoel2:hover span{
 	background:transparent url(../../img/el2/logo-eldp-version2.png) 100% 100% no-repeat;
 }
 .showdialogwindow,.deleteitemtable,.nongoldehlo{
 	cursor: pointer;
+}
+#pagination.paginationadmin{
+	margin-top: 20px;
 }

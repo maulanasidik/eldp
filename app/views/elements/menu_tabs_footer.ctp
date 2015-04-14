@@ -3,7 +3,7 @@
   <nav>
     <ul>
       <li>
-        <a href="#" class=""><span class="logoelinside">Elibrary</span></a>
+        <a href="#" class="logoel2"><span class="logoelinside">Elibrary</span></a>
       </li>
       
       <?php if ($this->params['controller'] == 'books'):?>
@@ -358,7 +358,7 @@ $(document).ready(function() {
   });
 
 
-  $(".showdialogwindow").on('click', function(){
+  $(".showdialogwindow",".gotolinkanchor").on('click', function(){
     $('.loadingpagecontainer').show();
     console.log('clicked');
     var thisurl = $(this).data('url');
