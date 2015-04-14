@@ -1,7 +1,15 @@
+<?php if($this->action != 'admin_search'):?>
 <div class="pagecontent">
   <h2 class="header">MODUL BUKU</h2>
   <h4 class="subheader">LIST BUKU</h4>
-<div id="a" class="book imageNavinside">&nbsp;</div>
+<div id="a" class="book imageNavinside">
+  &nbsp;
+  <div class="loadinginsidetitle" style="display:none;">
+    <img src="<?php echo $this->webroot;?>img/el2/loading-new.gif"> 
+  </div>
+</div>
+
+<?php endif;?>
 
 <?php 
 if($this->action != 'admin_search'){

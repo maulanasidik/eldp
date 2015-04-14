@@ -895,7 +895,7 @@ dl.separator dt:first-child:after { display: none; }
    	  top: 71px;
 }
 .imageNavinside{
-
+	position: relative;
 }
 
 
@@ -1133,14 +1133,17 @@ td.actions a:hover{
 
 .searchcontainer{
 	position: absolute;
-	top:10px;
+	top:40%;
 	left: 50%;
-	margin-left: -300px;
-	
+	margin-left: -220px;
+	margin-top: -180px;
+	width: 500px;
 	background: #fff;
+	z-index: 999999999;
+	display: block;
 }
 .searchcontainer form{
-	width: 300px;
+	width: 100%;
 	padding: 20px 20px 0px;
 }
 .searchcontainer form input{
@@ -1150,4 +1153,27 @@ td.actions a:hover{
 	border: none;
 	padding: 0;
 	margin: 0;
+}
+#lightboxOverlay{
+	width: 100%;
+	height: 100%;
+	opacity: 0.5 !important;
+	z-index: 1 !important;
+}
+.loadinginsidetitle{
+	left: 24px;
+	top:-50px;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	position: absolute;
+	opacity: 0;
+
+}
+.loadinginsidetitle img{
+	position: absolute;
+	top:17px;
+	left: 17px;
+
 }

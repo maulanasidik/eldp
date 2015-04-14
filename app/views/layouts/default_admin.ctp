@@ -169,6 +169,7 @@
     </div>
 
   <img src='<?php echo $this->webroot;?>img/el2/bg/matdes.jpg' alt='background-image' id='bgImage'/>  
+
   <header>
     <div id="headerWrapper">
       <div id="headerCenter">
@@ -193,18 +194,30 @@
               <a href="#!/" class="uphome">Ubah Sandi</a>
               <a href="#!/" class="uphome">Alamat Server</a>
               <a href="#!/" class="uphome">Logout</a>-->
-          </div>
+      </div>
 
    
       <?php e($content_for_layout); ?>
-   </div>
+    </div>
   </div><!-- /container -->
 
   </div>
   <footer> <a title='Metro UI template' href='' target='_blank'></a> ©HASAMA.Corps</footer>
-        </div>
+  
 
-
+<div class="searchcontainer metro" style="display:none;opacity:0;">
+  <h1 style="font-size:30px;margin-top:20px;">Pencarian Buku</h1>
+  <p style="text-align:center;color:#5f5f5f;">Masukkan query pencarian berdasarkan title, pengarang, penerbit, <br/>atau deskripsi</p>
+  <?php echo $form->create('Book',array('action'=>'admin_search','enctype'=>'multipart/form-data'));?>
+  <fieldset>
+    <div class="input-control text" style="width:100%;">
+        <input type="text" placeholder="ketikkan pencarian disini, kemudian tekan enter" name="data[Book][keyword]" class="clearwhenreload"/>
+        <button type="submit" class="btn-search" id="searchbooksubmit"></button>
+    </div>
+    
+  </fieldset>
+  <?php echo $form->end();?>
+</div>
   
   <?php echo $javascript->link('jquery.form.min.js'); ?>
 
@@ -221,8 +234,12 @@
   <?php echo $javascript->link('retina.js'); ?>
   <?php echo $javascript->link('jquery.qtip.js'); ?>
   <?php echo $javascript->link('settings.js'); ?>
-  <?php echo $javascript->link('dropzone.js'); ?>
-  <?php echo $javascript->link('custom.js'); ?>
+  <?php echo $javascript->link('dropzone.js'); 
+  echo $javascript->link('/client/js/jquery.transit.min.js');
+  ?>
+  <?php echo $javascript->link('custom.js'); 
+  ?>
+
 
   
   <script type="text/javascript">
@@ -270,6 +287,7 @@
 
      
     
+
 
 
 
@@ -875,30 +893,129 @@
     var options2 = {
         //target:        '#output2',   // target element to update
         //beforeSubmit:  showRequest,  // pre-submit callback
-        success:       showResponse  // post-submit callback
+        success:       showResponse_searchbook  // post-submit callback
     };
 
     $('#searchbooksubmit').on('click', function(e) {
-       
-        $('.spinner_container').show();
-        $('#bookscope.contenareaajax').hide();
-        $('#BookAdminSearchForm').ajaxSubmit(options2);
-        
+        e.preventDefault();
+        //$('.spinner_container').show();
+        //$('#bookscope.contenareaajax').hide();
 
-        $('.bookscope.contentareatoload').css({
-          'background-color': '#fff',
-          '-webkit-transition': 'background-color 200ms linear',
-          '-moz-transition': 'background-color 200ms linear',
-          '-o-transition': 'background-color 200ms linear',
-          '-ms-transition': 'background-color 200ms linear',
-          'transition': 'background-color 200ms linear'
+        $('#lightboxOverlay').hide(0,function(){
+          $('.searchcontainer').transition({
 
+            opacity: 0,
+            top: '30%',
+            scale: 0,
+            duration: 300,
+            easing: 'out',
+            complete: function() {
+              $('.searchcontainer').hide();
+              $('.icon-search').parent().removeClass('tab-current');
+
+              showsearchresult();
+            }
+
+          });
         });
-        console.log('submitted');
+
+        
         
 
         return false;
     });
+
+    function showsearchresult(){
+      setTimeout(function() {
+        $('.imageNavinside').css('background-image', 'none');
+        $('.pagecontent h2.header').text('LOADING');
+        $('.pagecontent h4').text('Silahkan menunggu..');
+        $('.contenareaajax').fadeOut(100);
+        $('.pageinfo').fadeOut(100);
+        
+        $('.loadinginsidetitle').show(0,function(){
+
+          $('.loadinginsidetitle').transition({
+            y:'45px',
+            opacity: 1,
+            duration: 700,
+            easing: 'in',
+
+            complete: function() { 
+              $('#BookAdminSearchForm').ajaxSubmit(options2);
+              /*$('.pagecontent').transition({
+                y:'50px',
+                duration:800,
+                easing: 'in',
+                complete: function() { 
+                  completeprocess();
+                }
+              })*/
+            }
+          })
+        });
+        
+
+        
+      }, 200);
+      
+    }
+
+    function showResponse_searchbook(responseText, statusText, xhr, $form)  { 
+      /*setTimeout(function() {*/
+        setTimeout(function() {
+
+          $('.loadinginsidetitle').transition({
+            y:'0',
+            opacity: 0,
+            duration: 400,
+            easing: 'out',
+
+            complete: function() { 
+              
+              $('.pagecontent h2.header').text('PENCARIAN BUKU');
+              $('.pagecontent h4').text('Hasil pencarian untuk "Alvira cantik" ');
+              setTimeout(function() {
+
+                $('.loadinginsidetitle').hide();
+                $('.imageNavinside').css('background-image', 'url(http://localhost/eldp/img/el2/Book-01.png)');
+                $('.contenareaajax').fadeIn(100);
+                $('.pageinfo').fadeIn(100);
+                $('.contenareaajax').html(responseText);
+              }, 500);
+              /*$('.pagecontent').transition({
+                y:'50px',
+                duration:800,
+                easing: 'in',
+                complete: function() { 
+                  completeprocess();
+                }
+              })*/
+            }
+          });
+          
+          
+        }, 3000);
+        /*
+        $('.pagecontent').transition({
+          y:'0',
+          duration:250,
+          easing: 'out',
+          complete: function() { 
+            setTimeout(function() {
+              $('.loadinginsidetitle').fadeOut();
+              $('.imageNavinside').css('background-image', 'url(http://localhost/eldp/img/el2/Book-01.png)');
+              $('.pagecontent h2.header').text('PENCARIAN BUKU');
+              $('.pagecontent h4').text('Hasil pencarian untuk "Alvira cantik" ');
+              $('.contenareaajax').fadeIn(100);
+              $('.pageinfo').fadeIn(100);
+            }, 500);
+          }
+
+        });
+        
+      }, 5000);*/
+    }
 
     function showResponse_searchphoto(responseText, statusText, xhr, $form)  { 
       setTimeout(function() {
@@ -921,6 +1038,8 @@
       }, 2000);
         
     } 
+
+    
 
     var options_searchphoto = {
         //target:        '#output2',   // target element to update
@@ -1547,6 +1666,8 @@
 
         return false;
     });
+
+
 
   </script>
   

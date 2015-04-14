@@ -343,17 +343,7 @@
 </div>
 
 
-<div class="searchcontainer metro">
-  <?php echo $form->create('Book',array('action'=>'admin_search','enctype'=>'multipart/form-data'));?>
-  <fieldset>
-    <div class="input-control text" style="width:100%;">
-        <input type="text" placeholder="ketikkan pencarian " name="data[Book][keyword]"/>
-        <button type="submit" class="btn-search" id="searchbooksubmit"></button>
-    </div>
-    
-  </fieldset>
-  <?php echo $form->end();?>
-</div>
+
 
 <script type="text/javascript">
 
@@ -469,5 +459,46 @@ $( '.deleteitemtable' ).on( "click", function(e) {
       //alert('Batal menghapus')
   }
 }); // on
+window.searchcontaineractive =false;
+$( '.icon-search' ).on( "click", function(e) {
+
+  e.preventDefault(); // avoids calling preview.php
+  $(this).parent().addClass('tab-current');
+  $('.searchcontainer').show(0,function(){
+    $('.searchcontainer').css('scale',1),
+    $('.clearwhenreload').val('');
+    $('.clearwhenreload').focus();
+    $('#lightboxOverlay').show();
+    $('.searchcontainer').transition({
+
+      opacity: 1,
+      top: '50%',
+      duration: 200,
+      easing: 'in'
+    });
+    window.searchcontaineractive = true;
+  });
+  
+
+}); // on
+$( '#lightboxOverlay' ).on( "click", function(e) {
+  $('.clearwhenreload').val('');
+
+  if(window.searchcontaineractive = true){
+    $('#lightboxOverlay').hide();
+    $('.searchcontainer').transition({
+      opacity: 0,
+      top: '30%',
+      duration: 200,
+      easing: 'out',
+      complete: function() {
+        $('.searchcontainer').hide();
+        $('.icon-search').parent().removeClass('tab-current');
+      }
+
+    });
+  }
+}); // on
+
 
 </script>
