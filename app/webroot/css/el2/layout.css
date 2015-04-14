@@ -1130,3 +1130,24 @@ td.actions a:hover{
 #pagination.paginationadmin{
 	margin-top: 20px;
 }
+
+.searchcontainer{
+	position: absolute;
+	top:10px;
+	left: 50%;
+	margin-left: -300px;
+	
+	background: #fff;
+}
+.searchcontainer form{
+	width: 300px;
+	padding: 20px 20px 0px;
+}
+.searchcontainer form input{
+	width: 80%;
+}
+.searchcontainer form fieldset{
+	border: none;
+	padding: 0;
+	margin: 0;
+}

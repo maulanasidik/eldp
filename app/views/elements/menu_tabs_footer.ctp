@@ -342,6 +342,19 @@
   </nav>
 </div>
 
+
+<div class="searchcontainer metro">
+  <?php echo $form->create('Book',array('action'=>'admin_search','enctype'=>'multipart/form-data'));?>
+  <fieldset>
+    <div class="input-control text" style="width:100%;">
+        <input type="text" placeholder="ketikkan pencarian " name="data[Book][keyword]"/>
+        <button type="submit" class="btn-search" id="searchbooksubmit"></button>
+    </div>
+    
+  </fieldset>
+  <?php echo $form->end();?>
+</div>
+
 <script type="text/javascript">
 
 
@@ -358,7 +371,7 @@ $(document).ready(function() {
   });
 
 
-  $(".showdialogwindow",".gotolinkanchor").on('click', function(){
+  $(".showdialogwindow").on('click', function(){
     $('.loadingpagecontainer').show();
     console.log('clicked');
     var thisurl = $(this).data('url');
