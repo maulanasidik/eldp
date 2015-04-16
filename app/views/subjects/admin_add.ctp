@@ -107,7 +107,7 @@
 
 (function() {
     
-function showResponse(responseText, statusText, xhr, $form)  { 
+function showResponse3(responseText, statusText, xhr, $form)  { 
 
     setTimeout(function() {
         $('.loadingpagecontainer').hide();
@@ -125,7 +125,7 @@ function showResponse(responseText, statusText, xhr, $form)  {
 var options2 = {
     //target:        '#output2',   // target element to update
     //beforeSubmit:  showRequest,  // pre-submit callback
-    success:       showResponse  // post-submit callback
+    success:       showResponse3  // post-submit callback
 };
 
 // bind form2 using ajaxSubmit

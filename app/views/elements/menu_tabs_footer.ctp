@@ -553,7 +553,7 @@ $(document).ready(function() {
 }); // ready
 
 
-$("#wrapper").on('click', 'a.deleteitemtable', function() {
+$("#wrapper").on('click', 'a.deleteitemtable', function(e) {
 
   e.preventDefault(); // avoids calling preview.php
   
