@@ -1,9 +1,7 @@
 <?php echo $form->create('Ebook',array('enctype'=>'multipart/form-data'));?>
 <fieldset>
 <div style="float:left;width:415px;margin-right:40px;">
-
     
-
     <label>Judul Buku</label>
     <div class="input-control text" data-role="input-control">
     <?php
@@ -109,7 +107,7 @@
 
 (function() {
     
-function showResponse(responseText, statusText, xhr, $form)  { 
+function showResponse2(responseText, statusText, xhr, $form)  { 
 
     setTimeout(function() {
         $('.loadingpagecontainer').hide();
@@ -121,7 +119,8 @@ function showResponse(responseText, statusText, xhr, $form)  {
         }
         $("#EbookAddForm").clearForm();
         $(".formcontainer").show();
-        $('#ebookscope #ebooktable').prepend(responseText);
+        $('#ebooktable').prepend(responseText);
+        console.log('sfdsdfsdf'+responseText)
         
     }, 2000);
         
@@ -131,7 +130,7 @@ function showResponse(responseText, statusText, xhr, $form)  {
 var options2 = {
     //target:        '#output2',   // target element to update
     //beforeSubmit:  showRequest,  // pre-submit callback
-    success:       showResponse  // post-submit callback
+    success:       showResponse2  // post-submit callback
 };
 
 // bind form2 using ajaxSubmit

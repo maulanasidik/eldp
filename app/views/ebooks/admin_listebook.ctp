@@ -141,7 +141,7 @@ function showResponse_ebookdofav(responseText, statusText, xhr, $form)  {
 
 
 <!--add to search function-->
-<?php if(($this->action == 'admin_search') || (count($listbuku)!=0)):
+<?php if(($this->action == 'admin_search')):
 ?> 
 <script>
 $('.pageinfo p').text('Ditemukan <?php echo count($listbuku);?> data untuk hasil pencarian "'+window.querysearch+'"');

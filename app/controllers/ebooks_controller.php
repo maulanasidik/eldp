@@ -1037,7 +1037,7 @@ class EbooksController extends AppController {
 			$this->Session->setFlash(__('Invalid Ebook.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->set('ebook', $this->Ebook->read(null, $id));
+		$this->set('daftarebook', $this->Ebook->read(null, $id));
 		$this->layout = 'default_blank';
 	}
 
