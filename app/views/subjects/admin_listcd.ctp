@@ -49,10 +49,10 @@ echo $this->renderElement('header_paginate');
               <?php if($entry['Subject']['favorite'] == 0):?>
 
                 <?php echo $form->input('CDFav.action',array('type'=>'hidden','value'=>1));?>
-                <a data-entryid="<?php echo $entry['Subject']['id'];?>" id="do_fav_<?php echo $entry['Subject']['id']?>" href="#" class="nongoldehlo"><i class=" icon-star on-right"></i> Jadikan Fav</a>
+                <a data-entryid="<?php echo $entry['Subject']['id'];?>" id="do_fav_<?php echo $entry['Subject']['id']?>"  class="nongoldehlo"><i class=" icon-star on-right"></i> Jadikan Fav</a>
               <?php else:?>
                 <?php echo $form->input('CDFav.action',array('type'=>'hidden','value'=>0));?>
-                <a data-entryid="<?php echo $entry['Subject']['id'];?>" id="do_fav_<?php echo $entry['Subject']['id']?>" href="#" class="nongoldehlo"><i class=" icon-star on-right"></i>  Buang dari Fav</a>
+                <a data-entryid="<?php echo $entry['Subject']['id'];?>" id="do_fav_<?php echo $entry['Subject']['id']?>"  class="nongoldehlo"><i class=" icon-star on-right"></i>  Buang dari Fav</a>
               <?php endif;?>
               <?php echo $form->end();?>
 
