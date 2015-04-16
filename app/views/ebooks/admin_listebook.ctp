@@ -1,14 +1,24 @@
-
+<?php if($this->action != 'admin_search'):?>
 <div class="pagecontent">
-  <h2 class="header">MODUL EBOOK</h2>
-<div id="a" class="Ebook imageNavinside">&nbsp;</div>
+  <h2 class="header">MODUL Ebook</h2>
+  <h4 class="subheader">LIST BUKU</h4>
+<div id="a" class="Ebook imageNavinside">&nbsp;
+  <div class="loadinginsidetitle" style="display:none;">
+    <img src="<?php echo $this->webroot;?>img/el2/loading-new.gif"> 
+  </div>
+</div>
+<?php endif;?>
 
 <?php 
 if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
 }
 ?> 
+
+<?php if($this->action != 'admin_search'):?> 
 <div class="mask1 contenareaajax">
+<?php endif;?><!--This is only show if not search-->
+
   <div class="transp actions">
     <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
@@ -73,7 +83,10 @@ echo $this->renderElement('header_paginate');
     
     
   </div>
+<?php if($this->action != 'admin_search'):?> 
 </div>
+<?php endif;?>
+
 <?php 
 if($this->action != 'admin_search'){
 
@@ -126,11 +139,25 @@ function showResponse_ebookdofav(responseText, statusText, xhr, $form)  {
 
 </script>
 
+
+<!--add to search function-->
+<?php if(($this->action == 'admin_search') || (count($listbuku)!=0)):
+?> 
+<script>
+$('.pageinfo p').text('Ditemukan <?php echo count($listbuku);?> data untuk hasil pencarian "'+window.querysearch+'"');
+</script>
+<?php endif;?>
+
+<!--add to search function-->
+
 </div>
 
 <?php 
+if($this->action != 'admin_search'):
 
 echo $this->renderElement('menu_tabs_footer'); 
+
+endif;
 
 ?>
 

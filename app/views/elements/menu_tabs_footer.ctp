@@ -7,37 +7,35 @@
       </li>
       
       <?php if ($this->params['controller'] == 'books'):?>
-      <li>
-        <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/books/add" data-title="Tambah Buku" data-width="900px" data-height="375px" ><span>Tambah Buku</span></a>]
-      </li>
-
-
-      <?php if ($actionActive =='listbook'):?>
-        <li class="tab-current">
-      <?php else:?>
         <li>
-      <?php endif;?>
-        <a href="#!/url=<?php echo $this->webroot;?>admin/books/listbook" class="icon icon-list2"><span>List Buku</span></a>
-      </li>
+          <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/books/add" data-title="Tambah Buku" data-width="900px" data-height="375px" ><span>Tambah Buku</span></a>]
+        </li>
 
-      <?php if ($actionActive =='showfavorite'):?>
-        <li class="tab-current">
-      <?php else:?>
+        <?php if ($actionActive =='listbook'):?>
+          <li class="tab-current">
+        <?php else:?>
+          <li>
+        <?php endif;?>
+          <a href="#!/url=<?php echo $this->webroot;?>admin/books/listbook" class="icon icon-list2"><span>List Buku</span></a>
+        </li>
+
+        <?php if ($actionActive =='showfavorite'):?>
+          <li class="tab-current">
+        <?php else:?>
+          <li>
+        <?php endif;?>
+        <a href="#!/url=<?php echo $this->webroot;?>admin/books/showfavorite" class="icon icon-star-full"><span>Buku Favorit</span></a>
+        </li>
+
         <li>
-      <?php endif;?>
-      <a href="#!/url=<?php echo $this->webroot;?>admin/books/showfavorite" class="icon icon-star-full"><span>Buku Favorit</span></a>
-      </li>
-
-
-      <li>
-        <a href="section-iconbox-4" class="icon icon-search"><span>Pencarian</span></a>
-      </li>
-      <li>
-        <a href="<?php echo $this->webroot;?>admin/books/printall" class="printview opennewtab icon icon-printer"><span>Cetak</span></a>
-      </li>
-      <li>
-        <a href="<?php echo $this->webroot;?>admin/books/barcode_all" class="printview opennewtab icon icon-barcode"><span>Cetak Barcode</span></a>
-      </li>
+          <a href="section-iconbox-4" class="icon icon-search" data-modul="book" data-titlemodul="Buku" data-desc="Masukkan query pencarian berdasarkan title, pengarang, penerbit, <br/>atau deskripsi"><span>Pencarian</span></a>
+        </li>
+        <li>
+          <a href="<?php echo $this->webroot;?>admin/books/printall" class="printview opennewtab icon icon-printer"><span>Cetak</span></a>
+        </li>
+        <li>
+          <a href="<?php echo $this->webroot;?>admin/books/barcode_all" class="printview opennewtab icon icon-barcode"><span>Cetak Barcode</span></a>
+        </li>
       <?php endif;?>
 
       <?php if ($this->params['controller'] == 'ebooks'):?>
@@ -64,7 +62,7 @@
 
 
       <li>
-        <a href="section-iconbox-4" class="icon icon-search"><span>Pencarian</span></a>
+        <a href="section-iconbox-4" class="icon icon-search" data-modul="ebook" data-titlemodul="Ebook" data-desc="Masukkan query pencarian berdasarkan title, pengarang, penerbit, <br/>atau deskripsi"><span>Pencarian</span></a>
       </li>
       <li>
         <a href="<?php echo $this->webroot;?>admin/ebooks/printall" class="printview opennewtab icon icon-printer"><span>Cetak</span></a>
@@ -384,8 +382,7 @@ $(document).ready(function() {
 
   });
 
-
-  $( 'a.gotolinkanchor' ).on( 'click', function () {
+  $("#wrapper").on('click', 'a.gotolinkanchor', function() {
 
     $('.loadingpagecontainer').show();
     console.log('clicked');
@@ -418,9 +415,145 @@ $(document).ready(function() {
 
   $('.pagecontent h4.subheader').text(window.titlerecord);
 
+
+  //START FOR SEARCH FUNCTION JS i try to make it dynamic
+
+  window.searchcontaineractive =false;
+  window.searchpageactive =false;
+  window.dataModul;
+  window.dataTitleModul;
+  window.dataDescModul;
+  window.querysearch;
+
+  $( '.icon-search' ).on( "click", function(e) {
+
+    e.preventDefault(); // avoids calling preview.php
+    window.dataModul = $(this).data('modul');
+    window.dataTitleModul = $(this).data('titlemodul');
+    window.dataDescModul = $(this).data('desc');
+    window.webrooturl = <?php echo $this->webroot;?>;
+    window.backgroundImageIcon = $('.imageNavinside').css('background-image');
+    $totalitemfound = '<?php echo $totalitemfound?>';
+
+    
+    //update all id element on search function
+    $('.btn-search').attr('id','search'+window.dataModul+'submit');
+    $('.btn-search').attr('id','search'+window.dataModul+'submit');
+    $('.formsearch').attr('id',window.dataModul+'adminsearchform');
+    $('form.formsearch').attr('action',window.webrooturl+'admin/'+window.dataModul+'s/search');
+
+    $('.searchforminput').attr('name','data['+toTitleCase(window.dataModul)+'][keyword]')
+    $('.searchcontainer header h1').text('Pencarian '+window.dataTitleModul);
+    $('.searchcontainer header p').html(window.dataDescModul);
+
+    $(this).parent().addClass('tab-current');
+    $('.searchcontainer').show(0,function(){
+      $('.searchcontainer').css('scale',1),
+      $('.clearwhenreload').val('');
+      $('.clearwhenreload').focus();
+      $('#lightboxOverlay').show();
+      $('.searchcontainer').transition({
+
+        opacity: 1,
+        top: '50%',
+        duration: 200,
+        easing: 'in'
+      });
+      window.searchcontaineractive = true;
+    });
+    
+
+  }); // on
+  
+  $(".btn-search").on('click',function(e) {
+      e.preventDefault();
+      $('#lightboxOverlay').hide(0,function(){
+        $('.searchcontainer').transition({
+          opacity: 0,
+          top: '30%',
+          scale: 0,
+          duration: 300,
+          easing: 'out',
+          complete: function() {
+            $('.searchcontainer').hide();
+            $('.icon-search').parent().removeClass('tab-current');
+            showsearchloading();
+            //get last query
+            window.querysearch = $('.searchforminput').val();
+          }
+
+        });
+      });
+      return false;
+  });
+
+  function showsearchloading(){
+    setTimeout(function() {
+      $('.imageNavinside').css('background-image', 'none');
+      $('.pagecontent h2.header').text('LOADING');
+      $('.pagecontent h4').text('Silahkan menunggu..');
+      $('.contenareaajax').fadeOut(100);
+      $('.pageinfo').fadeOut(100);
+      $('.paginationadmin').fadeOut(100);
+      
+      
+      $('.loadinginsidetitle').show(0,function(){
+
+        $('.loadinginsidetitle').transition({
+          y:'45px',
+          opacity: 1,
+          duration: 700,
+          easing: 'in',
+
+          complete: function() { 
+            $('.formsearch').ajaxSubmit(options_search);
+          }
+        })
+      });
+    }, 200);
+    
+  }
+
+  var options_search = {
+      success:       showResponse_search  // post-submit callback
+  };
+
+  function showResponse_search(responseText, statusText, xhr, $form)  { 
+      setTimeout(function() {
+        $('.loadinginsidetitle').transition({
+          y:'0',
+          opacity: 0,
+          duration: 400,
+          easing: 'out',
+
+          complete: function() { 
+            
+            $('.pagecontent h2.header').text('Pencarian '+window.dataTitleModul);
+            $('.pagecontent h4.subheader').text('Hasil pencarian untuk "'+window.querysearch+'" ');
+            setTimeout(function() {
+
+              $('.loadinginsidetitle').hide();
+              $('.pageinfo').fadeIn(100);
+              
+              $('.imageNavinside').css('background-image', window.backgroundImageIcon);
+              $('.contenareaajax').fadeIn(100);
+              $('.contenareaajax').html(responseText);
+              //make tab active is search
+              $('.tabs nav ul li').removeClass('tab-current');
+              $('nav ul li .icon-search').parent().addClass('tab-current');
+            }, 500);
+          }
+        });
+        
+        
+      }, 3000);
+  }
+  //END FOR SEARCH THIS
+
 }); // ready
 
-$( '.deleteitemtable' ).on( "click", function(e) {
+
+$("#wrapper").on('click', 'a.deleteitemtable', function() {
 
   e.preventDefault(); // avoids calling preview.php
   
@@ -459,28 +592,9 @@ $( '.deleteitemtable' ).on( "click", function(e) {
       //alert('Batal menghapus')
   }
 }); // on
-window.searchcontaineractive =false;
-$( '.icon-search' ).on( "click", function(e) {
 
-  e.preventDefault(); // avoids calling preview.php
-  $(this).parent().addClass('tab-current');
-  $('.searchcontainer').show(0,function(){
-    $('.searchcontainer').css('scale',1),
-    $('.clearwhenreload').val('');
-    $('.clearwhenreload').focus();
-    $('#lightboxOverlay').show();
-    $('.searchcontainer').transition({
 
-      opacity: 1,
-      top: '50%',
-      duration: 200,
-      easing: 'in'
-    });
-    window.searchcontaineractive = true;
-  });
-  
 
-}); // on
 $( '#lightboxOverlay' ).on( "click", function(e) {
   $('.clearwhenreload').val('');
 
@@ -499,6 +613,14 @@ $( '#lightboxOverlay' ).on( "click", function(e) {
     });
   }
 }); // on
+
+
+
+function toTitleCase(str) {
+    return str.replace(/(?:^|\s)\w/g, function(match) {
+        return match.toUpperCase();
+    });
+}
 
 
 </script>

@@ -785,8 +785,6 @@ class BooksController extends AppController {
 		$books = $this->Book->find('all',array('conditions'=>$conditions)); 
 		$this->set('listbook',$books);
 
-		
-
 		$conditions = array('Category.tipe'=>1);
 		$categoriesList = $this->Book->Category->find('all',array('conditions'=>$conditions));
 		$this->set('categoriesList',$categoriesList);
@@ -794,6 +792,7 @@ class BooksController extends AppController {
 
 		
 		$this->render('admin_listbook','ajax');
+		
 		//$this->layout = 'default_blank';
 	}
 

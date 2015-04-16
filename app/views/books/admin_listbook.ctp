@@ -15,8 +15,11 @@
 if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
 }
-?> 
+?>
+
+<?php if($this->action != 'admin_search'):?> 
 <div class="mask1 contenareaajax">
+<?php endif;?><!--This is only show if not search-->
   <div class="transp actions">
     <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
@@ -87,22 +90,15 @@ echo $this->renderElement('header_paginate');
 
         
         <?php endforeach;?>
-        
 
-
-        
       </tbody>
     </table>
     <!--div class="bottom_line1">&nbsp;</div-->
-  </div>
+  </div> <!--end div for transp-->
+  
+<?php if($this->action != 'admin_search'):?> 
 </div>
-
-
-<?php 
-if($this->action != 'admin_search'){
-echo $this->renderElement('paginate',array('data_scope' => 'ebookscope','data_background'=>'#c53437')); 
-}
-?>
+<?php endif;?>
 
 
 <script type="text/javascript">
@@ -145,17 +141,29 @@ function showResponse_bookdofav(responseText, statusText, xhr, $form)  {
   }, 2000);
 }
 
-
-
-
 </script>
+
+
+<!--add to search function-->
+<?php if(($this->action == 'admin_search') || (count($listbook)!=0)):
+?> 
+<script>
+$('.pageinfo p').text('Ditemukan <?php echo count($listbook);?> data untuk hasil pencarian "'+window.querysearch+'"');
+</script>
+<?php endif;?>
+
+<!--add to search function-->
+
+
 
 </div>
 
-<?php 
+<?php
+if($this->action != 'admin_search'):
 
 echo $this->renderElement('menu_tabs_footer'); 
 
+endif;
 ?>
 
 
