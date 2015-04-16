@@ -129,6 +129,16 @@ function showResponse_videodofav(responseText, statusText, xhr, $form)  {
 
 </script>
 
+<!--add to search function-->
+<?php if(($this->action == 'admin_search') || (count($listvideo)!=0)):
+?> 
+<script>
+$('.pageinfo p').text('Ditemukan <?php echo count($listvideo);?> data untuk hasil pencarian "'+window.querysearch+'"');
+</script>
+<?php endif;?>
+
+<!--add to search function-->
+
 </div>
 
 <?php 
