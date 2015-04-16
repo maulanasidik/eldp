@@ -61,7 +61,7 @@ echo $this->renderElement('header_paginate');
 
             <!--a class="gotolinkanchor" data-title="Ganti Password" data-width="800px" data-height="375" href="<?php echo $this->webroot;?>admin/users/password/<?php echo $member['User']['id'] ?>"><i class=" icon-pencil on-right"></i> Ganti Password</a-->
             
-            <a class="printview opennewtab" data-url="<?php echo $this->webroot;?>admin/users/barcode/<?php echo $member['User']['id']?>" ><i class="icon-printer on-right"></i> Print barcode</a>
+            <a class="printview opennewtab" href="<?php echo $this->webroot;?>admin/users/barcode/<?php echo $member['User']['id']?>" ><i class="icon-barcode on-right"></i> Print barcode</a>
 
             <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/users/delete/<?php echo $member['User']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
           </td>
