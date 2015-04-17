@@ -94,7 +94,7 @@
 
 
       <li>
-        <a href="section-iconbox-4" class="icon icon-search"><span>Pencarian</span></a>
+        <a href="section-iconbox-4" class="icon icon-search" data-modul="video" data-titlemodul="Video" data-desc="Masukkan query pencarian berdasarkan title, pengarang, penerbit, <br/>atau deskripsi"><span>Pencarian</span></a>
       </li>
       <li>
         <a href="<?php echo $this->webroot;?>admin/videos/printall" class="printview opennewtab icon icon-printer"><span>Cetak</span></a>
