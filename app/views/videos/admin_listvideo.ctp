@@ -1,7 +1,17 @@
 
+<?php if($this->action != 'admin_search'):?>
 <div class="pagecontent">
   <h2 class="header">MODUL VIDEO</h2>
-<div id="a" class="Video imageNavinside">&nbsp;</div>
+  <h4 class="subheader">LIST VIDEO</h4>
+<div id="a" class="Video imageNavinside">
+  &nbsp;
+  <div class="loadinginsidetitle" style="display:none;">
+    <img src="<?php echo $this->webroot;?>img/el2/loading-new.gif"> 
+  </div>
+</div>
+
+<?php endif;?>
+
 
 <?php 
 if($this->action != 'admin_search'){
@@ -130,7 +140,7 @@ function showResponse_videodofav(responseText, statusText, xhr, $form)  {
 </script>
 
 <!--add to search function-->
-<?php if(($this->action == 'admin_search') || (count($listvideo)!=0)):
+<?php if(($this->action == 'admin_search')):
 ?> 
 <script>
 $('.pageinfo p').text('Ditemukan <?php echo count($listvideo);?> data untuk hasil pencarian "'+window.querysearch+'"');
@@ -141,8 +151,10 @@ $('.pageinfo p').text('Ditemukan <?php echo count($listvideo);?> data untuk hasi
 
 </div>
 
-<?php 
+<?php
+if($this->action != 'admin_search'):
 
 echo $this->renderElement('menu_tabs_footer'); 
 
+endif;
 ?>

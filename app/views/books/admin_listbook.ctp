@@ -96,10 +96,11 @@ echo $this->renderElement('header_paginate');
     <!--div class="bottom_line1">&nbsp;</div-->
   </div> <!--end div for transp-->
   
-<?php if($this->action != 'admin_search'):?> 
-</div>
-<?php endif;?>
-
+<?php 
+if($this->action != 'admin_search'){
+echo $this->renderElement('paginate',array('data_scope' => 'ebookscope','data_background'=>'#c53437')); 
+}
+?>
 
 <script type="text/javascript">
           
