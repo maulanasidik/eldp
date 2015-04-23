@@ -10,7 +10,7 @@
   <td class="actions">
   <a class="gotolinkanchor" data-title="View Video" data-width="500px" data-height="400px" data-url="<?php echo $this->webroot;?>admin/videos/view/<?php echo $entry['Video']['id'];?>"><i class=" icon-new-tab on-right"></i> Lihat</a>
 
-  <a class="gotolinkanchor" data-title="Edit Video" data-width="700px" data-height="300px" data-url="<?php echo $this->webroot;?>admin/videos/edit/<?php echo $entry['Video']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
+  <a class="gotolinkanchor" data-title="Edit Video" data-width="900px" data-height="300px" data-url="<?php echo $this->webroot;?>admin/videos/edit/<?php echo $entry['Video']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
 
     <div>
       <?php echo $form->create('Video',array('id'=>'form_do_fav_'.$entry['Video']['id'],'action'=>'admin_do_favorite','style'=>'margin:0;'));

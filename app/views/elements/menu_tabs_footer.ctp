@@ -5,6 +5,87 @@
       <li>
         <a href="#" class="logoel2"><span class="logoelinside">Elibrary</span></a>
       </li>
+
+      <?php if ($this->params['controller'] == 'rents'):?>
+      <li>
+        <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/rents/add" data-title="Tambah Transaksi" data-width="500px" data-height="375px" >
+          <span style="margin-left: -17px;">Tambah Transaksi</span></a>
+      </li>
+
+      <?php if ($actionActive =='list'):?>
+        <li class="tab-current">
+      <?php else:?>
+        <li>
+      <?php endif;?>
+        <a href="#!/url=<?php echo $this->webroot;?>admin/rents/list" class="icon icon-list2"><span style="margin-left: -4px;">Peminjaman</span></a>
+      </li>
+
+
+      <?php if ($actionActive =='listback'):?>
+        <li class="tab-current">
+      <?php else:?>
+        <li>
+      <?php endif;?>
+        <a href="#!/url=<?php echo $this->webroot;?>admin/rents/listback" class="icon icon-list2"><span style="margin-left: -4px;">Pengembalian</span></a>
+      </li>
+
+      <?php if ($actionActive =='listbooking'):?>
+        <li class="tab-current">
+      <?php else:?>
+        <li>
+      <?php endif;?>
+        <a href="#!/url=<?php echo $this->webroot;?>admin/rents/listbooking" class="icon icon-list2"><span style="margin-left: -4px;">Booking</span></a>
+      </li>
+
+      <?php if ($actionActive =='history'):?>
+        <li class="tab-current">
+      <?php else:?>
+        <li>
+      <?php endif;?>
+        <a href="#!/url=<?php echo $this->webroot;?>admin/rents/history2" class="icon icon-list2"><span style="margin-left: -4px;">History Transaksi</span></a>
+      </li>
+      <?php endif;?>
+
+
+      <?php if ($this->params['controller'] == 'notifications'):?>
+      <li>
+        <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/notifications/add" data-title="Tambah Pengumuman" data-width="500px" data-height="375px" >
+          <span style="margin-left: -17px;">Tambah Pengumuman</span></a>]
+      </li>
+
+
+      <?php if ($actionActive =='listnotif'):?>
+        <li class="tab-current">
+      <?php else:?>
+        <li>
+      <?php endif;?>
+        <a href="#!/url=<?php echo $this->webroot;?>admin/notifications/listnotifications" class="icon icon-list2"><span style="margin-left: -4px;">List Pengumuman</span></a>
+      </li>
+
+      <?php if ($actionActive =='listnotifications_active'):?>
+        <li class="tab-current">
+      <?php else:?>
+        <li>
+      <?php endif;?>
+        <a href="#!/url=<?php echo $this->webroot;?>admin/notifications/listnotifications_active" class="icon icon-list2"><span style="margin-left: -4px;">Pengumuman Aktif</span></a>
+      </li>
+
+      <?php if ($actionActive =='listnotifications_notactive'):?>
+        <li class="tab-current">
+      <?php else:?>
+        <li>
+      <?php endif;?>
+        <a href="#!/url=<?php echo $this->webroot;?>admin/notifications/listnotifications_notactive" class="icon icon-list2"><span style="margin-left: -4px;">Pengumuman Tidak Aktif</span></a>
+      </li>
+
+      <?php if ($actionActive =='listnotifications_willactive'):?>
+        <li class="tab-current">
+      <?php else:?>
+        <li>
+      <?php endif;?>
+        <a href="#!/url=<?php echo $this->webroot;?>admin/notifications/listnotifications_willactive" class="icon icon-list2"><span style="margin-left: -4px;">Pengumuman Akan Aktif</span></a>
+      </li>
+      <?php endif;?>
       
       <?php if ($this->params['controller'] == 'books'):?>
         <li>
@@ -126,7 +207,7 @@
 
 
       <li>
-        <a href="section-iconbox-4" class="icon icon-search"><span>Pencarian</span></a>
+        <a href="section-iconbox-4" class="icon icon-search" data-modul="audio" data-titlemodul="Audio" data-desc="Masukkan query pencarian berdasarkan title, pengarang, penerbit, <br/>atau deskripsi"><span>Pencarian</span></a>
       </li>
       <li>
         <a href="<?php echo $this->webroot;?>admin/audios/printall" class="printview opennewtab icon icon-printer"><span>Cetak</span></a>
@@ -206,7 +287,7 @@
       </li>
 
       <li>
-        <a href="section-iconbox-4" class="icon icon-search"><span>Pencarian</span></a>
+        <a href="section-iconbox-4" class="icon icon-search" data-modul="user" data-titlemodul="Member" data-desc="Masukkan query pencarian berdasarkan title, pengarang, penerbit, <br/>atau deskripsi"><span>Pencarian</span></a>
       </li>
 
       <li>
@@ -244,7 +325,7 @@
 
 
       <li>
-        <a href="section-iconbox-4" class="icon icon-search"><span>Pencarian</span></a>
+        <a href="section-iconbox-4" class="icon icon-search" data-modul="photo" data-titlemodul="Photo" data-desc="Masukkan query pencarian berdasarkan title, pengarang, penerbit, <br/>atau deskripsi"><span>Pencarian</span></a>
       </li>
       <li>
         <a href="<?php echo $this->webroot;?>admin/photos/printall" class="printview opennewtab icon icon-printer"><span>Cetak</span></a>
@@ -577,7 +658,7 @@ $("#wrapper").on('click', 'a.deleteitemtable', function(e) {
 
               //clickedItem.parents('tr').removeClass('details-open');
               
-            clickedItem.parents('tr').fadeOut('slow',function(){
+            clickedItem.parents('tr').fadeOut('slow',function(e){
                 $('.loadingpagecontainer').hide();
                 clickedItem.parents('tr').remove();
                 alert(data.flashMessage);

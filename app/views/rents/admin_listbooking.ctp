@@ -1,10 +1,27 @@
-<?php
+<?php if($this->action != 'admin_search'):?>
+<div class="pagecontent">
+  <h2 class="header">MODUL TRANSAKSI</h2>
+  <h4 class="subheader">LIST TRANSAKSI</h4>
+<div id="a" class="book imageNavinside">
+  &nbsp;
+  <div class="loadinginsidetitle" style="display:none;">
+    <img src="<?php echo $this->webroot;?>img/el2/loading-new.gif"> 
+  </div>
+</div>
+
+<?php endif;?>
+
+<?php 
+if($this->action != 'admin_search'){
 echo $this->renderElement('header_paginate'); 
+}
 ?>
-<div class="mask1 content_transaction_container">
-  <div class="actions">
-    
-    <table class="table hovered" cellpadding="0" cellspacing="0">
+
+<?php if($this->action != 'admin_search'):?> 
+<div class="mask1 contenareaajax">
+<?php endif;?><!--This is only show if not search-->
+  <div class="transp actions">
+    <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
 		<th class="smallest-row"><?php echo ('ID Transaksi');?></th>
@@ -57,11 +74,33 @@ echo $this->renderElement('header_paginate');
         
       </tbody>
     </table>
-    <div class="bottom_line">&nbsp;</div>
-  </div>
-</div>
-<?php
+    <!--div class="bottom_line1">&nbsp;</div-->
+  </div> <!--end div for transp-->
+  
+<?php 
+if($this->action != 'admin_search'){
 echo $this->renderElement('paginate',array('data_scope' => 'rentscope','data_background'=>'#df9019')); 
+}
 ?>
 
+<!--add to search function-->
+<?php if(($this->action == 'admin_search') || (count($listbook)!=0)):
+?> 
+<script>
+$('.pageinfo p').text('Ditemukan <?php echo count($listbook);?> data untuk hasil pencarian "'+window.querysearch+'"');
+</script>
+<?php endif;?>
+
+<!--add to search function-->
+
+
+</div>
+
+<?php
+if($this->action != 'admin_search'):
+
+echo $this->renderElement('menu_tabs_footer'); 
+
+endif;
+?>
 

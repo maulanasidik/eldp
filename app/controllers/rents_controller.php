@@ -33,6 +33,8 @@ class RentsController extends AppController {
 
 		$this->set('tipe',$tipe);
 		$this->set('rents', $rents);
+
+		$this->set('actionActive','list');
 		$this->layout = 'default_blank';
 	}
 
@@ -77,6 +79,8 @@ class RentsController extends AppController {
 		
 		$this->set('rents', $rents);
 		$this->set('tipe',$tipe);
+
+		$this->set('actionActive','listback');
 		$this->layout = 'default_blank';
 	}
 
@@ -94,6 +98,8 @@ class RentsController extends AppController {
 		
 		$this->set('rents', $rents);
 		$this->set('tipe',$tipe);
+		
+		$this->set('actionActive','listbooking');
 		$this->layout = 'default_blank';
 	}
 
@@ -1479,7 +1485,7 @@ class RentsController extends AppController {
 
 
 		
-
+		$this->set('actionActive','financelist');
     	$this->layout = 'default_blank';
 	}
 
@@ -1799,7 +1805,7 @@ class RentsController extends AppController {
 
 
     
-
+      $this->set('actionActive','history');
       $this->layout = 'default_blank';
   }
 

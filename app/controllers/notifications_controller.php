@@ -133,6 +133,8 @@ class NotificationsController extends AppController {
 	    //$this->set(compact('data'));
 
 		$this->set('listnotif',$listnotif);
+		
+		$this->set('actionActive','listnotif');
 		$this->layout = 'default_blank';
 	}
 
@@ -149,6 +151,8 @@ class NotificationsController extends AppController {
 	    //$this->set(compact('data'));
 
 		$this->set('listnotif',$listnotif);
+		
+		$this->set('actionActive','listnotifications_active');
 		$this->layout = 'default_blank';
 	}
 
@@ -165,6 +169,8 @@ class NotificationsController extends AppController {
 	    //$this->set(compact('data'));
 
 		$this->set('listnotif',$listnotif);
+		
+		$this->set('actionActive','listnotifications_notactive');
 		$this->layout = 'default_blank';
 	}
 
@@ -189,6 +195,8 @@ class NotificationsController extends AppController {
 	    //$this->set(compact('data'));
 
 		$this->set('listnotif',$listnotif);
+		
+		$this->set('actionActive','listnotifications_willactive');
 		$this->layout = 'default_blank';
 	}
 

@@ -52,7 +52,7 @@ header{
 	width:100%;
 	min-height:20px;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#503C3C3C,endColorstr=#503C3C3C); 
-	background-color:rgba(244, 242, 242, 0.3);
+	/*background-color:rgba(244, 242, 242, 0.3);8*/
 	/*box-shadow:0 0 5px #555;*/
 }
 #headerCenter{
@@ -138,12 +138,12 @@ header{
 	}	
 }
 
-#tileContainer{
-	width: 1024px !important ;
-	display:none;
-	position:relative;		
-	font-weight:normal;
-	margin: 35px 0 0 50px;
+#tileContainer {
+  width: 1063px !important;
+  display: none;
+  position: relative;
+  font-weight: normal;
+  margin: 35px 0 0 85px;
 }
 footer{ /*show a little footer in the rightdown corner*/
 	position:fixed;
@@ -1179,4 +1179,21 @@ td.actions a:hover{
 }
 .pageinfo p{
 	color: #fff;
+}
+
+#pratile{
+	display: block !important;
+}
+
+#pratile li{
+	float: left;
+
+}
+
+.dropdown-menu {
+  margin-left: -17px;
+  min-width: 150px;
+  width: 200px;
+  font-size: 17px;
+  font-weight: 600;
 }

@@ -1,7 +1,17 @@
 
+<?php if($this->action != 'admin_search'):?>
 <div class="pagecontent">
   <h2 class="header">MODUL AUDIO</h2>
-<div id="a" class="Audio imageNavinside">&nbsp;</div>
+  <h4 class="subheader">LIST AUDIO</h4>
+<div id="a" class="Audio imageNavinside">
+  &nbsp;
+  <div class="loadinginsidetitle" style="display:none;">
+    <img src="<?php echo $this->webroot;?>img/el2/loading-new.gif"> 
+  </div>
+</div>
+
+<?php endif;?>
+
 
 <?php 
 if($this->action != 'admin_search'){
@@ -124,10 +134,22 @@ function showResponse_audiodofav(responseText, statusText, xhr, $form)  {
 
 </script>
 
+<!--add to search function-->
+<?php if(($this->action == 'admin_search')):
+?> 
+<script>
+$('.pageinfo p').text('Ditemukan <?php echo count($listaudio);?> data untuk hasil pencarian "'+window.querysearch+'"');
+</script>
+<?php endif;?>
+
+<!--add to search function-->
+
 </div>
 
-<?php 
+<?php
+if($this->action != 'admin_search'):
 
 echo $this->renderElement('menu_tabs_footer'); 
 
+endif;
 ?>

@@ -25,7 +25,41 @@
 </style>
 
 
-        <div id="tileContainer" class="" style="width: 1097.5px; height: 579px; display: block;">
+        <div id="tileContainer" class="" style="width: 1097.5px; height: 579px;">
+
+          <div id="pratile" style="width: 1200.5px; height: 100px; display: block;">
+  
+  <li style="width: 192px; height: 192px;  margin: -30px 0 0 -170px;">
+    <a class="dropdown-toggle" href="#"><img src="<?php echo $this->webroot;?>images/icon-login-08.png" style="width: 104px; height: 104px;"></a>
+
+    <ul class="dropdown-menu" data-role="dropdown" style="display: none;">
+      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/profiles/edit" data-title="Profile Perpustakaan" data-width="900px" data-height="375px">Profile Perpustakaan</a>
+      </li>
+
+      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/banners/listbanner" data-title="Profile Perpustakaan" data-width="900px" data-height="375px">Banner Management</a>
+      </li>
+
+      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/plans/listplan" data-title="Pengadaan Buku" data-width="900px" data-height="375px">Pengadaan Buku</a>
+      </li>
+
+      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/users/changepassword" data-title="Ubah Sandi" data-width="900px" data-height="375px">Ubah Sandi</a>
+      </li>
+
+      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/profiles/changeip" data-title="Edit IP Address" data-width="900px" data-height="375px">Alamat Server</a>
+      </li>
+
+  </ul>
+  </li>
+
+  <li style="width: 300px; height: 192px;  margin:-18px 0px 0 303px;">
+    <a href="#!/"><img src="<?php echo $this->webroot;?>client/images/Logo-ELDP-User-05.png" style="width: 232px; height: 70px;"></a>
+  </li>
+
+  <li style="width: 104px; height: 104px;  margin:-15px 0px 0px 367px;">
+    <a href="#!/url=<?php echo $this->webroot;?>admin/logout"><img src="<?php echo $this->webroot;?>client/images/icon-logout-08.png" ></a>
+  </li>
+  
+</div>
 
             <a id="tileSlideshow0-0_35--0_25" class="tile tileSlideshow group0 noClick" style="margin-top: 5px; margin-left: 56px; width: 190px; height: 190px; display: block; background: rgb(103, 59, 183);" data-pos="5-56-190" data-n="0"> 
         
@@ -43,7 +77,7 @@
           </a>
 
 
-            <a href="#!/url=welcome.php" class="tile tileCentered group0 " style="margin-top: 5px; margin-left: 264px; width: 390px; height: 86px; display: block; background: rgb(255, 214, 0);" data-pos="5-264-390"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/rents/list/1/1" class="tile tileCentered group0 " style="margin-top: 5px; margin-left: 264px; width: 390px; height: 86px; display: block; background: rgb(255, 214, 0);" data-pos="5-264-390"> 
           <div class="container" style="background:#FFD600;" onmouseover="javascript:$(this).css('background','#FFF')" onmouseout="javascript:$(this).css('background','#FFD600')">
             <h3 style="color:#FFF" onmouseover="javascript:$(this).css('color','#509601')" onmouseout="javascript:$(this).css('color','#FFF')">
               <img title="" alt="" style="margin-top:0px;margin-left:0px;" src="<?php echo $this->webroot;?>img/el2/icons/box_info.png" height="48" width="48">
@@ -55,7 +89,7 @@
           </a>
 
 
-            <a href="#!/url=welcome.php" class="tile tileCentered group0 " style="margin-top: 109px; margin-left: 264px; width: 390px; height: 86px; display: block; background: rgb(255, 214, 0);" data-pos="109-264-390"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/rents/financelist" class="tile tileCentered group0 " style="margin-top: 109px; margin-left: 264px; width: 390px; height: 86px; display: block; background: rgb(255, 214, 0);" data-pos="109-264-390"> 
           <div class="container" style="background:#FFD600;" onmouseover="javascript:$(this).css('background','#FFF')" onmouseout="javascript:$(this).css('background','#FFD600')">
             <h3 style="color:#FFF" onmouseover="javascript:$(this).css('color','#509601')" onmouseout="javascript:$(this).css('color','#FFF')">
                  <img title="" alt="" style="margin-top:0px;margin-left:0px;" src="<?php echo $this->webroot;?>img/el2/icons/box_info.png" height="48" width="48">
@@ -67,7 +101,7 @@
           </a>
 
 
-            <a id="tileSlideshow0-4_25--0_25" class="tile tileSlideshow group0" style="margin-top: 5px; margin-left: 680px; width: 190px; height: 190px; display: block; background: rgb(103, 59, 183);" data-pos="5-680-190" data-n="0"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/notifications/listnotifications" id="tileSlideshow0-4_25--0_25" class="tile tileSlideshow group0" style="margin-top: 5px; margin-left: 680px; width: 190px; height: 190px; display: block; background: rgb(103, 59, 183);" data-pos="5-680-190" data-n="0"> 
         
           <div class="imgWrapperBack" style="width: 192px; height: 192px; left: 163.415616px; top: 0px;"><img src="" alt=""></div>
         <div class="imgWrapper" style="width: 192px; height: 192px; left: -28.584384px; top: 0px;"><img src="" alt=""></div>
@@ -77,7 +111,7 @@
           
           <img id="sl_arrowRight" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowRight.png" alt="Slideshow - right">
           <img id="sl_arrowLeft" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowLeft.png" alt="Slideshow - left">
-          <div class="tileLabelWrapper bottom">
+          <div class="tileLabelWrapper bottom" >
             <div class="tileLabel bottom" style="border-bottom-color:#11528f;">Anouncement</div>
           </div> 
           </a>
