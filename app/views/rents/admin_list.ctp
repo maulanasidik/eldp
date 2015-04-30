@@ -1,7 +1,11 @@
+<script type="text/javascript">
+$('.pagecontent h2.header').text('MODUL TRANSAKSI');
+$('.pagecontent h4.subheader').text('List Peminjaman');
+</script>
 <?php if($this->action != 'admin_search'):?>
 <div class="pagecontent">
   <h2 class="header">MODUL TRANSAKSI</h2>
-  <h4 class="subheader">LIST TRANSAKSI</h4>
+  <h4 class="subheader">LIST PEMINJAMAN</h4>
 <div id="a" class="book imageNavinside">
   &nbsp;
   <div class="loadinginsidetitle" style="display:none;">

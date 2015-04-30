@@ -33,7 +33,7 @@
     <a class="dropdown-toggle" href="#"><img src="<?php echo $this->webroot;?>images/icon-login-08.png" style="width: 104px; height: 104px;"></a>
 
     <ul class="dropdown-menu" data-role="dropdown" style="display: none;">
-      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/profiles/edit" data-title="Profile Perpustakaan" data-width="900px" data-height="375px">Profile Perpustakaan</a>
+      <li><a class="gotolink showdialogwindow" data-url="<?php echo $this->webroot;?>admin/profiles/edit" data-title="Profile Perpustakaan" data-width="900px" data-height="400px">Profile Perpustakaan</a>
       </li>
 
       <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/banners/listbanner" data-title="Profile Perpustakaan" data-width="900px" data-height="375px">Banner Management</a>
@@ -75,17 +75,15 @@
               <div class="tileLabel bottom" style="border-bottom-color:#11528f;">Live Report</div>
           </div> 
           </a>
-
-
-            <a href="#!/url=<?php echo $this->webroot;?>admin/rents/list/1/1" class="tile tileCentered group0 " style="margin-top: 5px; margin-left: 264px; width: 390px; height: 86px; display: block; background: rgb(255, 214, 0);" data-pos="5-264-390"> 
-          <div class="container" style="background:#FFD600;" onmouseover="javascript:$(this).css('background','#FFF')" onmouseout="javascript:$(this).css('background','#FFD600')">
-            <h3 style="color:#FFF" onmouseover="javascript:$(this).css('color','#509601')" onmouseout="javascript:$(this).css('color','#FFF')">
-              <img title="" alt="" style="margin-top:0px;margin-left:0px;" src="<?php echo $this->webroot;?>img/el2/icons/box_info.png" height="48" width="48">
-            
-            Transaksi
-          </h3>
           
-          </div>
+          <a href="#!/url=<?php echo $this->webroot;?>admin/rents/list" class="tile tileCentered group0 " style="margin-top: 5px; margin-left: 264px; width: 390px; height: 86px; display: block; background: rgb(255, 214, 0);" data-pos="5-264-390"> 
+            <div class="container" style="background:#FFD600;" onmouseover="javascript:$(this).css('background','#FFF')" onmouseout="javascript:$(this).css('background','#FFD600')">
+
+              <h3 style="color:#FFF" onmouseover="javascript:$(this).css('color','#509601')" onmouseout="javascript:$(this).css('color','#FFF')">
+              <img title="" alt="" style="margin-top:0px;margin-left:0px;" src="<?php echo $this->webroot;?>img/el2/icons/box_info.png" height="48" width="48">
+              Transaksi
+              </h3>
+            </div>
           </a>
 
 
@@ -240,8 +238,8 @@
             <div style="line-height:30px; font-weight:300; margin-top:10px; margin-left:10px;">
             <div style="font-size:27px;line-height:30px;">Kode DDC</div>
           </div>        
-        </a>
-
+          
+          </a>
 
             <a href="#!/url=<?php echo $this->webroot;?>admin/locations/listlocations" class="tile group0 " style="margin-top: 485px; margin-left: 240px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-240-94"> 
           <div style="line-height:30px; font-weight:300; margin-top:40px; margin-left:10px;">

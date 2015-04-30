@@ -1489,6 +1489,11 @@ class RentsController extends AppController {
     	$this->layout = 'default_blank';
 	}
 
+	function admin_financelist2(){
+		$this->set('actionActive','financelist2');
+		$this->layout = 'default_blank';	
+	}
+
 
 	function admin_financelist_print(){
 		$this->Rent->recursive = 1;

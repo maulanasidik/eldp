@@ -1,4 +1,4 @@
-<div class="tabs tabs-style-iconbox">
+<div class="tabsel tabs-style-iconbox">
   
   <nav>
     <ul>
@@ -6,9 +6,9 @@
         <a href="#" class="logoel2"><span class="logoelinside">Elibrary</span></a>
       </li>
 
-      <?php if ($this->params['controller'] == 'rents'):?>
+      <?php if ($this->params['controller'] == 'rents' && $actionActive !='financelist' && $actionActive !='financelist2'):?>
       <li>
-        <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/rents/add" data-title="Tambah Transaksi" data-width="500px" data-height="375px" >
+        <a class="icon icon-plus " id="addtransaksi"  data-modul="user" data-titlemodul="ID Member" data-desc="Untuk memulai peminjaman, atau pengembalian, silahkan masukkan<br/> ID member, atau scan barcode member." data-width="500px" data-height="375px" >
           <span style="margin-left: -17px;">Tambah Transaksi</span></a>
       </li>
 
@@ -19,7 +19,6 @@
       <?php endif;?>
         <a href="#!/url=<?php echo $this->webroot;?>admin/rents/list" class="icon icon-list2"><span style="margin-left: -4px;">Peminjaman</span></a>
       </li>
-
 
       <?php if ($actionActive =='listback'):?>
         <li class="tab-current">
@@ -303,7 +302,7 @@
 
       <?php if ($this->params['controller'] == 'photos'):?>
       <li>
-        <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/photos/add" data-title="Tambah Foto" data-width="900px" data-height="375px" ><span>Tambah Foto</span></a>]
+        <a class="icon icon-plus showdialogwindowspecial" data-url="<?php echo $this->webroot;?>admin/photos/add" data-title="Tambah Foto" data-width="900px" data-height="375px" ><span>Tambah Foto</span></a>]
       </li>
 
 
@@ -416,6 +415,30 @@
       <?php endif;?>
 
 
+      <!--KEUANGAN FOOTER-->
+      <?php if (($this->params['controller'] == 'rents') && ( $actionActive =='financelist' || $actionActive =='financelist2') ):?>
+
+        <?php if ($actionActive =='financelist'):?>
+        <li class="tab-current">
+        <?php else:?>
+        <li>
+        <?php endif;?>
+        <a class="icon icon-stats-dots" href="#!/url=<?php echo $this->webroot;?>admin/rents/financelist"><span>Laporan Keuangan</span></a>
+      </li>
+
+
+      <?php if (($this->params['controller'] == 'rents') && $actionActive =='financelist2'):?>
+        <li class="tab-current">
+      <?php else:?>
+        <li>
+      <?php endif;?>
+        <a class="icon icon-stats-bars" data-modul="book" id="searchfinance" href="#!/url=<?php echo $this->webroot;?>admin/rents/financelist2"><span>Pencarian Laporan Keuangan</span></a>
+      </li>
+
+      
+      <?php endif;?>
+
+
 
     </ul>
   </nav>
@@ -463,6 +486,33 @@ $(document).ready(function() {
 
   });
 
+
+  $(".showdialogwindowspecial").on('click', function(){
+    $('.loadingpagecontainer').show();
+    console.log('clicked');
+    var thisurl = $(this).data('url');
+    var titlePage = $(this).data('title');
+
+    var Datawidth = $(this).data('width');
+    var Dataheight = $(this).data('height');
+
+    
+    $.ajax({
+      type: "GET",
+      dataType: "html",
+      cache: false,
+      url: thisurl, // preview.php
+      //data: $("#postp").serializeArray(), // all form fields
+      success: function (data) {
+        showdialogspecial(data,titlePage,Datawidth,Dataheight);
+      } // success
+    }); // ajax*/
+
+  });
+
+
+
+
   $("#wrapper").on('click', 'a.gotolinkanchor', function() {
 
     $('.loadingpagecontainer').show();
@@ -489,7 +539,7 @@ $(document).ready(function() {
 
   }); // gotolink function
 
-  $( '.tabs-style-iconbox a' ).on( 'click', function () {
+  $( '.tabsel-style-iconbox a' ).on( 'click', function () {
     window.titlerecord = $(this).find('span').text();
     
   }); // gotolink function
@@ -505,6 +555,7 @@ $(document).ready(function() {
   window.dataTitleModul;
   window.dataDescModul;
   window.querysearch;
+  window.stateonaddtransaction;
 
   $( '.icon-search' ).on( "click", function(e) {
 
@@ -546,7 +597,7 @@ $(document).ready(function() {
 
   }); // on
   
-  $(".btn-search").on('click',function(e) {
+  $(".searchcontainer .btn-search").on('click',function(e) {
       e.preventDefault();
       $('#lightboxOverlay').hide(0,function(){
         $('.searchcontainer').transition({
@@ -587,7 +638,7 @@ $(document).ready(function() {
           easing: 'in',
 
           complete: function() { 
-            $('.formsearch').ajaxSubmit(options_search);
+            $('.searchcontainer .formsearch').ajaxSubmit(options_search);
           }
         })
       });
@@ -620,7 +671,7 @@ $(document).ready(function() {
               $('.contenareaajax').fadeIn(100);
               $('.contenareaajax').html(responseText);
               //make tab active is search
-              $('.tabs nav ul li').removeClass('tab-current');
+              $('.tabsel nav ul li').removeClass('tab-current');
               $('nav ul li .icon-search').parent().addClass('tab-current');
             }, 500);
           }
@@ -630,6 +681,140 @@ $(document).ready(function() {
       }, 3000);
   }
   //END FOR SEARCH THIS
+
+  $( '#addtransaksi' ).on( "click", function(e) {
+
+    e.preventDefault(); // avoids calling preview.php
+    window.dataModul = $(this).data('modul');
+    window.dataTitleModul = $(this).data('titlemodul');
+    window.dataDescModul = $(this).data('desc');
+    window.webrooturl = <?php echo $this->webroot;?>;
+    window.backgroundImageIcon = $('.imageNavinside').css('background-image');
+    $totalitemfound = '<?php echo $totalitemfound?>';
+
+    
+    //update all id element on search function
+    $('.searchcontainer_transaksi .btn-search').attr('id','add_user_transaksi');
+    $('.searchcontainer_transaksi .formsearch').attr('id','form_add_user_transaksi');
+    $('.searchcontainer_transaksi form.formsearch').attr('action',window.webrooturl+'admin/'+window.dataModul+'s/search_home_result');
+
+    $('.searchcontainer_transaksi .searchforminput').attr('name','data['+toTitleCase(window.dataModul)+'][input_id]')
+    $('.searchcontainer_transaksi .searchforminput').attr('placeholder','Masukkan ID member disini')
+    $('.searchcontainer_transaksi header h1').text(window.dataTitleModul);
+    $('.searchcontainer_transaksi header p').html(window.dataDescModul);
+
+    $(this).parent().addClass('tab-current');
+    $('.searchcontainer_transaksi').show(0,function(){
+      $('.searchcontainer_transaksi').css('scale',1),
+      $('.clearwhenreload').val('');
+      $('.clearwhenreload').focus();
+      $('#lightboxOverlay').show();
+      $('.searchcontainer_transaksi').transition({
+
+        opacity: 1,
+        top: '50%',
+        duration: 200,
+        easing: 'in'
+      });
+      window.searchcontaineractive = true;
+      window.stateonaddtransaction = true;
+    });
+    
+
+  }); // on
+
+  $('.searchcontainer_transaksi').on('click','#add_user_transaksi',function(e){
+      e.preventDefault();
+      $('.icon-search').parent().removeClass('tab-current');
+      showsearchloading_transaksi();
+      
+      
+      return false;
+
+  });
+
+  function showsearchloading_transaksi(){
+    setTimeout(function() {
+      //$('.imageNavinside').css('background-image', 'none');
+      //$('.pagecontent h2.header').text('LOADING');
+      //$('.pagecontent h4').text('Silahkan menunggu..');
+      //$('.contenareaajax').fadeOut(100);
+      //$('.pageinfo').fadeOut(100);
+      //$('.paginationadmin').fadeOut(100);
+      $('#contentinsidebox').hide();
+      $('#loadinginsidebox').fadeIn();
+      
+      $('#form_add_user_transaksi').ajaxSubmit(options_search_transaksi);
+      
+    }, 200);
+    
+  }
+
+  var options_search_transaksi = {
+      success:       showResponse_search_transaksi  // post-submit callback
+  };
+
+  function showResponse_search_transaksi(responseText, statusText, xhr, $form)  { 
+      setTimeout(function() {
+        $('.loadinginsidetitle').transition({
+          y:'0',
+          opacity: 0,
+          duration: 400,
+          easing: 'out',
+
+          complete: function() { 
+            
+            $('.loadinginsidetitle').hide();
+            
+            
+            $('.imageNavinside').css('background-image', window.backgroundImageIcon);
+            $('.contenareaajax').fadeIn(100);
+
+            setTimeout(function() {
+
+              var $result = $(responseText).filter('#emptymember');
+              var $emptymember = $result.attr("id");
+              
+              if($emptymember == 'emptymember'){
+                alert('ID Member tidak ditemukan, silahkan masukkan kembali ID Member untuk memulai transaksi');
+                $('#loadinginsidebox').hide();
+                $('#contentinsidebox').fadeIn(100,function(){
+                  $('#contentinsidebox .clearwhenreload').val('');
+                  $('#contentinsidebox .clearwhenreload').focus();  
+                });
+                
+              }else{
+                $('.contenareaajax').html(responseText);
+                $('#lightboxOverlay').hide(0,function(){
+                  $('.searchcontainer').transition({
+                    opacity: 0,
+                    top: '30%',
+                    scale: 0,
+                    duration: 300,
+                    easing: 'out',
+                    complete: function() {
+                      $('.searchcontainer_transaksi').hide();
+                      $('#contentinsidebox').show();
+                      $('#loadinginsidebox').hide();
+                      $('.pagecontent h4.subheader').text('Penambahan Transaksi');
+                      $('.pageinfo').hide();
+                    }
+
+                  });
+                });
+                
+              }
+              //make tab active is search
+              $('.tabsel nav ul li').removeClass('tab-current');
+              $('nav ul li .icon-search').parent().addClass('tab-current');
+            }, 500);
+          }
+        });
+        
+        
+      }, 3000);
+  }
+  //END FOR TRANSAKSI THIS
 
 }); // ready
 
@@ -679,7 +864,8 @@ $("#wrapper").on('click', 'a.deleteitemtable', function(e) {
 $( '#lightboxOverlay' ).on( "click", function(e) {
   $('.clearwhenreload').val('');
 
-  if(window.searchcontaineractive = true){
+  if((window.stateonaddtransaction == false) && (window.searchcontaineractive == true)){
+
     $('#lightboxOverlay').hide();
     $('.searchcontainer').transition({
       opacity: 0,
@@ -692,16 +878,120 @@ $( '#lightboxOverlay' ).on( "click", function(e) {
       }
 
     });
+
+    
+
+  }else{
+
+    $('#lightboxOverlay').hide();
+    $('.searchcontainer_transaksi').transition({
+      opacity: 0,
+      top: '30%',
+      duration: 200,
+      easing: 'out',
+      complete: function() {
+        $('.searchcontainer_transaksi').hide();
+        $('#addtransaksi').parent().removeClass('tab-current');
+      }
+    });
+    window.location.href = "<?php echo $this->webroot;?>admin/users#!/url=/eldp/admin/rents/list";
+    console.log('option2');
+    
   }
+
 }); // on
-
-
 
 function toTitleCase(str) {
     return str.replace(/(?:^|\s)\w/g, function(match) {
         return match.toUpperCase();
     });
 }
+
+
+//searchfinance
+
+var options_finance_seacrh = {
+    //target:        '#output2',   // target element to update
+    //beforeSubmit:  showRequest,  // pre-submit callback
+    success:       showResponse_finance_search_home  // post-submit callback
+};
+
+
+$('#dofindfinance').on('click', function(e) {
+    
+    setTimeout(function() {
+      window.backgroundImageIcon = $('.imageNavinside').css('background-image');
+      $('.imageNavinside').css('background-image', 'none');
+      $('.pagecontent h2.header').text('LOADING');
+      $('.pagecontent h4').text('Silahkan menunggu..');
+      $('.contenareaajax').fadeOut(100);
+      $('.pageinfo').fadeOut(100);
+      
+      
+      $('.loadinginsidetitle').show(0,function(){
+
+        $('.loadinginsidetitle').transition({
+          y:'45px',
+          opacity: 1,
+          duration: 700,
+          easing: 'in',
+
+          complete: function() { 
+            $('#RentAdminFinancesearchForm').ajaxSubmit(options_finance_seacrh);
+          }
+        })
+      });
+    }, 200);
+
+    
+    
+
+    
+    console.log('submitted');
+    
+
+    return false;
+}); 
+
+
+function showResponse_finance_search_home(responseText, statusText, xhr, $form)  { 
+
+  setTimeout(function() {
+        $('.loadinginsidetitle').transition({
+          y:'0',
+          opacity: 0,
+          duration: 400,
+          easing: 'out',
+
+          complete: function() { 
+            
+            $('.pagecontent h2.header').text('Pencarian Transaksi Keuangan');
+            
+            setTimeout(function() {
+
+              $('.loadinginsidetitle').hide();
+              $('.pageinfo').fadeIn(100);
+              
+              $('.imageNavinside').css('background-image', window.backgroundImageIcon);
+              $('.contenareaajax').fadeIn(100);
+              $('.containerajaxtable').fadeIn();
+
+              $('.containerajaxtable').html(responseText);
+              //make tab active is search
+              
+              
+            }, 500);
+          }
+        });
+        
+        
+      }, 3000);
+  
+    
+} 
+
+
+
 
 
 </script>

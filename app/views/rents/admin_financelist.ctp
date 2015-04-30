@@ -1,7 +1,7 @@
 <style type="text/css">
 	.metro h2.totalkas {
 		font-size: 21px;
-		color: #fff;
+		color: #414141;
 		line-height: 40px;
 		margin-bottom: 27px;
 		font-weight: 300;
@@ -17,13 +17,13 @@
 
 <?php if($this->action != 'admin_search'):?>
 <div class="pagecontent">
-  <h2 class="header">MODUL KEUANGAN</h2>
-  <h4 class="subheader">LIST KEUANGAN</h4>
-<div id="a" class="book imageNavinside">
-  &nbsp;
-  <div class="loadinginsidetitle" style="display:none;">
-    <img src="<?php echo $this->webroot;?>img/el2/loading-new.gif"> 
-  </div>
+  	<h2 class="header">MODUL KEUANGAN</h2>
+  	<h4 class="subheader">LIST KEUANGAN</h4>
+	<div id="a" class="book imageNavinside">
+  	&nbsp;
+  	<div class="loadinginsidetitle" style="display:none;">
+    	<img src="<?php echo $this->webroot;?>img/el2/loading-new.gif"> 
+  	</div>
 </div>
 
 <?php endif;?>
@@ -47,14 +47,36 @@ echo $this->renderElement('header_paginate');
 <div class="mask1 content_transaction_container contenareaajax">
 <?php endif;?><!--This is only show if not search-->
   <div class="transp actions">
-    
-    <h2 class="totalkas"> Total Kas Bulan <?php echo date('F');?> = Rp <?php echo $total_this_month_transaction;?></h2>
-    <h2 class="totalkas"> Total Kas Tahun <?php echo date('Y');?> = Rp <?php echo $total_thisyear_transaction;?></h2>
-    <div class="buttonlist_finance" style="margin-top: 17px;
-  margin-bottom: 35px;">
-    	<button id="dofindfinance" type="submit" style="float:left;margin-left: 2px;" class="info normal printview opennewtab" href="<?php echo $this->webroot?>admin/rents/financelist_print">Print</button>
-    	<button id="dofindfinance" type="submit" style="float:left;margin-left: 10px;" class="info normal opensametab" href="<?php echo $this->webroot?>admin/rents/finance_download">Export</button>
-    </div>
+  	<div class="headersearchfinance" style="display:none;">
+  		<div class="tags">
+	    	<?php echo $form->create('Rent',array('action'=>'admin_financesearch','enctype'=>'multipart/form-data','autocomplete'=>'off'));?>
+	        
+	        <div class="inputdatefinance">
+	        <?php
+	          echo $form->input('tgl_awal',array('type'=>'date','label'=>'Tanggal awal'));
+	        ?>
+	        </div>
+
+	        <div class="inputdatefinance">
+	        <?php
+	          echo $form->input('tgl_akhir',array('type'=>'date','label'=>'Tanggal akhir'));
+	        ?>
+	        </div>
+
+	        <button id="dofindfinance" type="submit" style="float:left;" class="default large">Submit</button>
+	        <?php echo $form->end();?>
+		</div>
+  	</div>
+
+    <div class="headerfinance metro">
+	    <h2 class="totalkas"> Total Kas Bulan <?php echo date('F');?> = Rp <?php echo $total_this_month_transaction;?></h2>
+	    <h2 class="totalkas"> Total Kas Tahun <?php echo date('Y');?> = Rp <?php echo $total_thisyear_transaction;?></h2>
+	    <div class="buttonlist_finance" style="margin-top: 17px;
+	  margin-bottom: 35px;">
+	    	<button id="dofindfinance" type="submit" style="float:left;margin-left: 2px;" class="btn info normal printview opennewtab" href="<?php echo $this->webroot?>admin/rents/financelist_print">Print</button>
+	    	<button id="dofindfinance" type="submit" style="float:left;margin-left: 10px;" class="info normal opensametab" href="<?php echo $this->webroot?>admin/rents/finance_download">Export</button>
+	    </div>
+	</div>
 
     <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>

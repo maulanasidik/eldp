@@ -1,12 +1,12 @@
 <style type="text/css">
 	.metro h2.totalkas {
 		font-size: 21px;
-		color: #fff;
-		line-height: 40px;
-		margin-bottom: 27px;
-		font-weight: 300;
-		width: 300px;
-		float: left;
+	  color: #414141;
+	  line-height: 40px;
+	  margin-bottom: 27px;
+	  font-weight: 300;
+	  width: 350px;
+	  float: left;
 	}
 	.bottom_line{
 		clear: both;
@@ -21,17 +21,20 @@
 <?php
 echo $this->renderElement('header_paginate'); 
 ?>
-<div class="mask1 content_transaction_container">
+<div class="mask1 content_transaction_container transp actions">
   <div class="actions">
     
-    <h2 class="totalkas" style="width:550px;"> Total Kas dari <?php echo $tgl_awal_set;?> s/d <?php echo $tgl_akhir_set;?> = Rp <?php echo $total_this_transaction;?></h2>
-
+    <div class="headerfinance metro">
+    	<h2 class="totalkas" style="width:550px;"> Total Kas dari <?php echo $tgl_awal_set;?> s/d <?php echo $tgl_akhir_set;?> = Rp <?php echo $total_this_transaction;?></h2>
+	
     <div class="buttonlist_finance">
     	<button id="dofindfinance" type="submit" style="float:left;" class="info normal printview opennewtab" href="<?php echo $this->webroot?>admin/rents/financesearch_print?startdate=<?php echo $tgl_awal_query_set;?>&enddate=<?php echo $tgl_akhir_query_set;?>&startdate_print=<?php echo $tgl_awal_set;?>&enddate_print=<?php echo $tgl_akhir_set;?>">Print</button>
     	<button id="dofindfinance" type="submit" style="float:left;" class="info normal printview opennewtab" href="<?php echo $this->webroot?>admin/rents/finance_search_download?startdate=<?php echo $tgl_awal_query_set;?>&enddate=<?php echo $tgl_akhir_query_set;?>&startdate_print=<?php echo $tgl_awal_set;?>&enddate_print=<?php echo $tgl_akhir_set;?>">Export</button>
     </div>
 
-    <table class="table hovered" cellpadding="0" cellspacing="0">
+    </div>
+
+    <table class="table hovered tables" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
 		<th class="smallest-row"><?php echo ('ID Transaksi');?></th>
@@ -173,4 +176,8 @@ $(".opennewtab").click(function() {
 
   return false;
 });
+</script>
+
+<script type="text/javascript">
+	$('.pagecontent h4.subheader').text('Hasil pencarian dari <?php echo $tgl_awal_set;?> s/d <?php echo $tgl_akhir_set;?>');
 </script>

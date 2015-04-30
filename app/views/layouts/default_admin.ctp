@@ -222,6 +222,35 @@
   </fieldset>
   <?php echo $form->end();?>
 </div>
+
+
+
+<div class="searchcontainer_transaksi metro" style="display:none;opacity:0;">
+  <div id="loadinginsidebox">
+    <h1>LOADING</h1>
+    <p > Silahkan Menunggu</p>
+    <img src="<?php echo $this->webroot;?>img/el2/Preloader_5.gif"/>
+  </div>
+  <div id="contentinsidebox">
+    <header>
+      <h1 style="font-size:30px;margin-top:20px;">Pencarian Buku</h1>
+      <p style="text-align:center;color:#5f5f5f;"></p>
+    </header>
+    <?php echo $form->create('Book',array('action'=>'admin_search','enctype'=>'multipart/form-data','class'=>'formsearch'));?>
+    <fieldset>
+      <div class="input-control text" style="width:100%;">
+          <input type="text" placeholder="ketikkan pencarian disini, kemudian tekan enter" name="data[Book][keyword]" class="searchforminput clearwhenreload" autocomplete="off"/>
+          <button type="submit" class="btn-search" id="searchbooksubmit"></button>
+      </div>
+      
+    </fieldset>
+    <?php echo $form->end();?>
+  </div>
+</div>
+
+
+
+
   
   <?php echo $javascript->link('jquery.form.min.js'); ?>
 
@@ -359,7 +388,7 @@
           overlay: true,
           draggable:true,
           shadow: true,
-          flat: false,
+          flat: true,
           width:Datawidth,
           height:400,
           padding: 10,
@@ -1549,6 +1578,28 @@
 
 
 
+    $(".showdialogwindow").on('click', function(){
+      $('.loadingpagecontainer').show();
+      console.log('clicked');
+      var thisurl = $(this).data('url');
+      var titlePage = $(this).data('title');
+
+      var Datawidth = $(this).data('width');
+      var Dataheight = $(this).data('height');
+
+      
+      $.ajax({
+        type: "GET",
+        dataType: "html",
+        cache: false,
+        url: thisurl, // preview.php
+        //data: $("#postp").serializeArray(), // all form fields
+        success: function (data) {
+          showdialog(data,titlePage,Datawidth,Dataheight);
+        } // success
+      }); // ajax*/
+
+    });
   </script>
   
 

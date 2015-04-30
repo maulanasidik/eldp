@@ -618,7 +618,7 @@ class PhotosController extends AppController {
 			$this->Photo->create();
 			if ($this->Photo->save($this->data)) {
 				$status = "true";
-				//$lastID  = $this->User->getInsertID();
+				$lastID  = $this->Photo->getInsertID();
 				
 				$sequence = $this->Photo->Sequence->read(null, $idsequence);
 				$current=$sequence['Sequence']['value']+1;
