@@ -623,7 +623,7 @@ textarea{
 }
 input,select,textarea{
 	margin:3px 3px 3px 3px;
-	padding: 5px 100px;
+	padding: 5px 23px;
 }
 input[type=button], button{
 	/*background-color:#555;
@@ -1183,6 +1183,7 @@ td.actions a:hover{
 
 #pratile{
 	display: block !important;
+	position: relative;
 }
 
 #pratile li{
@@ -1262,4 +1263,24 @@ td.actions a:hover{
 }
 .frame a,.tabs a{
 	text-decoration: none;
+}
+
+h1.slide{
+	margin-left: 45px;
+}
+
+span.slides{
+	margin-left: 35px;
+}
+
+small.sml{
+	font-size: 27px;
+	margin-left: 19px;
+}
+#logoedusoft{
+	position: absolute;
+	top: 0;
+	display: block !important;
+	left: 50%;
+	margin-left: 29px;
 }

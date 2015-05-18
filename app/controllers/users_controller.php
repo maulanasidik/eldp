@@ -282,9 +282,18 @@ function beforeFilter(){
 		$this->set('late', $late);
 
 
+		$notifcondition = array('Notification.active'=>1, 'Notification.expiration_date >'=>date('Y-m-d', strtotime('now')));
+		$notifactive = $this->User->Notification->find('count',array('conditions'=>$notifcondition,'order' => array('Notification.expiration_date' => 'DESC')));
+		$this->set('notifactive', $notifactive);
+
+
 		
 		$cur_year =  date('Y');
 		$this->set('cur_year',$cur_year);
+
+
+		$this->set('actionActive','index');
+		
 		
 		$this->layout = 'default_admin';
 

@@ -39,14 +39,14 @@ echo $this->renderElement('header_paginate');
       <thead>
         <tr class="title_table">
           
-          <th>ID</th>
-          <th class="largest-row">Judul</th>
-          <th>Kategori</th>
-          <th>Penerbit</th>
-          <th>Pengarang</th>
-          <th>Jumlah Buku</th>
-          <th>Status</th>
-          <th class="actions">Actions</th>
+          <th style="color:#fff;">ID</th>
+          <th class="largest-row" style="color:#fff;">Judul</th>
+          <th style="color:#fff;">Kategori</th>
+          <th style="color:#fff;">Penerbit</th>
+          <th style="color:#fff;">Pengarang</th>
+          <th style="color:#fff;">Jumlah Buku</th>
+          <th style="color:#fff;">Status</th>
+          <th class="actions" style="color:#fff;">Actions</th>
         </tr>
       </thead>
       <tbody id="plantable">

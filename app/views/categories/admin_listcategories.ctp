@@ -94,7 +94,7 @@
         
       </tbody>
     </table>
-    <div class="bottom_line1">&nbsp;</div>
+    
   </div>
 </div>
 

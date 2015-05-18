@@ -15,12 +15,12 @@ echo $this->renderElement('header_paginate');
       <thead>
         <tr class="title_table">
           
-          <th class="largest-row"><a href="#">ID</a></th>
-          <th><a href="#">Banner</a></th>
-          <th><a href="#">Judul</a></th>
-          <th><a href="#">Aktif</a></th>
-          <th><a href="#">Didaftarkan</a></th>
-          <th class="actions"><a>Actions</a></th>
+          <th class="largest-row" style="color:#fff;">ID</th>
+          <th style="color:#fff;">Banner</th>
+          <th style="color:#fff;">Judul</th>
+          <th style="color:#fff;">Aktif</th>
+          <th style="color:#fff;">Didaftarkan</th>
+          <th class="actions" style="color:#fff;">Actions</th>
         </tr>
       </thead>
       <tbody id="bannertable">

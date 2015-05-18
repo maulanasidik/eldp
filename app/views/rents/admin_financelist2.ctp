@@ -20,7 +20,7 @@
 		margin-top: 10px;
 	}
 	.headerfinance{
-		padding: 15px 0 15px 180px;
+		padding: 15px 0 15px 70px;
 	}
 </style>
 
@@ -55,7 +55,7 @@ date_default_timezone_set('Asia/Jakarta');
 	    <div class="tags">
 	    	<?php echo $form->create('Rent',array('action'=>'admin_financesearch','enctype'=>'multipart/form-data','autocomplete'=>'off'));?>
 	        
-	        <div class="inputdatefinance">
+	        <div class="inputdatefinance" style="margin-lfet:  margin-left: -7px;">
 	        <?php
 	          echo $form->input('tgl_awal',array('type'=>'date','label'=>'Tanggal awal'));
 	        ?>

@@ -8,9 +8,9 @@
 
   <td class="actions">
     
-    <a class="gotolinkanchor" data-title="View Photo" data-width="500px" data-height="375" href="<?php echo $this->webroot;?>admin/photos/view/<?php echo $entry['Photo']['id'] ?>"><i class="  icon-new-tab on-right"></i> Lihat</a>
+    <a class="gotolinkanchor" data-title="View Photo" data-width="500px" data-height="375" data-url="<?php echo $this->webroot;?>admin/photos/view/<?php echo $entry['Photo']['id'] ?>"><i class="  icon-new-tab on-right"></i> Lihat</a>
 
-            <a class="gotolinkanchor" data-title="Edit Photo" data-width="500px" data-height="375" href="<?php echo $this->webroot;?>admin/photos/edit/<?php echo $entry['Photo']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
+            <a class="gotolinkanchor" data-title="Edit Photo" data-width="500px" data-height="375" data-url="<?php echo $this->webroot;?>admin/photos/edit/<?php echo $entry['Photo']['id'] ?>"><i class=" icon-pencil on-right"></i> Edit</a>
 
             <div>
       <?php echo $form->create('Photo',array('id'=>'photoform_do_fav_'.$entry['Photo']['id'],'action'=>'admin_do_favorite','style'=>'margin:0;'));
@@ -20,16 +20,16 @@
       <?php if($entry['Photo']['favorite'] == 0):?>
 
         <?php echo $form->input('PhotoFav.action',array('type'=>'hidden','value'=>1));?>
-        <a id="do_fav_<?php echo $entry['Photo']['id']?>" href="#"><i class=" icon-star on-right"></i> Jadikan Fav</a>
+        <a id="do_fav_<?php echo $entry['Photo']['id']?>"><i class=" icon-star on-right"></i> Jadikan Fav</a>
       <?php else:?>
         <?php echo $form->input('PhotoFav.action',array('type'=>'hidden','value'=>0));?>
-        <a id="do_fav_<?php echo $entry['Photo']['id']?>" href="#"><i class=" icon-star on-right"></i>  Buang dari Fav</a>
+        <a id="do_fav_<?php echo $entry['Photo']['id']?>"><i class=" icon-star on-right"></i>  Buang dari Fav</a>
       <?php endif;?>
       <?php echo $form->end();?>
 
     </div>
             
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/photos/delete/<?php echo $entry['Photo']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/photos/delete/<?php echo $entry['Photo']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
   </td>
 
 

@@ -12,7 +12,7 @@
 }
 .inputdatefinance{
   
-  width:250px;
+  width:405px;
   float: left;
 }
 .metro .inputdatefinance .date, .date1{
@@ -21,6 +21,16 @@
 .tags:after{
   clear: both;
   display: none;
+}
+
+#parent div {
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#parent div:first-child {
+    display:block;
 }
 </style>
 
@@ -36,16 +46,19 @@
       <li><a class="gotolink showdialogwindow" data-url="<?php echo $this->webroot;?>admin/profiles/edit" data-title="Profile Perpustakaan" data-width="900px" data-height="400px">Profile Perpustakaan</a>
       </li>
 
-      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/banners/listbanner" data-title="Profile Perpustakaan" data-width="900px" data-height="375px">Banner Management</a>
+      <li><a class="gotolink showdialogwindow" data-url="<?php echo $this->webroot;?>admin/banners/listbanner" data-title="Banner Management" data-width="900px" data-height="400px">Banner Management</a>
       </li>
 
-      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/plans/listplan" data-title="Pengadaan Buku" data-width="900px" data-height="375px">Pengadaan Buku</a>
+      <!--li><a class="gotolink showdialogwindow" data-url="<?php echo $this->webroot;?>admin/banners/listbanner" data-title="Profile Perpustakaan" data-width="900px" data-height="375px">Banner Management</a>
+      </li-->
+
+      <li><a class="gotolink showdialogwindow" data-url="<?php echo $this->webroot;?>admin/plans/listplan" data-title="Pengadaan Buku" data-width="900px" data-height="375px">Pengadaan Buku</a>
       </li>
 
-      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/users/changepassword" data-title="Ubah Sandi" data-width="900px" data-height="375px">Ubah Sandi</a>
+      <li><a class="gotolink showdialogwindow" data-url="<?php echo $this->webroot;?>admin/users/changepassword" data-title="Ubah Sandi" data-width="900px" data-height="375px">Ubah Sandi</a>
       </li>
 
-      <li><a class="gotolink" href="<?php echo $this->webroot;?>admin/profiles/changeip" data-title="Edit IP Address" data-width="900px" data-height="375px">Alamat Server</a>
+      <li><a class="gotolink showdialogwindow" data-url="<?php echo $this->webroot;?>admin/profiles/changeip" data-title="Edit IP Address" data-width="900px" data-height="375px">Alamat Server</a>
       </li>
 
   </ul>
@@ -55,6 +68,8 @@
     <a href="#!/"><img src="<?php echo $this->webroot;?>client/images/Logo-ELDP-User-05.png" style="width: 232px; height: 70px;"></a>
   </li>
 
+
+
   <li style="width: 104px; height: 104px;  margin:-15px 0px 0px 367px;">
     <a href="#!/url=<?php echo $this->webroot;?>admin/logout"><img src="<?php echo $this->webroot;?>client/images/icon-logout-08.png" ></a>
   </li>
@@ -63,14 +78,40 @@
 
             <a id="tileSlideshow0-0_35--0_25" class="tile tileSlideshow group0 noClick" style="margin-top: 5px; margin-left: 56px; width: 190px; height: 190px; display: block; background: rgb(103, 59, 183);" data-pos="5-56-190" data-n="0"> 
         
-            <div class="imgWrapperBack" style="width: 192px; height: 192px; left: 165.901654111111px; top: 0px;"><img src="" alt=""></div>
-          <div class="imgWrapper" style="width: 192px; height: 192px; left: -26.0983458888889px; top: 0px;"><img src="" alt=""></div>
-             
+            <div id="parent">
+
+              <div class="tile-content">
+                <h1 class="slide">
+                  <span id="livereport_booking" class="slides">
+                  <?php          
+                 echo $booking; 
+                 ?>
+                  </span>
+                  </br><small class="sml"> Buku</small></br></h1>
+                  <span class="ket" >Yang Sedang Di Booking</span>
+              </div>
+              <div class="tile-content">
+                <h1 class="slide">
+                  <span id="livereport_back" class="slides">
+                  <?php
+                    echo $back;
+                   ?></span>
+                  </br><small class="sml"> Buku</small></br></h1>
+                  <span class="ket" style="margin-left:13px;">Harus Dikembalikan Hari Ini</span>
+              </div>
+              <div class="tile-content">
+                <h1 class="slide">
+                  <span id="livereport_late" class="slides">
+                  <?php
+                    echo $late;
+                   ?></span>
+                  </br><small class="sml"> Buku</small></br></h1>
+                  <span class="ket">Terlambat Dikembalikan</span>
+              </div>
+            </div>
                
-            <script>slideshowTiles["tileSlideshow0-0_35--0_25"] = [[],[],[],"slide-right",5000]</script>
             
-            <img id="sl_arrowRight" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowRight.png" alt="Slideshow - right">
-            <img id="sl_arrowLeft" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowLeft.png" alt="Slideshow - left">
+            
             <div class="tileLabelWrapper bottom">
               <div class="tileLabel bottom" style="border-bottom-color:#11528f;">Live Report</div>
           </div> 
@@ -101,13 +142,33 @@
 
             <a href="#!/url=<?php echo $this->webroot;?>admin/notifications/listnotifications" id="tileSlideshow0-4_25--0_25" class="tile tileSlideshow group0" style="margin-top: 5px; margin-left: 680px; width: 190px; height: 190px; display: block; background: rgb(103, 59, 183);" data-pos="5-680-190" data-n="0"> 
         
-        
+
+              <div class="tile-content">
+                <h1 class="slide">
+                  <span class="slides">
+                  <?php          
+                 echo $notifactive; 
+                 ?>
+                  </span>
+                  </br><small style="font-size:20px; margin-left: -13px;"> Pengumuman</small></br></h1>
+                  <span class="ket" style="margin-left: 41px;">Yang Sedang Aktif</span>
+              </div>
+
+              <script>    function Divs() {
+        var divs= $('#parent div'),
+            now = divs.filter(':visible'),
+            next = now.next().length ? now.next() : divs.first(),
+            speed = 1;
+    
+        now.fadeOut(speed);
+        next.fadeIn(speed);
+    }
+    
+    $(function () {
+        setInterval(Divs, 5500);
+    });</script>
          
-             
-          <script>slideshowTiles["tileSlideshow0-4_25--0_25"] = [['<?php echo $this->webroot;?>img/el2/Book-01.png'],[],[],"slide-right",5000]</script>
-          
-          <img id="sl_arrowRight" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowRight.png" alt="Slideshow - right">
-          <img id="sl_arrowLeft" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowLeft.png" alt="Slideshow - left">
+
           <div class="tileLabelWrapper bottom" >
             <div class="tileLabel bottom" style="border-bottom-color:#11528f;">Anouncement</div>
           </div> 
@@ -177,25 +238,19 @@
 
 
             <a href="#!/url=<?php echo $this->webroot;?>admin/categories/listcategories/1" id="tileScroll0_0-2_25" class="tile tileScroll group0 " style="margin-top: 405px; margin-left: 0px; width: 310px; height: 70px; display: block; background: rgb(205, 220, 57);" data-pos="405-0-310"> 
-            <div class="tileTitle" style="margin-left:10px;">Kategori</div>
+            <div class="tileTitle" style="margin-left:105px; margin-top:14px; color: #673BB7;">Kategori</div>
           <div class="divScroll" style="margin-left: 12px; opacity: 1; margin-top: 0px;"></div>
             <script>scrollTile("0_0-2_25",[],2500,0)</script>
             </a>
 
 
-            <a href="#!/url=<?php echo $this->webroot;?>admin/users/listmembers" id="tileSlideshow0-2_25-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 360px; width: 70px; height: 70px; display: block; background: rgb(0, 187, 212);" data-pos="405-360-70" data-n="0"> 
-          
-          <div class="imgWrapperBack" style="width: 72px; height: 72px; left: 60.662592px; top: 0px;">
-            <h2>Thi is</h2>
-          </div>
-        <div class="imgWrapper" style="width: 72px; height: 72px; left: -11.337408px; top: 0px;">
-          <h2>Thi at</h2>
-        </div>
 
-          <script>slideshowTiles["tileSlideshow0-2_25-2_25"] = [[],[],[],"slide-right",5000]</script>
+            <a href="#!/url=<?php echo $this->webroot;?>admin/users/listmembers" id="tileSlideshow0-2_25-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 360px; width: 70px; height: 70px; display: block; background: #FFD600;" data-pos="405-360-70" data-n="0"> 
+
           
-          <img id="sl_arrowRight" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowRight.png" alt="Slideshow - right">
-          <img id="sl_arrowLeft" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowLeft.png" alt="Slideshow - left">
+            <div class="imageCenterer" style="width: 46px; margin-left: 13px; margin-top: 2px;">
+              <img src="<?php echo $this->webroot;?>img/el2/member.png" alt="" title="" style="width:104.5px;"> 
+            </div>
 
           <div class="tileLabelWrapper bottom">
             <div class="tileLabel bottom" style="border-bottom-color:#11528f;">Member</div>
@@ -203,20 +258,11 @@
           </a>
 
 
-            <a href="#!/url=<?php echo $this->webroot;?>admin/photos/listphotos" id="tileSlideshow0-3-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 480px; width: 70px; height: 70px; display: block; background: rgb(0, 187, 212);" data-pos="405-480-70" data-n="0"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/photos/listphotos" id="tileSlideshow0-3-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 480px; width: 70px; height: 70px; display: block; background: #FFD600;" data-pos="405-480-70" data-n="0"> 
         
-          <div class="imgWrapperBack" style="width: 72px; height: 72px; left: 59.4682083333333px; top: 0px;">
-            <img src="" alt="">
-          </div>
-        <div class="imgWrapper" style="width: 72px; height: 72px; left: -12.5317916666667px; top: 0px;">
-          <img src="" alt="">
-        </div>
-         
-             
-          <script>slideshowTiles["tileSlideshow0-3-2_25"] = [[],[],[],"slide-right",5000]</script>
-          
-          <img id="sl_arrowRight" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowRight.png" alt="Slideshow - right">
-          <img id="sl_arrowLeft" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowLeft.png" alt="Slideshow - left">
+            <div class="imageCenterer" style="width: 46px; margin-left: 13px; margin-top: 3px;">
+                <img src="<?php echo $this->webroot;?>img/el2/foto.png" alt="" title="" style="width:104.5px;"> 
+            </div>
           <div class="tileLabelWrapper bottom">
             <div class="tileLabel bottom" style="border-bottom-color:#11528f;">Foto</div>
           </div> 
@@ -224,7 +270,7 @@
 
 
             <a href="#!/url=<?php echo $this->webroot;?>admin/subjects/listcd" id="tileScroll0_3_75-2_25" class="tile tileScroll group0 " style="margin-top: 405px; margin-left: 600px; width: 310px; height: 70px; display: block; background: rgb(205, 220, 57);" data-pos="405-600-310"> 
-          <div class="tileTitle" style="margin-left:10px;">Pustaka Multimedia</div>
+          <div class="tileTitle" style="margin-left:34px; margin-top:14px; color: #673BB7;">Pustaka Multimedia</div>
         <div class="divScroll" style="margin-left: 12px; opacity: 1; margin-top: 0px;">
         </div>
 
@@ -235,7 +281,7 @@
 
             <a href="#!/url=<?php echo $this->webroot;?>admin/ddcs/listddc" class="tile group0 " style="margin-top: 485px; margin-left: 80px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-80-94"> 
             <div style="line-height:30px; font-weight:300; margin-top:10px; margin-left:10px;">
-            <div style="font-size:27px;line-height:30px;">Kode DDC</div>
+            <div style="font-size:20px; margin-left:-10px; margin-top:37px; line-height:20px;">Kode DDC</div>
           </div>        
           
           </a>
@@ -266,10 +312,20 @@
             <div style="font-size:20px;line-height:20px;">Ebook CR</div>
           </div>
         </a>
+        <img id="logoedusoft" src="<?php echo $this->webroot;?>images/logo-edu-small.png">
         </div>
         <div id="contentWrapper" >
           <div id="content">
           </div>
+
+
         </div>
         
+
+  
+  
   <div id="catchScroll"></div>
+  <script type="text/javascript">
+  $('#logoedusoft').css('display','block');
+  </script>
+
