@@ -63,15 +63,13 @@ echo $form->input('details',array('div'=>false,'label'=>false));
 
 <label>Pilih file Cover</label>
 <?php
-echo $form->input('File.image1', array('label'=>false, 'type'=>'file', 'style'=>
-    'margin-left: -100px'));
+echo $form->input('File.image1', array('label'=>false, 'type'=>'file'));
 ?>
 
 
 <label>Pilih file Video</label>
 <?php
-echo $form->input('file', array('label'=>false, 'type'=>'file', 'style'=>
-    'margin-left: -100px'));
+echo $form->input('file', array('label'=>false, 'type'=>'file'));
 ?>
 </div>
 <div style="clear:both;float:none;margin-bottom:30px;"/>

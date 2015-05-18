@@ -58,7 +58,7 @@ echo $this->renderElement('header_paginate');
 
             
 
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/banners/delete/<?php echo $entry['Banner']['id']?>" ><i class="icon-remove on-right"></i> Hapus</a>
+            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/banners/delete/<?php echo $entry['Banner']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
 
 
 

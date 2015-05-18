@@ -8,9 +8,9 @@
    <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
-            <th><a href="/elips/ddcs/index/page:1/sort:id/direction:asc">Id</a></th>
-            <th><a href="/elips/ddcs/index/page:1/sort:kode_ddc/direction:desc">Kode Ddc</a></th>
-            <th><a href="/elips/ddcs/index/page:1/sort:keterangan/direction:asc">Keterangan</a></th>
+            <th>Id</th>
+            <th>Kode Ddc</th>
+            <th>Keterangan</th>
             <th class="actions">Actions</th>
         </tr>
       </thead>

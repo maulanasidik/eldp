@@ -4,6 +4,7 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="" />
 <title>Elibrary Client</title>
+<link rel="icon" type="image/ico" href="<?php echo $this->webroot;?>images/logo64x64.ico">
 
 <?php
 echo $html->css('/client/css/foundation.min.css');
@@ -47,19 +48,19 @@ echo $javascript->link('jquery.jplayer.min.js');
       <div class="buttonview">
         <ul class="button-group radius">
         
-        <li><a id="homeicon" class="button" href="<?php echo $this->webroot;?>" title="#"></a></li>
+        <li><a id="homeicon" class="button" href="<?php echo $this->webroot;?>" title="BERANDA"></a></li>
         <li>
         <?php if($favoriteactive=='true'):?>
-        <a id="favorite" class="button active" href="<?php echo $this->webroot;?><?php echo $controllerActive;?>/<?php echo $actionactive;?><?php if(!empty($activecat)){echo '/'.$activecat; }?>" title="#"></a>
+        <a id="favorite" class="button active" href="<?php echo $this->webroot;?><?php echo $controllerActive;?>/<?php echo $actionactive;?><?php if(!empty($activecat)){echo '/'.$activecat; }?>" title="BUKAN FAVORITE"></a>
         <?php else:?>
-        <a id="favorite" class="button" href="<?php echo $this->webroot;?><?php echo $controllerActive;?>/<?php echo $actionactive;?><?php if(!empty($activecat)){echo '/'.$activecat; }?>/?favorite=true" title="#"></a>  
+        <a id="favorite" class="button" href="<?php echo $this->webroot;?><?php echo $controllerActive;?>/<?php echo $actionactive;?><?php if(!empty($activecat)){echo '/'.$activecat; }?>/?favorite=true" title="FAVORITE"></a>  
         
         <?php endif;?>
         </li>
 
-        <li><a id="comment" href="#comment1" class="ebookpopup button"></a></li>
-        <li><a id="listview1"  class="button" href="#" title="#"></a></li>
-        <li><a id="listview" class="active button" href="#" title="#"></a></li>
+        <li><a id="comment" href="#comment1" class="ebookpopup button" title="KOMENTAR"></a></li>
+        <li><a id="listview1"  class="button" href="#" title="TAMPILAN LIST"></a></li>
+        <li><a id="listview" class="active button" href="#" title="TAMPILAN GRID"></a></li>
         </ul>
         <!--oneset-->
           

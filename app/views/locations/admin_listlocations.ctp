@@ -9,11 +9,11 @@
       
       <thead>
         <tr class="title_table">
-          <th><a href="/elips/locations/index/page:1/sort:id/direction:asc">Id</a></th>
-          <th><a href="/elips/locations/index/page:1/sort:lokasi/direction:asc">Lokasi</a></th>
-          <th><a href="/elips/locations/index/page:1/sort:keterangan/direction:asc">Keterangan</a></th>
-          <th><a href="/elips/books/index/page:1/sort:penerbit/direction:asc">Dibuat</a></th>
-          <th><a href="/elips/books/index/page:1/sort:penerbit/direction:asc">Diubah</a></th>
+          <th>Id</th>
+          <th>Lokasi</th>
+          <th>Keterangan</th>
+          <th>Dibuat</th>
+          <th>Diubah</th>
           <th class="actions">Aksi</th>
         </tr>
       </thead>

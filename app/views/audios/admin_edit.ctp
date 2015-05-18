@@ -120,13 +120,13 @@
             ?>
             <label>Ganti file Cover</label>
             <?php
-            echo $form->input('File.image', array('label'=>false, 'type'=>'file', 'style'=>'margin-left: -100px'));
+            echo $form->input('File.image', array('label'=>false, 'type'=>'file'));
             ?>
           <br/>
           
           <label>Ganti file Audio</label>
           <?php
-          echo $form->input('file', array('label'=>false, 'type'=>'file', 'style'=>'margin-left: -100px'));
+          echo $form->input('file', array('label'=>false, 'type'=>'file'));
           ?>
           </div>
 </div>

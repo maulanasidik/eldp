@@ -30,13 +30,13 @@
     ?>
     </div>
 
-    <div>
+    <div style="margin-top:51px">
 
 
     <?php
     echo '<span>Logo anda sebelumnya</span><br/>';
     if($profile['Profile']['image']!=null){?>
-        <img width="50" src="<?php echo $this->webroot.$profile['Profile']['image'];?>"/>
+        <img width="80" src="<?php echo $this->webroot.$profile['Profile']['image'];?>" style="margin-left:109px;"/>
     <?php }else{
         echo '<p>Belum ada logo</p>';
     }

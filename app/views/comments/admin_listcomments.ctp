@@ -1,20 +1,36 @@
-
+<?php if($this->action != 'admin_search'):?>
 <div class="pagecontent">
   <h2 class="header">KOMENTAR</h2>
-<div id="a" class="comments imageNavinside">&nbsp;</div>
+  <h4 class="subheader">LIST KOMENTAR</h4>
+<div id="a" class="comments imageNavinside">
+  &nbsp;
+  <div class="loadinginsidetitle" style="display:none;">
+    <img src="<?php echo $this->webroot;?>img/el2/loading-new.gif"> 
+  </div>
+</div>
 
+<?php endif;?>
+
+<?php 
+if($this->action != 'admin_search'){
+echo $this->renderElement('header_paginate'); 
+}
+?>
+
+<?php if($this->action != 'admin_search'):?> 
 <div class="mask1 contenareaajax">
+<?php endif;?><!--This is only show if not search-->
   <div class="transp actions">
    <table class="tables hovered" cellpadding="0" cellspacing="0">
       
       <thead>
         <tr class="title_table">
 
-          <th><a href="/elips/comments/index/page:1/sort:id/direction:asc">Id</a></th>                        
-          <th><a href="/elips/comments/index/page:1/sort:username/direction:asc">Member</a></th>
-          <th><a href="/elips/comments/index/page:1/sort:nama/direction:asc">Comment</a></th>
+          <th>Id</th>                        
+          <th>Member</th>
+          <th>Comment</th>
           <!--<th><a href="/elips/comments/index/page:1/sort:lahir/direction:asc">Status</a></th>-->
-          <th><a href="/elips/comments/index/page:1/sort:lahir/direction:asc">Created</a></th>
+          <th>Created</th>
           <th class="actions">Actions</th>
         </tr>
       </thead>
@@ -41,7 +57,22 @@
           </td>
         </tr>
 
-        <script type="text/javascript">
+        <?php endforeach;?>
+
+        
+        
+      </tbody>
+    </table>
+    <div class="bottom_line1">&nbsp;</div>
+  </div>
+
+<?php 
+if($this->action != 'admin_search'){
+echo $this->renderElement('paginate',array('data_scope' => 'commentscope','data_background'=>'#c53437')); 
+}
+?>
+
+<script type="text/javascript">
           
 
         $(document).ready(function() { 
@@ -72,19 +103,24 @@
         }
         
         </script>
-        <?php endforeach;?>
-        
+
+<!--add to search function-->
+<?php if(($this->action == 'admin_search')):
+?> 
+<script>
+$('.pageinfo p').text('Ditemukan <?php echo count($listbook);?> data untuk hasil pencarian "'+window.querysearch+'"');
+</script>
+<?php endif;?>
+
+<!--add to search function-->
 
 
-        
-      </tbody>
-    </table>
-    <div class="bottom_line1">&nbsp;</div>
-  </div>
 </div>
 
-<?php 
+<?php
+if($this->action != 'admin_search'):
 
 echo $this->renderElement('menu_tabs_footer'); 
 
+endif;
 ?>

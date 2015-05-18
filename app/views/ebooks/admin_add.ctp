@@ -1,7 +1,9 @@
 <?php echo $form->create('Ebook',array('enctype'=>'multipart/form-data'));?>
 <fieldset>
-<div style="float:left;width:415px;margin-right:40px;">
+<div style="float:left;width:350px;margin-right:40px;">
+
     
+
     <label>Judul Buku</label>
     <div class="input-control text" data-role="input-control">
     <?php
@@ -80,8 +82,7 @@
 
     <label>Pilih file ebook</label>
     <?php
-    echo $form->input('Ebook.ebookfiles', array('div'=>false,'label'=>false, 'type'=>'file', 'style'=>
-    'margin-left: -96px'));
+    echo $form->input('Ebook.ebookfiles', array('div'=>false,'label'=>false, 'type'=>'file'));
     ?>
 
     <?php endif;?>
@@ -107,7 +108,7 @@
 
 (function() {
     
-function showResponse2(responseText, statusText, xhr, $form)  { 
+function showResponse(responseText, statusText, xhr, $form)  { 
 
     setTimeout(function() {
         $('.loadingpagecontainer').hide();
@@ -119,8 +120,7 @@ function showResponse2(responseText, statusText, xhr, $form)  {
         }
         $("#EbookAddForm").clearForm();
         $(".formcontainer").show();
-        $('#ebooktable').prepend(responseText);
-        console.log('sfdsdfsdf'+responseText)
+        $('#ebookscope #ebooktable').prepend(responseText);
         
     }, 2000);
         
@@ -130,7 +130,7 @@ function showResponse2(responseText, statusText, xhr, $form)  {
 var options2 = {
     //target:        '#output2',   // target element to update
     //beforeSubmit:  showRequest,  // pre-submit callback
-    success:       showResponse2  // post-submit callback
+    success:       showResponse  // post-submit callback
 };
 
 // bind form2 using ajaxSubmit

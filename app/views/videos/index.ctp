@@ -5,14 +5,21 @@
 
     <div class="itemisotope">
     <!--oneset-->
-      <div class="box" id="#">
-        <div class="postim1">
-          <a href="#dataebook<?php echo $book['Video']['id']?>" class="ebookpopup ebookpopup1">
-            <img src="<?php echo $this->webroot?><?php echo $book['Video']['cover']?>" style="width:100px;height:152px;">
+      <div class="box" >
+        <div class="postim" >
+          <div class="btitle">
+            <h2><a href="#" rel="bookmark" title="Permanent Link to "><?php echo $book['Video']['title']?></a></h2>
+          </div>
+          <span class="inwriter"><?php echo $book['Video']['produksi']?></span>
+          <a href="#dataebook_<?php echo $book['Video']['id']?>" class="ebookpopup">
+            <img class="bookcover" src="<?php echo $this->webroot.$book['Video']['cover']?>" alt="" style="display: inline-block; left: 0px; top: 0px; width: 150px;">
           </a>
           <a class="play ebookpopup1 ebookpopup" href="#dataebook<?php echo $book['Video']['id']?>" style="opacity: 1;">1</a>
-          
         </div>
+
+
+
+
       </div>
 
       <div class="box-home">

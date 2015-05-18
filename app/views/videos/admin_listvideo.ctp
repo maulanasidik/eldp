@@ -23,13 +23,13 @@ echo $this->renderElement('header_paginate');
    <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
-          <th><a href="#">ID Pustaka</a></th>
-          <th><a href="#">Cover</a></th>
-          <th><a href="#">Judul</a></th>
-          <th><a href="#">Kategori</a></th>
-          <th><a href="#">Sutradara</a></th>
-          <th><a href="#">Produksi</a></th>
-          <th><a href="#">Tahun</a></th>
+          <th>ID Pustaka</th>
+          <th>Cover</th>
+          <th>Judul</th>
+          <th>Kategori</th>
+          <th>Sutradara</th>
+          <th>Produksi</th>
+          <th>Tahun</th>
           <th class="actions">Actions</th>
         </tr>
       </thead>

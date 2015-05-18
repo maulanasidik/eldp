@@ -409,7 +409,7 @@
       </li>
 
       <li>
-        <a href="section-iconbox-4" class="icon icon-search"><span>Pencarian</span></a>
+        <a href="section-iconbox-4" class="icon icon-search" data-modul="comment" data-titlemodul="Comment" data-desc="Masukkan query pencarian berdasarkan title, pengarang, penerbit, <br/>atau deskripsi"><span>Pencarian</span></a>
       </li>
       
       <?php endif;?>

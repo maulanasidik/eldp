@@ -24,11 +24,11 @@ echo $this->renderElement('header_paginate');
       <thead>
         <tr class="title_table">
           <th>ID Pustaka</th>
-          <th class="largest-row"><a href="/elips/books/index/page:1/sort:name/direction:asc">Judul</a></th>
-          <th><a href="#">Kategori</a></th>
-          <th><a href="#">Penerbit</a></th>
-          <th><a href="#">Pengarang</a></th>
-          <th><a href="#">Tahun</a></th>
+          <th class="largest-row">Judul</th>
+          <th>Kategori</th>
+          <th>Penerbit</th>
+          <th>Pengarang</th>
+          <th>Tahun</th>
           <th class="actions">Actions</th>
         </tr>
       </thead>

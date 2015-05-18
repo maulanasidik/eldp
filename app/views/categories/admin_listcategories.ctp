@@ -15,16 +15,16 @@
       <thead>
         <tr class="title_table">
           <th>Id</th>
-          <th class="largest-row"><a href="/elips/books/index/page:1/sort:kategori/direction:asc">Kategori</a></th>
+          <th class="largest-row">Kategori</th>
           <?php if($tipe == 1):?>
-          <th><a href="/elips/books/index/page:1/sort:penerbit/direction:asc">Lama Peminjaman</a></th>
-          <th><a href="/elips/books/index/page:1/sort:penerbit/direction:asc">Denda Terlambat</a></th>
-          <th><a href="/elips/books/index/page:1/sort:penerbit/direction:asc">DDC</a></th>
-          <th><a href="/elips/books/index/page:1/sort:penerbit/direction:asc">Lokasi</a></th>
+          <th>Lama Peminjaman</th>
+          <th>Denda Terlambat</th>
+          <th>DDC</th>
+          <th><Lokasi</th>
           <?php endif;?>
-          <th><a href="/elips/books/index/page:1/sort:penerbit/direction:asc">Keterangan</a></th>
-          <th><a href="/elips/books/index/page:1/sort:penerbit/direction:asc">Dibuat</a></th>
-          <th><a href="/elips/books/index/page:1/sort:penerbit/direction:asc">Diubah</a></th>
+          <th>Keterangan</th>
+          <th>Dibuat</th>
+          <th>Diubah</th>
           <th class="actions">Aksi</th>
         </tr>
       </thead>

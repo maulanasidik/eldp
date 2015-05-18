@@ -25,14 +25,14 @@ echo $this->renderElement('header_paginate');
       <thead>
         <tr class="title_table">
           <th>ID</th>
-          <th class="largest-row"><a href="#">Judul</a></th>
-          <th><a href="#">Kategori</a></th>
-          <th><a href="#">Penerbit</a></th>
-          <th><a href="#">Pengarang</a></th>
-          <th><a href="#">Dipinjam</a></th>
-          <th><a href="#">Rusak</a></th>
-          <th><a href="#">Tersedia</a></th>
-          <th><a href="#">Letak</a></th>
+          <th class="largest-row">Judul</th>
+          <th>Kategori</th>
+          <th>Penerbit</th>
+          <th>Pengarang</th>
+          <th>Dipinjam</th>
+          <th>Rusak</th>
+          <th>Tersedia</th>
+          <th>Letak</th>
           <th class="actions">Actions</th>
         </tr>
       </thead>

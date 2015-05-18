@@ -24,12 +24,12 @@ echo $this->renderElement('header_paginate');
     <thead>
       <tr class="title_table">
 
-        <th><a href="#">Id Pustaka</a></th>
-        <th><a href="#">Judul</a></th>
-        <th><a href="#">Kategori</a></th>
-        <th><a href="#">Penerbit</a></th>
-        <th><a href="#">Pengarang</a></th>
-        <th><a href="#">Tahun</a></th>
+        <th>Id Pustaka</th>
+        <th>Judul</th>
+        <th>Kategori</th>
+        <th>Penerbit</th>
+        <th>Pengarang</th>
+        <th>Tahun</th>
         <th class="actions">Actions</th>
       </tr>
     </thead>
