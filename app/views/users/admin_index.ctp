@@ -101,11 +101,10 @@
 
             <a href="#!/url=<?php echo $this->webroot;?>admin/notifications/listnotifications" id="tileSlideshow0-4_25--0_25" class="tile tileSlideshow group0" style="margin-top: 5px; margin-left: 680px; width: 190px; height: 190px; display: block; background: rgb(103, 59, 183);" data-pos="5-680-190" data-n="0"> 
         
-          <div class="imgWrapperBack" style="width: 192px; height: 192px; left: 163.415616px; top: 0px;"><img src="" alt=""></div>
-        <div class="imgWrapper" style="width: 192px; height: 192px; left: -28.584384px; top: 0px;"><img src="" alt=""></div>
+        
          
              
-          <script>slideshowTiles["tileSlideshow0-4_25--0_25"] = [[],[],[],"slide-right",5000]</script>
+          <script>slideshowTiles["tileSlideshow0-4_25--0_25"] = [['<?php echo $this->webroot;?>img/el2/Book-01.png'],[],[],"slide-right",5000]</script>
           
           <img id="sl_arrowRight" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowRight.png" alt="Slideshow - right">
           <img id="sl_arrowLeft" src="<?php echo $this->webroot;?>img/el2/arrows/simpleArrowLeft.png" alt="Slideshow - left">
@@ -187,10 +186,10 @@
             <a href="#!/url=<?php echo $this->webroot;?>admin/users/listmembers" id="tileSlideshow0-2_25-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 360px; width: 70px; height: 70px; display: block; background: rgb(0, 187, 212);" data-pos="405-360-70" data-n="0"> 
           
           <div class="imgWrapperBack" style="width: 72px; height: 72px; left: 60.662592px; top: 0px;">
-            <img src="" alt="">
+            <h2>Thi is</h2>
           </div>
         <div class="imgWrapper" style="width: 72px; height: 72px; left: -11.337408px; top: 0px;">
-          <img src="" alt="">
+          <h2>Thi at</h2>
         </div>
 
           <script>slideshowTiles["tileSlideshow0-2_25-2_25"] = [[],[],[],"slide-right",5000]</script>
