@@ -204,7 +204,6 @@
   </div><!-- /container -->
 
   </div>
-  <footer> <a title='Metro UI template' href='' target='_blank'></a> ©HASAMA.Corps</footer>
   
 
 <div class="searchcontainer metro" style="display:none;opacity:0;">

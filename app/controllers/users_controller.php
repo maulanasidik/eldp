@@ -290,6 +290,10 @@ function beforeFilter(){
 		
 		$cur_year =  date('Y');
 		$this->set('cur_year',$cur_year);
+
+
+		$this->set('actionActive','index');
+		
 		
 		$this->layout = 'default_admin';
 

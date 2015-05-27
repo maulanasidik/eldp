@@ -1183,6 +1183,7 @@ td.actions a:hover{
 
 #pratile{
 	display: block !important;
+	position: relative;
 }
 
 #pratile li{
@@ -1275,4 +1276,11 @@ span.slides{
 small.sml{
 	font-size: 27px;
 	margin-left: 19px;
+}
+#logoedusoft{
+	position: absolute;
+	top: 0;
+	display: block !important;
+	left: 50%;
+	margin-left: 29px;
 }

@@ -68,6 +68,8 @@
     <a href="#!/"><img src="<?php echo $this->webroot;?>client/images/Logo-ELDP-User-05.png" style="width: 232px; height: 70px;"></a>
   </li>
 
+
+
   <li style="width: 104px; height: 104px;  margin:-15px 0px 0px 367px;">
     <a href="#!/url=<?php echo $this->webroot;?>admin/logout"><img src="<?php echo $this->webroot;?>client/images/icon-logout-08.png" ></a>
   </li>
@@ -140,6 +142,7 @@
 
             <a href="#!/url=<?php echo $this->webroot;?>admin/notifications/listnotifications" id="tileSlideshow0-4_25--0_25" class="tile tileSlideshow group0" style="margin-top: 5px; margin-left: 680px; width: 190px; height: 190px; display: block; background: rgb(103, 59, 183);" data-pos="5-680-190" data-n="0"> 
         
+
               <div class="tile-content">
                 <h1 class="slide">
                   <span class="slides">
@@ -165,6 +168,7 @@
         setInterval(Divs, 5500);
     });</script>
          
+
           <div class="tileLabelWrapper bottom" >
             <div class="tileLabel bottom" style="border-bottom-color:#11528f;">Anouncement</div>
           </div> 
@@ -240,7 +244,9 @@
             </a>
 
 
+
             <a href="#!/url=<?php echo $this->webroot;?>admin/users/listmembers" id="tileSlideshow0-2_25-2_25" class="tile tileSlideshow group0 " style="margin-top: 405px; margin-left: 360px; width: 70px; height: 70px; display: block; background: #FFD600;" data-pos="405-360-70" data-n="0"> 
+
           
             <div class="imageCenterer" style="width: 46px; margin-left: 13px; margin-top: 2px;">
               <img src="<?php echo $this->webroot;?>img/el2/member.png" alt="" title="" style="width:104.5px;"> 
@@ -306,10 +312,20 @@
             <div style="font-size:20px;line-height:20px;">Ebook CR</div>
           </div>
         </a>
+        <img id="logoedusoft" src="<?php echo $this->webroot;?>images/logo-edu-small.png">
         </div>
         <div id="contentWrapper" >
           <div id="content">
           </div>
+
+
         </div>
         
+
+  
+  
   <div id="catchScroll"></div>
+  <script type="text/javascript">
+  $('#logoedusoft').css('display','block');
+  </script>
+
