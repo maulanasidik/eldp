@@ -4536,17 +4536,17 @@ p.pengarangdetail{
 
 #tablet{
     position: absolute;
-    top: -65px;
-    right: -17px;
+    top: -61px;
+    right: -20px;
     z-index: 6;
-    width: 709px;
-    height: 470px;
+    width: 673px;
+    height: 449px;
 }
 #notes{
-    width: 610px;
+    width: 555px;
     position: absolute;
     left: -7px;
-    top: -11px;
+    top: 30px;
     
 }
 #libraryidentity{
@@ -4602,10 +4602,10 @@ p.pengarangdetail{
 }
 #box {
     position: absolute;
-    width: 605px;
-    height: 410px;
-    right: 190px;
-    top: 300px;
+    width: 570px;
+    height: 391px;
+    right: 119px;
+    top: 172px;
     z-index: 5;
 }
 ul.bxslider{
@@ -4633,12 +4633,12 @@ html{
 }
 #pengumuman{
     position: absolute;
-    top: 330px;
-    left: 112px;
+    top: 277px;
+    left: 155px;
 }
 #pengumuman #content{
     position: absolute;
-    top: 5px;
+    top: 6px;
     left: 3px;
     margin-left: 0;
     padding: 0;
@@ -4678,8 +4678,22 @@ html{
    
     position: absolute;
     right: 450px;
-    bottom: 30px;
+    top: 555px;
 
 }
 
+h4.peng{
+    font-size: 11px;
+    margin-bottom: -4px;
+}
 
+h2.um{
+    font-size: 12px;
+    margin-bottom: 7px;;
+}
+
+#mybook {
+  width: 364px !important;
+  height: 264px !important;
+  margin-top: 0px;
+}

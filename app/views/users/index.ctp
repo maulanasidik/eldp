@@ -6,27 +6,39 @@
 <div id="digiclock"></div>-->
 <img src="<?php echo $this->webroot;?>client/images/Logo-ELDP-User-05.png" id="logolanding"/>
 <div id="pengumuman">
-<img src="<?php echo $this->webroot;?>client/images/notes.png" id="notes"/>
+<img src="<?php echo $this->webroot;?>client/images/notes.png" id="notes" style="width: 398px; height: 272px; position: absolute; top: -4px; left: -1px;"/>
   <section id="content" class="sub-content">
     
     
       <!--<div id="menu"></div>-->
       <div id="mybook">
           <div title="first page" rel="first chapter">
-            <img src="<?php echo $this->webroot;?>client/images/pen.png"/>
+            <img src="<?php echo $this->webroot;?>client/images/pen.png" style="width: 137px;"/>
               <!--<h3>1 jQuery Booklet</h3>
               <p>This is a sample booklet! It uses all of the default options, but feel free to explore all the possibilities in the <a href="options">options</a> section.</p>
               <h3>Content Variety</h3>
               <p>You can place any sort of html elements inside of your booklet pages. There is no limit to the possibilities you can create. Even using simple options, you can have elaborate displays.</p>-->
           </div>
           <div title="second page">
-              <h3 style="font-size:20px;">Pengumuman 1</h3>
+              <h3 style="font-size:13px; margin-top: -9px;">Pengumuman 1</h3>
               <p></p>
               <ul>
-                  <li><h4>Total Buku terdaftar:</h4><h2><?php echo $totalbook;?></h2></li>
-                  <li><h4>Total Video terdaftar:</h4><h2><?php echo $totalvideo;?></h2></li>
-                  <li><h4>Total Audio terdaftar:</h4><h2><?php echo $totalaudio; ?></h2></li>
-                  <li><h4>Total Ebook terdaftar:</h4><h2><?php echo $totalebook; ?></h2></li>
+                  <li>
+                    <h4 class="peng">Total Buku terdaftar:</h4>
+                    <h2 class="um"><?php echo $totalbook;?></h2>
+                  </li>
+                  <li>
+                    <h4 class="peng">Total Video terdaftar:</h4>
+                    <h2 class="um"><?php echo $totalvideo;?></h2>
+                  </li>
+                  <li>
+                    <h4 class="peng">Total Audio terdaftar:</h4>
+                    <h2 class="um"><?php echo $totalaudio; ?></h2>
+                  </li>
+                  <li>
+                    <h4 class="peng">Total Ebook terdaftar:</h4>
+                    <h2 class="um"><?php echo $totalebook; ?></h2>
+                  </li>
                   
               </ul>
               <p></p>
@@ -42,7 +54,7 @@
                 <?php
                 echo '<span></span><br/>';
                 if($notif['Notification']['dir']!=null){?>
-                    <img width="245" src="<?php echo $this->webroot.$notif['Notification']['dir'];?>"/>
+                    <img width="45" src="<?php echo $this->webroot.$notif['Notification']['dir'];?>"/>
                 <?php }else{
                     echo '<p class="fontred">No Image</p>';
                 }
@@ -93,7 +105,12 @@ Telpon 021-: 8295455, Fax. 021-8351782</p>
   <div class="sponsortext">
     <p>In previous article I explained 6 jQuery News ticker plugin examples, 4 SpellChecker Plugin examples, 4 jQuery Price Range slider examples, 11+ Best jQuery Countdown timer plugins, 12+ Best jQuery Drag and Drop Plugins, 11+ best jQuery Scroll to top plugins and many articles relating to jQuery Plugins, JQuery, Ajax, asp.net, SQL Server etc. Now I will explain best jQuery clock plugins (analog & digital) examples.</p>
   </div>-->
-  <a href="#" id="gotoslidelanding2" class="" style="margin-top:450px; float:right; right:40px; font-size: 20px;">Mulai</a>
+  <a href="#" id="gotoslidelanding2" class="" style="margin-top: 0px;
+  float: right;
+  position: absolute;
+  top: 307px;
+  right: 93px;
+  font-size: 20px;">Mulai</a>
 </div>
 
   </div>
@@ -348,8 +365,8 @@ jQuery(document).ready(function() {
       var options = $.extend({}, $.fn.booklet.defaults, {
           pagePadding: 15,
           menu: "#menu",
-          height: 405,
-          width:570,
+          height: 254,
+          width:370,
           speed : 1500,
           pagePadding:20,
           pageSelector: true,
