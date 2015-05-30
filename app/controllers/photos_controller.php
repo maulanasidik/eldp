@@ -615,6 +615,8 @@ class PhotosController extends AppController {
 
 		if (!empty($this->data)) {
 
+			$this->data['Photo']['tahun'] = $this->data['Photo']['tahunBerdiri']['year']; 
+
 			$this->Photo->create();
 			if ($this->Photo->save($this->data)) {
 				$status = "true";

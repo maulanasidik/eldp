@@ -1,6 +1,6 @@
-<div>
+<div clas="">
 
-  <a class="actions gotolinkondialog" data-url="<?php echo $this->webroot;?>admin/banners/add" data-title="Tambah Banner" data-width="900px" data-height="375px"><i class=" icon-plus on-right" href="#"></i> Tambah Banner</a>
+  <a class="actions gotolinkondialog" data-url="<?php echo $this->webroot;?>admin/banners/add" data-title="Tambah Banner" data-width="900px" data-height="375px" style="float:right;cursor:pointer;"><i class=" icon-plus on-left" href="#"></i> Tambah Banner</a>
 
 </div>
 
@@ -10,7 +10,7 @@ echo $this->renderElement('header_paginate');
 }
 ?> 
 <div class="mask1">
-  <div class="actions">
+  <div class="actions contentinsideframe">
     <table class="table hovered" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
@@ -32,7 +32,7 @@ echo $this->renderElement('header_paginate');
 
         <tr class="altrow " id="banner_record_<?php echo $entry['Banner']['id']?>">
 
-          <td style="color:black"><?php echo $entry['Banner']['id_pustaka']?></td>
+          <td style="color:black"><?php echo $entry['Banner']['id']?></td>
           <td><img src="<?php echo $this->webroot.$entry['Banner']['file']?>"/ width="50"></td>
           <td style="color:black"><?php echo $entry['Banner']['title']?></td>
           <td style="color:black"><?php $aktif = $entry['Banner']['active'];
@@ -50,15 +50,15 @@ echo $this->renderElement('header_paginate');
           <td class="actions">
 
 
-            <a class="gotolinkondialog" data-url="<?php echo $this->webroot;?>admin/banners/view/<?php echo $entry['Banner']['id'] ?>" data-title="Lihat Pengadaan Buku" data-width="900px" data-height="375px"><i class=" icon-new-tab on-right" href="#"></i> Lihat</a>
+            <a class="gotolinkondialog" data-url="<?php echo $this->webroot;?>admin/banners/view/<?php echo $entry['Banner']['id'] ?>" data-title="Detail Banner" data-width="900px" data-height="375px"><i class=" icon-new-tab on-right" href="#"></i> Lihat</a>
 
             
             
-            <a class="gotolinkondialog" data-url="<?php echo $this->webroot;?>admin/banners/edit/<?php echo $entry['Banner']['id'] ?>" data-title="Edit Pengadaan Buku" data-width="900px" data-height="375px"><i class=" icon-pencil on-right" href="#"></i> Edit</a>
+            <a class="gotolinkondialog" data-url="<?php echo $this->webroot;?>admin/banners/edit/<?php echo $entry['Banner']['id'] ?>" data-title="Edit Banner" data-width="900px" data-height="375px"><i class=" icon-pencil on-right" href="#"></i> Edit</a>
 
             
 
-            <a class="deleteitemtable" href="<?php echo $this->webroot;?>admin/banners/delete/<?php echo $entry['Banner']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
+            <a class="deleteitemtable" data-url="<?php echo $this->webroot;?>admin/banners/delete/<?php echo $entry['Banner']['id']?>" ><i class="icon-cross on-right"></i> Hapus</a>
 
 
 
@@ -151,11 +151,13 @@ $(document).ready(function() {
           var clickedItem = $(this);
           $('.loadingpagecontainer').show();
           
+          var thisurl = $(this).data('url');
+
           $.ajax({
             type: "POST",
             dataType: "json",
             cache: false,
-            url: this.href, // preview.php
+            url: thisurl, // preview.php
             //data: $("#postp").serializeArray(), // all form fields
             success: function (data) {
               console.log(data);

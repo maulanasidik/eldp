@@ -946,54 +946,11 @@ class BooksController extends AppController {
 		}
 		
 		
-		$this->FusionCharts->create
-					(
-						'Column3D Chart',
-						array
-						(
-							'type' => 'Column3D',
-							'width' => 600,
-							'height' => 350,
-							'id' => ''
-						)
-					);
-		
-				$this->FusionCharts->setChartParams
-					(
-						'Column3D Chart',
-						array
-						(
-							'caption' => 'Jumlah Buku Baru per tahun',
-							'xAxisName' => 'Bulan',
-							'yAxisName' => 'Unit',
-							'decimalPrecision' => '0',
-							'formatNumberScale' => '0'
-						)
-					);
-		
-				$this->FusionCharts->addChartData
-					(
-						'Column3D Chart',
-						array
-						(
-							array('value' => $jumlahbulan1, 'params' => array('name' => 'Jan')),
-							array('value' => $jumlahbulan2, 'params' => array('name' => 'Feb')),
-							array('value' => $jumlahbulan3, 'params' => array('name' => 'Mar')),
-							array('value' => $jumlahbulan4, 'params' => array('name' => 'Apr')),
-							array('value' => $jumlahbulan5, 'params' => array('name' => 'May')),
-							array('value' => $jumlahbulan6, 'params' => array('name' => 'Jun')),
-							array('value' => $jumlahbulan7, 'params' => array('name' => 'Jul')),
-							array('value' => $jumlahbulan8, 'params' => array('name' => 'Aug')),
-							array('value' => $jumlahbulan9, 'params' => array('name' => 'Sep')),
-							array('value' => $jumlahbulan10, 'params' => array('name' => 'Oct')),
-							array('value' => $jumlahbulan11, 'params' => array('name' => 'Nov')),
-							array('value' => $jumlahbulan12, 'params' => array('name' => 'Dec'))
-						)
-					);
-					
-			$this->set('year',$year);
-			$this->set(compact('jumlahbulan1','jumlahbulan2','jumlahbulan3','jumlahbulan4','jumlahbulan5','jumlahbulan6','jumlahbulan7','jumlahbulan8','jumlahbulan9','jumlahbulan10','jumlahbulan11','jumlahbulan12'));
-			$this->layout = 'default_blank';
+		$this->set('actionActive','chart_new_book');
+							
+		$this->set('year',$year);
+		$this->set(compact('jumlahbulan1','jumlahbulan2','jumlahbulan3','jumlahbulan4','jumlahbulan5','jumlahbulan6','jumlahbulan7','jumlahbulan8','jumlahbulan9','jumlahbulan10','jumlahbulan11','jumlahbulan12'));
+		$this->layout = 'default_blank';
 	}
 
 

@@ -21,6 +21,11 @@
   echo $html->css('dropzone'); 
   echo $html->css('styles'); 
   
+  echo $html->css('/js/amcharts/plugins/export/export.css');
+
+  
+  
+  
   ?>
 
 
@@ -148,6 +153,14 @@
 
   echo $javascript->link('jquery.jplayer.min.js');
   echo $javascript->link('/client/js/jwplayer.js');
+
+  echo $javascript->link('amcharts/amcharts.js');
+  echo $javascript->link('amcharts/serial.js');
+  echo $javascript->link('amcharts/plugins/export/export.js');
+  echo $javascript->link('amcharts/themes/light.js');
+
+
+
   
   ?>
 

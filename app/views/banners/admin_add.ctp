@@ -61,12 +61,54 @@ function showResponse(responseText, statusText, xhr, $form)  {
         }
         $("#BannerAddForm").clearForm();
         $(".formcontainer").show();
-        $('#bannertable').prepend(responseText);
+        
+
+        var titlePage = "List Banner";
+
+        var Datawidth = '900px';
+        var Dataheight = '375px';
+
+        $.ajax({
+          type: "GET",
+          dataType: "html",
+          cache: false,
+          url: '<?php echo $this->webroot;?>admin/banners/listbanner', // preview.php
+          //data: $("#postp").serializeArray(), // all form fields
+          success: function (data) {
+            showdialogondialog(data,titlePage,Datawidth,Dataheight);
+          } // success
+        }); // ajax
         
     }, 2000);
-        
+      
     
 } 
+
+
+function showdialogondialog(datashow,titlePage,Datawidth,Dataheight){
+
+  //$('.loadingpagecontainer').hide();
+  
+  $.Dialog({
+      overlay: true,
+      draggable:true,
+      shadow: true,
+      flat: false,
+      width:Datawidth,
+      height:Dataheight,
+      padding: 10,
+      icon: '<span class="icon icon-book"></span>',
+      title: titlePage,
+      shadow: true,
+      onShow: function(_dialog){
+          var content = datashow;
+        $.Dialog.content(content);
+        $('.window-overlay .shadow').css('overflow','scroll');
+        $('.window-overlay .shadow').css('maxHeight','600px');
+          
+      }
+  });
+}
 
 var options2 = {
     //target:        '#output2',   // target element to update

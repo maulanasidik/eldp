@@ -24,9 +24,6 @@ display: table-cell;
     <?php
     echo $form->input('id',array('div'=>false,'label'=>false));
     ?>
-
-            
-
             <label>Judul</label>
 
             <div class="input-control text" data-role="input-control">

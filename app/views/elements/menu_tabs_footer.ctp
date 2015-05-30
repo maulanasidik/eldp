@@ -6,7 +6,7 @@
         <a href="#" class="logoel2"><span class="logoelinside">Elibrary</span></a>
       </li>
 
-      <?php if ($this->params['controller'] == 'rents' && $actionActive !='financelist' && $actionActive !='financelist2'):?>
+      <?php if ($this->params['controller'] == 'rents' && $actionActive !='financelist' && $actionActive !='financelist2' && $actionActive !='chart' && $actionActive !='loose' && $actionActive !='chart_loose') :?>
       <li>
         <a class="icon icon-plus " id="addtransaksi"  data-modul="user" data-titlemodul="ID Member" data-desc="Untuk memulai peminjaman, atau pengembalian, silahkan masukkan<br/> ID member, atau scan barcode member." data-width="500px" data-height="375px" >
           <span style="margin-left: -17px;">Tambah Transaksi</span></a>
@@ -86,7 +86,7 @@
       </li>
       <?php endif;?>
       
-      <?php if ($this->params['controller'] == 'books'):?>
+      <?php if($this->params['controller'] == 'books' && $actionActive !='chart_new_book'):?>
         <li>
           <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/books/add" data-title="Tambah Buku" data-width="900px" data-height="375px" ><span>Tambah Buku</span></a>]
         </li>
@@ -120,7 +120,7 @@
 
       <?php if ($this->params['controller'] == 'ebooks'):?>
       <li>
-        <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/ebooks/add" data-title="Tambah Ebook" data-width="900px" data-height="500px" ><span>Tambah Ebook</span></a>]
+        <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/ebooks/add/2" data-title="Tambah Ebook" data-width="900px" data-height="500px" ><span>Tambah Ebook</span></a>]
       </li>
 
 
@@ -438,8 +438,34 @@
       
       <?php endif;?>
 
+      <?php if(($this->params['controller'] == 'books' && $actionActive =='chart_new_book') || ($this->params['controller'] == 'rents' && ($actionActive =='chart' || $actionActive =='chart_loose'))):?>
+
+        <?php if ($this->params['controller'] == 'rents' && $actionActive =='chart'):?>
+          <li class="tab-current">
+        <?php else:?>
+          <li>
+        <?php endif;?>
+        <a class="icon icon-stats-dots" href="#!/url=<?php echo $this->webroot;?>admin/rents/chart"><span>Peminjaman</span></a>
+        </li>
+        
+        <?php if (($this->params['controller'] == 'books') && ($actionActive =='chart_new_book')):?>
+          <li class="tab-current">
+        <?php else:?>
+          <li>
+        <?php endif;?>
+        <a class="icon icon-stats-dots" href="#!/url=<?php echo $this->webroot;?>admin/books/chart"><span>Buku Baru</span></a>
+        </li>
 
 
+        <?php if ($this->params['controller'] == 'rents' && $actionActive =='chart_loose'):?>
+          <li class="tab-current">
+        <?php else:?>
+          <li>
+        <?php endif;?>
+        <a class="icon icon-stats-dots" href="#!/url=<?php echo $this->webroot;?>admin/rents/chart_loose"><span>Buku Hilang/Rusak</span></a>
+        </li> 
+
+      <?php endif;?>
     </ul>
   </nav>
 </div>

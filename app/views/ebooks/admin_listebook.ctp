@@ -19,7 +19,7 @@ echo $this->renderElement('header_paginate');
 <div class="mask1 contenareaajax">
 <?php endif;?><!--This is only show if not search-->
 
-  <div class="transp actions">
+  <div class="transp actions" id="ebookscope">
     <table class="tables hovered" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
