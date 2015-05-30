@@ -94,6 +94,8 @@
       
       
       <script type="text/javascript">
+
+      
       scale = 150;
       spacing = 10;
       theme = '';

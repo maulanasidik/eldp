@@ -1192,11 +1192,12 @@ td.actions a:hover{
 }
 
 .dropdown-menu {
-  margin-left: -17px;
+  margin-left: 10px;
   min-width: 150px;
   width: 200px;
   font-size: 17px;
   font-weight: 600;
+  
 }
 
 
@@ -1289,4 +1290,21 @@ small.sml{
 	background: rgba(255,255,255,0.6);
 	padding: 10px 18px;
 	color: #000;
+}
+
+.css-shapes-preview{ 
+    position: relative; 
+    height: 200px; 
+    width: 200px; 
+    background-color: #f28600; 
+    border-radius: 150px; 
+    color: #fff;
+    text-align: center;
+  	padding-top: 75px;
+  	font-size: 1.5em;
+  	margin: 0 auto;
+  	margin-top: 30px;
+}
+.css-shapes-preview:hover{
+	background-color: #0060c2;
 }

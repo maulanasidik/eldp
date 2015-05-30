@@ -4,19 +4,20 @@ class AppController extends Controller {
 	//var $components = array('Auth','Cookie','RequestHandler');
  	var $helpers = array('Form','Html','Time','Javascript','Ajax','FusionCharts.FusionCharts','Waktuindo');
  	
- 	var $components = array('FusionCharts.FusionCharts');
-	
+ 	var $components = array('FusionCharts.FusionCharts','Session');
+
+
 	//tambah patch
 	var $_User = array();
 
 
 	function beforeFilter() {
 		// if admin url requested
-		if(isset($this->params['admin']) && $this->params['admin']) {
+		if(isset($this->params['admin']) || $this->params['admin']) {
 			// check user is logged in
 			if( !$this->Session->check('User') ) {
 				$this->Session->setFlash('Anda harus login terlebih dahulu.',true);
-			//	$this->redirect(array('controller'=>'users','action'=>'login'));
+				$this->redirect(array('controller'=>'users','action'=>'admin_login'));
 			}
 
 			// save user data

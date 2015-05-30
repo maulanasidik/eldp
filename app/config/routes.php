@@ -44,7 +44,7 @@
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 	//tambah patch
-	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
-	Router::connect('/admin/logout', array('controller' => 'users', 'action' => 'logout'));
+	Router::connect('/admin/users/login', array('controller' => 'users', 'action' => 'login'));
+	Router::connect('logout', array('controller' => 'users', 'action' => 'logout'));
 
 ?>

@@ -71,7 +71,7 @@
 
 
   <li style="width: 104px; height: 104px;  margin:-15px 0px 0px 367px;">
-    <a href="#!/url=<?php echo $this->webroot;?>admin/logout"><img src="<?php echo $this->webroot;?>client/images/icon-logout-08.png" ></a>
+    <a href="#!/url=<?php echo $this->webroot;?>logout"><img src="<?php echo $this->webroot;?>client/images/icon-logout-08.png" ></a>
   </li>
   
 </div>
@@ -307,7 +307,7 @@
         </a>
 
 
-            <a href="#!/url=typography.php" class="tile group0 " style="margin-top: 485px; margin-left: 720px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-720-94"> 
+            <a href="#!/url=<?php echo $this->webroot;?>admin/ebooks/cr" class="tile group0 " style="margin-top: 485px; margin-left: 720px; width: 94px; height: 94px; display: block; background: rgb(103, 59, 183);" data-pos="485-720-94"> 
             <div style="line-height:30px; font-weight:300; margin-top:40px; margin-left:5px;">
             <div style="font-size:20px;line-height:20px;">Ebook CR</div>
           </div>

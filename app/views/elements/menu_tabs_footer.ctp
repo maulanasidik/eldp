@@ -118,7 +118,7 @@
         </li>
       <?php endif;?>
 
-      <?php if ($this->params['controller'] == 'ebooks'):?>
+      <?php if ($this->params['controller'] == 'ebooks' && $actionActive !='ebookcr'):?>
       <li>
         <a class="icon icon-plus showdialogwindow" data-url="<?php echo $this->webroot;?>admin/ebooks/add/2" data-title="Tambah Ebook" data-width="900px" data-height="500px" ><span>Tambah Ebook</span></a>]
       </li>

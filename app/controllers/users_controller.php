@@ -8,6 +8,7 @@ function beforeFilter(){
 	//tambah patch
 	parent::beforeFilter();
 	//$this->Auth->allow('login');
+	
 }
 
 	function signup(){

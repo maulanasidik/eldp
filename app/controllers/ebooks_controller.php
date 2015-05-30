@@ -173,6 +173,15 @@ class EbooksController extends AppController {
 		$this->layout = 'default_blank';
 	}
 
+
+	function admin_cr(){
+		$this->Ebook->recursive = 0;
+
+		
+		$this->set('actionActive','ebookcr');
+		$this->layout = 'default_blank';
+	}
+
 	function bookcategory(){
 		$this->Category->recursive = 0;
 		$bookcategory = $this->Ebook->Category->find('all');
