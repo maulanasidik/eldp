@@ -18,7 +18,7 @@
 		<?php echo $html->image('illustrator.jpg',array('id'=>'main'));?>
 		<div id="content">
 			<div class="header">
-			<h2 class="">Selamat Datang di INSTALASI Applikasi</h2>
+			<h2 class="">Selamat Datang di INSTALASI Applikasi <br/><?php echo $appLicationName;?></h2>
 			
 			</div>
 			<div class="menu" id="install">
