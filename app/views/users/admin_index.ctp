@@ -71,7 +71,7 @@
 
 
   <li style="width: 104px; height: 104px;  margin:-15px 0px 0px 367px;">
-    <a href="#!/url=<?php echo $this->webroot;?>logout"><img src="<?php echo $this->webroot;?>client/images/icon-logout-08.png" ></a>
+    <a href="#!/url=<?php echo $this->webroot;?>logout" id="logout_btn"><img src="<?php echo $this->webroot;?>client/images/icon-logout-08.png" ></a>
   </li>
   
 </div>
@@ -327,5 +327,10 @@
   <div id="catchScroll"></div>
   <script type="text/javascript">
   $('#logoedusoft').css('display','block');
+  $('#logout_btn').on('click',function(){
+    window.location.href = '<?php echo $this->webroot;?>users/logout';  
+  });
+  
+
   </script>
 
