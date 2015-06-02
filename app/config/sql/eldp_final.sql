@@ -829,6 +829,8 @@ CREATE TABLE `profiles` (
   `nama_pustakawan` varchar(255) DEFAULT NULL,
   `kepala_pustakawan` varchar(255) DEFAULT NULL,
   `email` varchar(32) DEFAULT NULL,
+  `license_key` varchar(255) DEFAULT NULL,
+  `val_sync` varchar(255) DEFAULT NULL,
   `image` varchar(300) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
@@ -838,8 +840,6 @@ CREATE TABLE `profiles` (
 --
 -- Dumping data for table `profiles`
 --
-
-INSERT INTO `profiles` VALUES(1, '192.168.2.9', 'Perpus Purnomojatis', 'Jalan Tali 2 No.5 Rt 007/08 Kotabambuselatan Jakbar ', '56489752', 'Bapak. Adi', 'Bapak. Adi', 'asfsfsf', 'files/profiles/new-logo.png', '2011-03-20 04:16:02', '2015-04-27 16:49:19');
 
 -- --------------------------------------------------------
 

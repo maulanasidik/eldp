@@ -1,10 +1,10 @@
 <?php 
 class AppController extends Controller {
 
-	//var $components = array('Auth','Cookie','RequestHandler');
+	var $components = array('Cookie','Session');
  	var $helpers = array('Form','Html','Time','Javascript','Ajax','Waktuindo');
  	
- 	var $components = array('Session');
+ 	//var $components = array('Session');
 
 
 	//tambah patch

@@ -376,6 +376,7 @@ class InstallController extends InstallAppController {
 							//($license_terminate) ? exit : NULL;
 							break;
 						case 1: // Ok*/
+
 							// write data to session  file
 							$this->Session->write('Install.profile_name', $this->data['Data']['profile_name']);
 							$this->Session->write('Install.profile_alamat', $this->data['Data']['profile_alamat']);
@@ -383,6 +384,8 @@ class InstallController extends InstallAppController {
 							$this->Session->write('Install.profile_tahunBerdiri', $this->data['Data']['profile_tahunBerdiri']);
 							$this->Session->write('Install.profile_status', $this->data['Data']['profile_status']);
 							$this->Session->write('Install.profile_email', $this->data['Data']['profile_email']);
+							$this->Session->write('Install.nama_pustakawan', $this->data['Data']['nama_pustakawan']);
+							$this->Session->write('Install.kepala_pustakawan', $this->data['Data']['kepala_pustakawan']);
 							$this->Session->write('Install.licenseKey', $this->data['Data']['licenseKey']);
 							$this->Session->write('Install.ionoCreated', true);
 							
@@ -396,7 +399,7 @@ class InstallController extends InstallAppController {
 							//hash before save
 							$licValHashed = Security::hash($licValGet, null, true);
 
-							$licValHashed = 'sfsdf3249234234';
+							//$licValHashed = 'sfsdf3249234234';
 							
 							//STOREE!
 							$this->Session->write('Install.licVal', $licValHashed);
@@ -481,6 +484,8 @@ class InstallController extends InstallAppController {
 						$this->Session->write('Install.profile_tahunBerdiri', $this->data['Data']['profile_tahunBerdiri']);
 						$this->Session->write('Install.profile_status', $this->data['Data']['profile_status']);
 						$this->Session->write('Install.profile_email', $this->data['Data']['profile_email']);
+						$this->Session->write('Install.nama_pustakawan', $this->data['Data']['nama_pustakawan']);
+						$this->Session->write('Install.kepala_pustakawan', $this->data['Data']['kepala_pustakawan']);
 						$this->Session->write('Install.licenseKey', $licoff);
 						$this->Session->write('Install.ionoCreated', true);
 
@@ -553,6 +558,10 @@ class InstallController extends InstallAppController {
         $this->pageTitle = __('Step 3: Proses Instalasi', true);
 		$this->Session->write('Install.completeInstall', 0);
 		$this->Session->write('Install.startInstall', true);
+
+		$showdatasubmitted = $this->Session->read('Install');
+		
+		$this->set('showdatasubmitted',$showdatasubmitted);
         
 		
 
@@ -638,10 +647,12 @@ class InstallController extends InstallAppController {
 		if(!$db->isConnected()) {
 			
 		}else{
-			$statement = "INSERT INTO `profiles` VALUES(1, '".$this->Session->read('Install.profile_name')."', '".$this->Session->read('Install.profile_alamat')."', '".$this->Session->read('Install.profile_telp')."', 1987, 1, '".$this->Session->read('Install.profile_email')."', 1, 1, 'img/2011-09-01-200407tut-wuri-handayani.png', '".$today."', '".$today."');";
-			//$statement = "INSERT INTO `profiles` VALUES(1, '".$this->Session->read('Install.profile_name')."', 'Jl. Test', '4444-4444', 1987, 1, 'test@test.com', '4234234', '4234234','img/2011-09-01-200407tut-wuri-handayani.png', '2011-03-20 04:16:02', '2011-03-20 04:16:02');";
-			$db->query($statement);
+			
+			$statement = 'INSERT INTO `profiles` VALUES (1, "192.168.1.2", "'.$this->Session->read('Install.profile_name').'", "'.$this->Session->read('Install.profile_alamat').'", "'.$this->Session->read('Install.profile_telp').'", "'.$this->Session->read('Install.nama_pustakawan').'", "'.$this->Session->read('Install.kepala_pustakawan').'", "'.$this->Session->read('Install.profile_email').'", "'.$this->Session->read('Install.licenseKey').'", "'.$this->Session->read('Install.licVal').'", "client/images/Logo-ELDP-User-05.png", "'.$today.'", "'.$today.'");';
+			
 			$this->__saveInifile();
+			$db->query($statement);
+			
 		}
 		
 	}
@@ -650,7 +661,7 @@ class InstallController extends InstallAppController {
 		//$content = str_replace('{default_database}', $this->data['Install']['database'], $content);
 		
 		$install = $this->Session->read('Install');
-		$install['date'] = date('Y-m-d H:i:s');
+		//$install['date'] = date('Y-m-d H:i:s');
         $settings = array();
 		foreach ($install as $field => $value) {
 			$settings[] = $field .' = "'. $value .'"';
@@ -669,7 +680,7 @@ class InstallController extends InstallAppController {
         //$content = str_replace('{default_password}', $this->data['Install']['password'], $content);
         //$content = str_replace('{default_database}', $this->data['Install']['database'], $content);
         if($this->File->write($contents) ) {
-			//$this->Session->delete('Install');
+			$this->Session->delete('Install');
         } else {
             $this->Session->setFlash(__('Could not write database.php file.', true));
         }

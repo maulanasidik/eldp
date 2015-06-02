@@ -27,6 +27,10 @@
 		echo $form->year('tahunBerdiri', 1945, 2011, null, array('class'=>'year-set'), 'Pilih Tahun');	
 		echo '</div>';
 		echo $form->input('profile_telp', array('label' => 'Telpon','class'=>'input-normal'));
+
+		echo $form->input('nama_pustakawan', array('label' => 'Petugas Perpustakaan','class'=>'input-normal'));
+
+		echo $form->input('kepala_pustakawan', array('label' => 'Kepala Perpustakaan','class'=>'input-normal'));
 		echo $form->input('profile_email', array('label' => 'Email Admin: ','class'=>'input-normal'));
 		
 		?>
