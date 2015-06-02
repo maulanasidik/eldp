@@ -19,7 +19,7 @@
 	}
 </style>
 <?php
-echo $this->renderElement('header_paginate'); 
+//echo $this->renderElement('header_paginate'); 
 ?>
 <div class="mask1 content_transaction_container transp actions">
   <div class="actions">
@@ -61,7 +61,7 @@ echo $this->renderElement('header_paginate');
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($rents as $rent) : ?>
+        <?php foreach ($this_transaction as $rent) : ?>
         <tr class="altrow ">
 			<td class="smallest-row"><?php echo $rent['Rent']['id']?></td>
 			<td><?php echo $rent['Book']['title']; ?></td>
@@ -164,7 +164,7 @@ echo $this->renderElement('header_paginate');
 
 
 <?php
-echo $this->renderElement('paginate',array('data_scope' => 'financescope','data_background'=>'#007599')); 
+//echo $this->renderElement('paginate',array('data_scope' => 'financescope','data_background'=>'#007599')); 
 ?>
 
 <script type="text/javascript">

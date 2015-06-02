@@ -980,6 +980,51 @@ $('#dofindfinance').on('click', function(e) {
 }); 
 
 
+
+
+$('#dofindtransaction').on('click', function(e) {
+    
+    setTimeout(function() {
+      window.backgroundImageIcon = $('.imageNavinside').css('background-image');
+      $('.imageNavinside').css('background-image', 'none');
+      $('.pagecontent h2.header').text('LOADING');
+      $('.pagecontent h4').text('Silahkan menunggu..');
+      $('.contenareaajax').fadeOut(100);
+      $('.pageinfo').fadeOut(100);
+      
+      
+      $('.loadinginsidetitle').show(0,function(){
+
+        $('.loadinginsidetitle').transition({
+          y:'45px',
+          opacity: 1,
+          duration: 700,
+          easing: 'in',
+
+          complete: function() { 
+            $('#RentAdminSearchhistoryForm').ajaxSubmit(options_history_seacrh);
+          }
+        })
+      });
+    }, 200);
+
+    
+    
+
+    
+    console.log('submitted');
+    
+
+    return false;
+}); 
+
+
+var options_history_seacrh = {
+    //target:        '#output2',   // target element to update
+    //beforeSubmit:  showRequest,  // pre-submit callback
+    success:       showResponse_history_search_home  // post-submit callback
+};
+
 function showResponse_finance_search_home(responseText, statusText, xhr, $form)  { 
 
   setTimeout(function() {
@@ -992,7 +1037,47 @@ function showResponse_finance_search_home(responseText, statusText, xhr, $form) 
           complete: function() { 
             
             $('.pagecontent h2.header').text('Pencarian Transaksi Keuangan');
+            $('.pagecontent h4').text('Hasil Pencarian');
+            setTimeout(function() {
+
+              $('.loadinginsidetitle').hide();
+              $('.pageinfo').fadeIn(100);
+              
+              $('.imageNavinside').css('background-image', window.backgroundImageIcon);
+              $('.contenareaajax').fadeIn(100);
+              $('.containerajaxtable').fadeIn();
+
+              $('.containerajaxtable').html(responseText);
+              //make tab active is search
+              
+              
+            }, 500);
+          }
+        });
+        
+        
+      }, 3000);
+  
+    
+} 
+
+
+
+
+function showResponse_history_search_home(responseText, statusText, xhr, $form)  { 
+
+  setTimeout(function() {
+        $('.loadinginsidetitle').transition({
+          y:'0',
+          opacity: 0,
+          duration: 400,
+          easing: 'out',
+
+          complete: function() { 
             
+            $('.pagecontent h2.header').text('Pencarian Transaksi ');
+            $('.pagecontent h4').text('Hasil Pencarian');
+
             setTimeout(function() {
 
               $('.loadinginsidetitle').hide();

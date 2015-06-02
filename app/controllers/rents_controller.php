@@ -248,6 +248,11 @@ class RentsController extends AppController {
 		$this->set(compact('rents'));
 		
 	}
+
+	function admin_history2(){
+		$this->set('actionActive','history2');
+		$this->layout = 'default_blank';	
+	}
 	
 	function history_advance($print =null) {
 		$this->set('print',$print);

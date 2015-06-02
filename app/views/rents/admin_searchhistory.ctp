@@ -1,12 +1,12 @@
 <style type="text/css">
 	.metro h2.totalkas {
 		font-size: 21px;
-		color: #fff;
-		line-height: 40px;
-		margin-bottom: 27px;
-		font-weight: 300;
-		width: 300px;
-		float: left;
+	  color: #414141;
+	  line-height: 40px;
+	  margin-bottom: 27px;
+	  font-weight: 300;
+	  width: 350px;
+	  float: left;
 	}
 	.bottom_line{
 		clear: both;
@@ -78,19 +78,23 @@ function waktuindo($datawaktu)
     echo"$waktu[2] $bulan $waktu[0]";
 }
 
-echo $this->renderElement('header_paginate'); 
+//echo $this->renderElement('header_paginate'); 
 ?>
-<div class="mask1 content_transaction_container">
+<div class="mask1 content_transaction_container transp actions" id="rentscope">
+
   <div class="actions">
     
     
-
+  	<div class="headerfinance metro">
+  	<h2 class="totalkas" style="width:550px;"> Terdapat <?php echo count($this_transaction);?> Transaksi</h2>
+  		
     <div class="buttonlist_finance">
-    	<button id="dofindtransaction" type="submit" style="float:left;background-color:#EAA741;" class="info normal printview opennewtab yellow" href="<?php echo $this->webroot?>admin/rents/searchhistory_print?startdate=<?php echo $tgl_awal_query_set;?>&enddate=<?php echo $tgl_akhir_query_set;?>&startdate_print=<?php echo $tgl_awal_set;?>&enddate_print=<?php echo $tgl_akhir_set;?>">Print</button>
-    	<button id="dofindtransaction" type="submit" style="float:left;background-color:#EAA741;" class="info normal printview opennewtab yellow" href="<?php echo $this->webroot?>admin/rents/searchhistory_download?startdate=<?php echo $tgl_awal_query_set;?>&enddate=<?php echo $tgl_akhir_query_set;?>&startdate_print=<?php echo $tgl_awal_set;?>&enddate_print=<?php echo $tgl_akhir_set;?>">Export</button>
+    	<button id="dofindtransaction" type="submit" style="float:left;" class="info normal printview opennewtab" href="<?php echo $this->webroot?>admin/rents/searchhistory_print?startdate=<?php echo $tgl_awal_query_set;?>&enddate=<?php echo $tgl_akhir_query_set;?>&startdate_print=<?php echo $tgl_awal_set;?>&enddate_print=<?php echo $tgl_akhir_set;?>">Print</button>
+    	<button id="dofindtransaction" type="submit" style="float:left;" class="info normal printview opennewtab" href="<?php echo $this->webroot?>admin/rents/searchhistory_download?startdate=<?php echo $tgl_awal_query_set;?>&enddate=<?php echo $tgl_akhir_query_set;?>&startdate_print=<?php echo $tgl_awal_set;?>&enddate_print=<?php echo $tgl_akhir_set;?>">Export</button>
     </div>
+	</div>
 
-    <table class="table hovered" cellpadding="0" cellspacing="0">
+    <table class="table hovered tables" cellpadding="0" cellspacing="0">
       <thead>
         <tr class="title_table">
 		<th class="smallest-row"><?php echo ('ID Transaksi');?></th>
@@ -224,7 +228,7 @@ echo $this->renderElement('header_paginate');
 
 
 <?php
-echo $this->renderElement('paginate',array('data_scope' => 'rentscope','data_background'=>'#df9019')); 
+//echo $this->renderElement('paginate',array('data_scope' => 'rentscope','data_background'=>'#df9019')); 
 ?>
 
 <script type="text/javascript">
