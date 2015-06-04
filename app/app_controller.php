@@ -1,10 +1,10 @@
 <?php 
 class AppController extends Controller {
 
-	//var $components = array('Auth','Cookie','RequestHandler');
- 	var $helpers = array('Form','Html','Time','Javascript','Ajax','FusionCharts.FusionCharts','Waktuindo');
+	var $components = array('Cookie','Session');
+ 	var $helpers = array('Form','Html','Time','Javascript','Ajax','Waktuindo');
  	
- 	var $components = array('FusionCharts.FusionCharts','Session');
+ 	//var $components = array('Session');
 
 
 	//tambah patch
@@ -13,11 +13,16 @@ class AppController extends Controller {
 
 	function beforeFilter() {
 		// if admin url requested
-		if(isset($this->params['admin']) || $this->params['admin']) {
+		if(isset($this->params['admin']) && $this->params['admin']) {
 			// check user is logged in
 			if( !$this->Session->check('User') ) {
+<<<<<<< HEAD
 				/*$this->Session->setFlash('Anda harus login terlebih dahulu.',true);
 				$this->redirect(array('controller'=>'users','action'=>'admin_login'));*/
+=======
+				$this->Session->setFlash('Anda harus login terlebih dahulu.',true);
+				$this->redirect(array('controller'=>'users','action'=>'login'));
+>>>>>>> 82015164661a441147c579c7b27f933d28e17dcb
 			}
 
 			// save user data

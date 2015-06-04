@@ -7,9 +7,78 @@ var $name = 'Users';
 function beforeFilter(){
 	//tambah patch
 	parent::beforeFilter();
+	//$this->Auth->allow('logout','__getlic','__ceklicense','login');
 	//$this->Auth->allow('login');
+	$licInfo = $this->__getlic();
+	$this->__ceklicense($licInfo['licVal'],$licInfo['lickey']);
 	
 }
+	
+
+	function __getlic(){
+		$this->User->bindModel(
+	    	array('belongsTo' => 
+		    	array(
+				'Profile' => array(
+		             'className' => 'Profile',
+		             'foreignKey'=> ''
+		         )
+		        )
+		    )
+		);
+		
+		$profils = $this->User->Profile->read(null, 1);
+		$lickey = $profils['Profile']['license_key'];
+		$licVal = $profils['Profile']['val_sync'];
+		
+		$license = array();
+		$license['lickey'] = $lickey;
+		$license['licVal'] = $licVal;
+		//array_push($license, $lickey, $licVal);
+		
+		return $license;
+		
+	}
+	
+	function __ceklicense($getLic,$getIon){
+		
+		//Check License first!!!
+		$zend_id = $this->getZendid();
+		$ion = $getIon;
+		$get_lic = $getLic;
+		//ion:1-6-1-1315771514-c4ca4238znd:M:NA22Q-RNVUA-6TP86-GD6ZNM:FC82D-K2SGF-5ASZ8-F2ED2
+	
+		$get_local_lic = 'ion:'.$ion.'znd:'.$zend_id;
+		$lic_hashed = Security::hash($get_local_lic, null, true);
+	
+		if($get_lic != $lic_hashed){
+			echo '<br>
+			<b style="color:red;">Fatal error:</b>  <br>License yang anda gunakan <b>tidak valid!</b> atau <b>tidak legal!!</b>. Silahkan hubungi costumer support untuk keterangan lebih lanjut<br>';
+			($this->webroot()) ? exit : NULL;
+		
+		}
+		
+	}
+
+	function getZendid(){
+
+		$idZend = zend_get_id();
+
+		$banyakIdZend = count($idZend);
+
+		if($banyakIdZend > 1){	
+			foreach ($idZend as $id => $n){
+				$idZendSelected = $idZend[0];
+			}
+		}else if($banyakIdZend == 1){
+			$idZendSelected = $idZend;
+		}else{
+			$idZendSelected = null;
+		}
+
+	return $idZendSelected;
+
+	}	
 
 	function signup(){
 	if (!empty($this->data)) {
