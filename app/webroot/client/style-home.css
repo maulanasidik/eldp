@@ -4610,8 +4610,8 @@ p.pengarangdetail{
 }
 ul.bxslider{
     width: 100%;
-    margin-top: 32px;
-    margin-left: 51px;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
 #box .bx-wrapper .bx-viewport{

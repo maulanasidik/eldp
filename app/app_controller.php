@@ -16,8 +16,8 @@ class AppController extends Controller {
 		if(isset($this->params['admin']) || $this->params['admin']) {
 			// check user is logged in
 			if( !$this->Session->check('User') ) {
-				$this->Session->setFlash('Anda harus login terlebih dahulu.',true);
-				$this->redirect(array('controller'=>'users','action'=>'admin_login'));
+				/*$this->Session->setFlash('Anda harus login terlebih dahulu.',true);
+				$this->redirect(array('controller'=>'users','action'=>'admin_login'));*/
 			}
 
 			// save user data
